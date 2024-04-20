@@ -50,7 +50,7 @@ const SignUp = () => {
           <input
             type="text"
             name="firstName"
-            placeholder= " 👤 First Name"
+            placeholder= " 👤  First Name"
             value={formData.firstName}
             onChange={handleChange}
             required
@@ -58,7 +58,7 @@ const SignUp = () => {
           <input
             type="text"
             name="lastName"
-            placeholder=" 👤 Last Name"
+            placeholder=" 👤  Last Name"
             value={formData.lastName}
             onChange={handleChange}
             required
@@ -68,7 +68,7 @@ const SignUp = () => {
           <input
             type="email"
             name="email"
-            placeholder=" 📧 Email Address"
+            placeholder=" 📧  Email Address"
             value={formData.email}
             onChange={handleChange}
             required
@@ -78,7 +78,7 @@ const SignUp = () => {
           <input
             type="password"
             name="password"
-            placeholder=" 🔒 Password"
+            placeholder=" 🔒  Password"
             value={formData.password}
             onChange={handleChange}
             required
@@ -86,7 +86,7 @@ const SignUp = () => {
           <input
             type="password"
             name="confirmPassword"
-            placeholder=" 🔒 Confirm Password"
+            placeholder=" 🔒  Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
             required
@@ -96,20 +96,20 @@ const SignUp = () => {
           <input
             type="number"
             name="phone"
-            placeholder=" 📞 Phone Number"
+            placeholder=" 📞  Phone Number"
             value={formData.phone}
             onChange={handleChange}
           /> &nbsp; &nbsp;
           <input
             type="number"
             name="emergencyContact"
-            placeholder=" 📞 Emergency Contact"
+            placeholder=" 📞  Emergency Contact"
             value={formData.emergencyContact}
             onChange={handleChange}
           />
         </div>
         <div className="form-group">
-          <label> 📅 Date of Birth </label>
+          <label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 📅 &nbsp; Date of Birth: </label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <input
             type="date"
             name="dateOfBirth"
@@ -127,7 +127,7 @@ const SignUp = () => {
     onChange={handleChange}
     required
   >
-    <option value=""> 🚻 Select Gender</option>
+    <option value=""> 🚻  Select Gender</option>
     <option value="male">Male</option>
     <option value="female">Female</option>
     <option value="male">Non-Binary</option>
@@ -140,7 +140,7 @@ const SignUp = () => {
         <div className="form-group">
           <textarea
             name="medicalHistory"
-            placeholder=" 📝 Medical History"
+            placeholder=" 📝  Medical History"
             value={formData.medicalHistory}
             onChange={handleChange}
           ></textarea>
@@ -148,7 +148,7 @@ const SignUp = () => {
         <div className="form-group">
           <textarea
             name="reasonForTherapy"
-            placeholder=" 📝 Reason for Seeking Therapy"
+            placeholder=" 📝  Reason for Seeking Therapy"
             value={formData.reasonForTherapy}
             onChange={handleChange}
           ></textarea>

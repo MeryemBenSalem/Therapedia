@@ -44,7 +44,7 @@ div {
   }
 
   h1, h2 {
-    font-family: Montserrat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   .form-group {
@@ -74,7 +74,7 @@ div {
   input[type="email"],
   textarea,
   label {
-    width: 450px;
+    width: 540px;
 
   }
   
