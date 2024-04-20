@@ -1,7 +1,10 @@
 // sign_up.js
 import React, { useState } from 'react';
 import './sign_up.css'; 
-import logo from '../assets/logo.png';  // Import the logo image
+import logo from '../assets/logo.png';  
+import cond from '../assets/terms&conditions.pdf';  
+import { Link } from 'react-router-dom';
+
 
 
 const SignUp = () => {
@@ -38,12 +41,15 @@ const SignUp = () => {
   return (
     
     <div className="sign-up-container">
+        <div className="close-button-container">
+    <Link to="/welcome" className="close-button">x</Link>
+  </div>
       <div className="logo-container">
         <img src={logo} alt="Therapedia Logo" className="logo" />
       </div>
 
       <h1>Ready to get started ?</h1>
-      <h2>Sign Up to Therapedia</h2>
+      <h2>Create your Therapedia Account</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
         
@@ -109,7 +115,7 @@ const SignUp = () => {
           />
         </div>
         <div className="form-group">
-          <label> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 📅 &nbsp; Date of Birth: </label>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 📅 &nbsp; Date of Birth:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <input
             type="date"
             name="dateOfBirth"
@@ -153,17 +159,20 @@ const SignUp = () => {
             onChange={handleChange}
           ></textarea>
         </div>
-        <div className="form-group">
-          <input
-            type="checkbox"
-            name="agreement"
-            checked={formData.agreement}
-            onChange={(e) => setFormData(prevState => ({ ...prevState, agreement: e.target.checked }))}
-            required
-          />
-          <label>I agree to <a href="/path/to/your.pdf" target="_blank" rel="noopener noreferrer">the rules and conditions of Therapedia</a> </label>
-        </div>
+        <div className="form-group" style={{ display: 'flex', alignItems: 'center' }}>
+  <input
+    type="checkbox"
+    name="agreement"
+    checked={formData.agreement}
+    onChange={(e) => setFormData(prevState => ({ ...prevState, agreement: e.target.checked }))}
+    required
+  />
+  <span style={{ marginLeft: '10px' }}>
+    I agree to <a href={cond} target="_blank" rel="noopener noreferrer">the rules and conditions of Therapedia</a>
+  </span>
+</div>
         <button type="submit">Sign Up</button>
+      
       </form>
     </div>
   );

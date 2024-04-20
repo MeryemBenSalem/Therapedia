@@ -7,17 +7,17 @@ div {
 }
 
 .logo-container {
-  /* Style the logo container */
+  
   position: absolute;
   top: 20px;
   left: 20px;
-  z-index: 1; /* Set z-index to make sure the logo appears above other elements */
+  z-index: 1; 
 }
 
 .logo {
-  /* Style the logo image */
-  width: 250px; /* Set the width of the logo */
-  height: auto; /* Maintain aspect ratio */
+
+  width: 250px; 
+  height: auto; 
 }
 .sign-up-container {
     max-width: 600px;
@@ -142,11 +142,41 @@ div {
 }
 
 a {
-  color: #BC1823; /* Change 'blue' to the desired color */
-  text-decoration: none; /* Optional: removes underline */
+  color: #BC1823; 
+  text-decoration: none; 
 }
 
-/* Link color when hovering over it */
+
 a:hover {
-  color: red; /* Change 'red' to the desired hover color */
+  color: red; 
+}
+
+.close-button-container {
+  position: absolute;
+  right: 300px;
+  
+}
+
+.close-button {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #AD8291;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block; 
+  line-height: 1; 
+  text-align: center; 
+  color: #68283D;
+  font-weight: bold;
+  
+}
+
+.close-button:hover {
+  color: black; 
+}
+.close-button-container {
+  background-color: #D1B3BC;
 }
