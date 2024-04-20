@@ -1,8 +1,10 @@
 // sign_up.js
 import React, { useState } from 'react';
-import './sign_up.css'; // Make sure to create this CSS file for styling
+import './sign_up.css'; 
+import logo from '../assets/logo.png';  // Import the logo image
 
-const sign_up = () => {
+
+const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -34,22 +36,29 @@ const sign_up = () => {
   };
 
   return (
+    
     <div className="sign-up-container">
+      <div className="logo-container">
+        <img src={logo} alt="Therapedia Logo" className="logo" />
+      </div>
+
+      <h1>Ready to get started ?</h1>
       <h2>Sign Up to Therapedia</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
+        
           <input
             type="text"
             name="firstName"
-            placeholder="First Name"
+            placeholder= " 👤 First Name"
             value={formData.firstName}
             onChange={handleChange}
             required
-          />
+          /> &nbsp; &nbsp;
           <input
             type="text"
             name="lastName"
-            placeholder="Last Name"
+            placeholder=" 👤 Last Name"
             value={formData.lastName}
             onChange={handleChange}
             required
@@ -59,25 +68,25 @@ const sign_up = () => {
           <input
             type="email"
             name="email"
-            placeholder="Email Address"
+            placeholder=" 📧 Email Address"
             value={formData.email}
             onChange={handleChange}
             required
-          />
+          /> 
         </div>
         <div className="form-group">
           <input
             type="password"
             name="password"
-            placeholder="Password"
+            placeholder=" 🔒 Password"
             value={formData.password}
             onChange={handleChange}
             required
-          />
+          /> &nbsp; &nbsp;
           <input
             type="password"
             name="confirmPassword"
-            placeholder="Confirm Password"
+            placeholder=" 🔒 Confirm Password"
             value={formData.confirmPassword}
             onChange={handleChange}
             required
@@ -87,19 +96,20 @@ const sign_up = () => {
           <input
             type="number"
             name="phone"
-            placeholder="Phone Number"
+            placeholder=" 📞 Phone Number"
             value={formData.phone}
             onChange={handleChange}
-          />
+          /> &nbsp; &nbsp;
           <input
             type="number"
             name="emergencyContact"
-            placeholder="Emergency Contact"
+            placeholder=" 📞 Emergency Contact"
             value={formData.emergencyContact}
             onChange={handleChange}
           />
         </div>
         <div className="form-group">
+          <label> 📅 Date of Birth </label>
           <input
             type="date"
             name="dateOfBirth"
@@ -107,39 +117,30 @@ const sign_up = () => {
             value={formData.dateOfBirth}
             onChange={handleChange}
           />
-          <input
-            type="text"
-            name="nationality"
-            placeholder="Nationality"
-            value={formData.nationality}
-            onChange={handleChange}
-          />
         </div>
         <div className="form-group">
-          <label>Gender:</label>
-          <div>
-            <input
-              type="radio"
-              name="gender"
-              value="male"
-              checked={formData.gender === 'male'}
-              onChange={handleChange}
-            />
-            <label>Male</label>
-            <input
-              type="radio"
-              name="gender"
-              value="female"
-              checked={formData.gender === 'female'}
-              onChange={handleChange}
-            />
-            <label>Female</label>
-          </div>
+        <div className="input-container">
+  <div className='genderco'>
+  <select
+    name="gender"
+    value={formData.gender}
+    onChange={handleChange}
+    required
+  >
+    <option value=""> 🚻 Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="male">Non-Binary</option>
+    <option value="other">Other</option>
+    <option value="female">Prefer Not to Say</option>
+  </select>
+  </div>
+</div>
         </div>
         <div className="form-group">
           <textarea
             name="medicalHistory"
-            placeholder="Medical History"
+            placeholder=" 📝 Medical History"
             value={formData.medicalHistory}
             onChange={handleChange}
           ></textarea>
@@ -147,7 +148,7 @@ const sign_up = () => {
         <div className="form-group">
           <textarea
             name="reasonForTherapy"
-            placeholder="Reason for Seeking Therapy"
+            placeholder=" 📝 Reason for Seeking Therapy"
             value={formData.reasonForTherapy}
             onChange={handleChange}
           ></textarea>
@@ -160,7 +161,7 @@ const sign_up = () => {
             onChange={(e) => setFormData(prevState => ({ ...prevState, agreement: e.target.checked }))}
             required
           />
-          <label>I agree to the rules and conditions of Therapedia</label>
+          <label>I agree to <a href="/path/to/your.pdf" target="_blank" rel="noopener noreferrer">the rules and conditions of Therapedia</a> </label>
         </div>
         <button type="submit">Sign Up</button>
       </form>
@@ -168,4 +169,4 @@ const sign_up = () => {
   );
 };
 
-export default sign_up;
+export default SignUp;
