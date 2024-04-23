@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Forum")
+@RequestMapping("/Question")
 public class QuestionController {
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
@@ -22,4 +22,7 @@ public class QuestionController {
     public List<Question> getAllQuestions(){
         return questionService.getAllQuestions();
     }
+
+
+
 }
