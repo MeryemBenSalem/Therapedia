@@ -3,7 +3,7 @@ package com.ppp.Therapedia.model;
 import jakarta.persistence.Entity;
 
 @Entity
-public class Patient extends User {
+public class Patient extends Profile {
     private String emergencyContact;
     private String dateOfBirth;
     private String gender;
