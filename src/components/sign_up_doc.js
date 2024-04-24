@@ -15,12 +15,16 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
     phone: '',
-    emergencyContact: '',
-    dateOfBirth: '',
-    nationality: '',
-    gender: '',
-    medicalHistory: '',
-    reasonForTherapy: '',
+    Affiliations: '',
+    specialization: '',
+    licenseNumber: '',
+    yearsOfExperience: '',
+    //emergencyContact: '',
+    //dateOfBirth: '',
+    //nationality: '',
+    //gender: '',
+    //medicalHistory: '',
+    //reasonForTherapy: '',
     agreement: false
   });
 

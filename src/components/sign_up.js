@@ -17,7 +17,7 @@ const SignUp = () => {
     phone: '',
     emergencyContact: '',
     dateOfBirth: '',
-    nationality: '',
+    //nationality: '',
     gender: '',
     medicalHistory: '',
     reasonForTherapy: '',
