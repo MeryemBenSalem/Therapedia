@@ -1,6 +1,6 @@
-// Question.js
 import React, { useState } from 'react';
 import Comment from './Comment';
+import './Question.css'; // Import the CSS file
 
 const Question = ({ question }) => {
     const [comments, setComments] = useState([]);
@@ -8,14 +8,15 @@ const Question = ({ question }) => {
 
     const handleAddComment = () => {
         if (!newComment.trim()) return;
-        setComments([...comments, newComment]);
+        const updatedComments = [...comments, { text: newComment, upvotes: 0, downvotes: 0 }];
+        setComments(updatedComments);
         setNewComment('');
     };
 
     return (
-        <div>
-            <h3>{question.text}</h3>
-            <div>
+        <div className="question-container">
+            <h3 className="question-text">{question.text}</h3>
+            <div className="button-container">
                 <button>Upvote ({question.upvotes})</button>
                 <button>Downvote ({question.downvotes})</button>
             </div>
@@ -24,13 +25,16 @@ const Question = ({ question }) => {
                     type="text"
                     value={newComment}
                     onChange={(e) => setNewComment(e.target.value)}
+                    className="comment-input"
                     placeholder="Add a comment..."
                 />
-                <button onClick={handleAddComment}>Comment</button>
+                <button onClick={handleAddComment} className="comment-button">Comment</button>
             </div>
-            {question.comments.map((comment, index) => (
-                <Comment key={index} comment={comment} />
-            ))}
+            <div className="comment-container">
+                {comments.map((comment, index) => (
+                    <Comment key={index} comment={comment} />
+                ))}
+            </div>
         </div>
     );
 };

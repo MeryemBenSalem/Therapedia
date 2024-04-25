@@ -1,0 +1,64 @@
+/* Question.css */
+
+.question-container {
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.question-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    margin-bottom: 10px;
+}
+
+.comment-container {
+    margin-top: 10px;
+}
+
+.comment-input {
+    width: calc(100% - 80px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.comment-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.comment-button:hover {
+    background-color: #0056b3;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.comment p {
+    margin: 0;
+}
+.question-container .button-container button {
+    padding: 10px 15px; /* Adjust padding */
+    margin-right: 10px; /* Add margin between buttons */
+    background-color: #28a745; /* Green color for upvote button */
+}
+
+.question-container .button-container button.downvote {
+    background-color: #dc3545; /* Red color for downvote button */
+}

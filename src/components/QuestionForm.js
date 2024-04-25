@@ -1,23 +1,42 @@
-// ForumPage.js
 import React, { useState } from 'react';
-import Question from './Question';
+import './QuestionForm.css'; // Import the CSS file for QuestionForm
 
-const ForumPage = () => {
-    const [questions, setQuestions] = useState([]);
+const QuestionForm = ({ onAddQuestion }) => {
+    const [newQuestion, setNewQuestion] = useState('');
 
-    const handleAddQuestion = (newQuestion) => {
-        setQuestions([...questions, newQuestion]);
+    const handleInputChange = (event) => {
+        setNewQuestion(event.target.value);
+    };
+
+    const handleSubmit = () => {
+        if (newQuestion.trim() !== '') {
+            // Create a new question object
+            const question = {
+                text: newQuestion,
+                upvotes: 0,
+                downvotes: 0,
+                comments: [],
+            };
+
+            // Call the onAddQuestion function passed from the parent component
+            onAddQuestion(question);
+
+            // Clear the input field after submitting
+            setNewQuestion('');
+        }
     };
 
     return (
-        <div>
-            <h1>Forum</h1>
-            <QuestionForm onAddQuestion={handleAddQuestion} />
-            {questions.map((question, index) => (
-                <Question key={index} question={question} />
-            ))}
+        <div className="question-form"> {/* Apply question-form class */}
+            <input
+                type="text"
+                value={newQuestion}
+                onChange={handleInputChange}
+                placeholder="Type your question..."
+            />
+            <button onClick={handleSubmit}>Submit</button>
         </div>
     );
 };
 
-export default ForumPage;
+export default QuestionForm;

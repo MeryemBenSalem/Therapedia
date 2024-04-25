@@ -1,0 +1,39 @@
+/* Comment.css */
+
+.comment-container {
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.comment-text {
+    margin-bottom: 5px;
+}
+
+.button-container {
+    margin-top: 5px;
+}
+
+.comment-button {
+    padding: 5px 10px;
+    background-color: #007bff; /* Blue color */
+    color: #fff; /* White color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.comment-button:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+}
+.comment-container .button-container button {
+    padding: 5px 10px; /* Adjust padding */
+    margin-right: 5px; /* Add margin between buttons */
+    background-color: #28a745; /* Green color for upvote button */
+}
+
+.comment-container .button-container button.downvote {
+    background-color: #dc3545; /* Red color for downvote button */
+}
