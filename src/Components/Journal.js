@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Styles/JournalPage.css";
-import {FaCalendarAlt, FaThumbtack} from "react-icons/fa";
+import { FaCalendarAlt, FaThumbtack } from "react-icons/fa";
 import JournalHero from "./JournalHero";
 import JournalImage from "../Assets/journal.png";
 
-
-
 function Journal() {
     const [journalEntries, setJournalEntries] = useState([]);
-    const [showModal, setShowModal] = useState(false);
+    const [showAddModal, setShowAddModal] = useState(false);
+    const [showTipsModal, setShowTipsModal] = useState(true);
     const [newEntry, setNewEntry] = useState("");
     const [title, setTitle] = useState("");
     const [editingIndex, setEditingIndex] = useState(null);
     const [activeNote, setActiveNote] = useState(null); // Track active note index
-
 
     // Fetch journal entries from the Spring Boot API
     useEffect(() => {
@@ -42,7 +40,8 @@ function Journal() {
                     fetchJournalEntries(); // Refresh journal entries after adding
                     setNewEntry("");
                     setTitle("");
-                    setShowModal(false);
+                    setShowAddModal(false);
+                    setShowTipsModal(false);
                 })
                 .catch(error => {
                     console.error("Error adding journal entry:", error);
@@ -64,14 +63,13 @@ function Journal() {
                     setEditingIndex(null);
                     setNewEntry("");
                     setTitle("");
-                    setShowModal(false);
+                    setShowAddModal(false);
                 })
                 .catch(error => {
                     console.error("Error editing journal entry:", error);
                 });
         }
     };
-
 
     const deleteJournalEntry = (index) => {
         const entryId = journalEntries[index].id;
@@ -89,7 +87,7 @@ function Journal() {
     };
 
     const handleAddJournalClick = () => {
-        setShowModal(true);
+        setShowAddModal(true);
     };
 
     const handleViewJournalsClick = () => {
@@ -99,20 +97,15 @@ function Journal() {
 
     return (
         <div className="journal-page">
-            <div/>
-            <div/>
             <JournalHero onAddClick={handleAddJournalClick} onViewClick={handleViewJournalsClick} image={JournalImage}/>
-            <div/>
-            <div/>
-            <div/>
-            <div/>
-            {showModal && (
+            <br/><br/><br/><br/>
+            {showAddModal && (
                 <div className="modal-wrapper">
-                    <div className="modal" onClick={() => setShowModal(false)}>
+                    <div className="modal" onClick={() => setShowAddModal(false)}>
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <span className="close" onClick={() => setShowModal(false)}>
-                    &times;
-                </span>
+              <span className="close" onClick={() => setShowAddModal(false)}>
+                &times;
+              </span>
                             <h2>{editingIndex !== null ? "Edit Funky Journal" : "Add New Funky Journal"}</h2>
                             <input
                                 type="text"
@@ -129,26 +122,49 @@ function Journal() {
                             <div className="date-container">
                                 <p>Date: {new Date().toLocaleDateString()}</p>
                             </div>
-                            <button className="add-entry-btn" onClick={editingIndex !== null ? editJournalEntry : addJournalEntry}>
+                            <button className="add-entry-btn"
+                                    onClick={editingIndex !== null ? editJournalEntry : addJournalEntry}>
                                 {editingIndex !== null ? "Save Changes" : "Add Funky Entry"}
                             </button>
                         </div>
                     </div>
                 </div>
             )}
-
-
+            {showTipsModal && (
+                <div className="modal-wrapper">
+                    <div className="modal" onClick={() => setShowTipsModal(false)}>
+                        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <span className="close" onClick={() => setShowTipsModal(false)}>
+                &times;
+              </span>
+                            <h2>Welcome to Your Journal!</h2>
+                            <p>Here are some tips and suggestions for topics you can write about:</p>
+                            <br/>
+                            <ul>
+                                <li>Gratitude: Reflect on things you're grateful for.</li>
+                                <br/>
+                                <li>Self-Reflection: Write about your thoughts and feelings.</li>
+                                <br/>
+                                <li>Achievements: Celebrate your accomplishments, big or small.</li>
+                                <br/><br/>
+                            </ul>
+                            <button className="add-entry-btn" onClick={() => setShowTipsModal(false)}>Start Journaling
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
             <div id="journal-entries" className="journal-entries">
                 {journalEntries.map((entry, index) => (
                     <div key={index} className={`entry-item ${activeNote === index ? 'active' : ''}`}
                          onClick={() => toggleNote(index)}>
-                        <span className="pin-icon">
-                            <FaThumbtack/>
-                        </span>
+            <span className="pin-icon">
+              <FaThumbtack/>
+            </span>
                         <div className="entry-header">
-                            <span className="calendar-icon">
-                                <FaCalendarAlt/>
-                            </span>
+              <span className="calendar-icon">
+                <FaCalendarAlt/>
+              </span>
                             <h3 className="entry-date">{new Date(entry.creationDate).toLocaleDateString()}</h3>
                         </div>
                         <h2>{entry.title}</h2>
@@ -160,7 +176,7 @@ function Journal() {
                                 setEditingIndex(index);
                                 setTitle(entry.title);
                                 setNewEntry(entry.content);
-                                setShowModal(true);
+                                setShowAddModal(true);
                             }}>Edit
                             </button>
                             <button onClick={() => deleteJournalEntry(index)}>Delete</button>

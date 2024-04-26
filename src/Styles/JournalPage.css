@@ -214,6 +214,32 @@
   margin-bottom: 10px;
 }
 
+.tips-modal-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.tips-modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tips-modal-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.tips-modal-content ul {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.tips-modal-content li {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+
 
 
 
