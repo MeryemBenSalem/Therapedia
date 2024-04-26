@@ -2,10 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
-import Legal from "./Pages/Legal";
-import NotFound from "./Pages/NotFound";
-import Appointment from "./Pages/Appointment";
-import SignupForm from "./Components/SignupForm"; // Import the SignupForm component
+import JournalPage from "./Pages/JournalPage";
 
 function App() {
   return (
@@ -13,10 +10,7 @@ function App() {
         <Router basename="Therapedia">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="/appointment" element={<Appointment />} />
-            <Route path="/signup" element={<SignupForm />} /> {/* Add route for signup page */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="/journal" element={<JournalPage />} />
           </Routes>
         </Router>
       </div>

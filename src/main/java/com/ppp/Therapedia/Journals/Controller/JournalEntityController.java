@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api/journals")
+@RequestMapping("/api/journal-entries")
 public class JournalEntityController {
 
     @Autowired
