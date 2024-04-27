@@ -7,8 +7,11 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
+import SignUpPopUp from "./SignUpPopUp.js";
+
 
 function Navbar() {
+  const [buttonPopup, setButtonPopup] = useState(false);
   const [nav, setNav] = useState(false);
 
   const openNav = () => {
@@ -53,9 +56,9 @@ function Navbar() {
         </ul>
 
         {/* Sign In/Sign Up Button */}
-        <Link to="/signup" className="navbar-btn">
-          <FontAwesomeIcon icon={faUserCircle} /> Sign Up
-        </Link>
+        <button className="navbar-btn" onClick={() => setButtonPopup(true)}>
+          <FontAwesomeIcon icon={faUserCircle} /> Sign Up</button>
+        <SignUpPopUp trigger={buttonPopup} setTrigger={setButtonPopup}></SignUpPopUp>
 
         {/* Mobile */}
         <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
