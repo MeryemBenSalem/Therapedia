@@ -32,7 +32,7 @@ const QuestionForm = ({ onAddQuestion }) => {
                 type="text"
                 value={newQuestion}
                 onChange={handleInputChange}
-                placeholder="Type your question..."
+                placeholder="Express yourself..."
             />
             <button onClick={handleSubmit}>Submit</button>
         </div>

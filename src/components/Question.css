@@ -1,64 +1,177 @@
-/* Question.css */
+/**
+ * Oscuro: #283035
+ * Azul: #03658c
+ * Detalle: #c7cacb
+ * Fondo: #dee1e3
+ ----------------------------------*/
 
-.question-container {
-    border: 1px solid #ccc; /* Light gray border */
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
+
+
+/** ====================
+ * Lista de Comentarios
+ =======================*/
+
+
+
+
+/**
+ * Lineas / Detalles
+ -----------------------*/
+
+
+
+
+/**
+ * Avatar
+ ---------------------------*/
+.questions-list{
+    margin-top: 20px;
+    margin-left: 20px; /* Shift to the right */
+    clear: both; /* Clear floats */
+    border: 2px solid #c0a2ea; /* Add border */
+    background-color: #f4f4f4; /* Add background color */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+.questions-list li {
+    margin-bottom: 15px;
+    display: flex;
+    position: relative;
+}
+.question-avatar {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    z-index: 99;
+    float: left; /* Change float to left */
+    border: 3px solid #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
 }
 
-.question-text {
-    font-size: 18px;
-    margin-bottom: 10px;
+.question-box {
+    flex:1;
+    margin-left:10px;
+    width: auto; /* Adjust width to fit remaining space */
+    float: left; /* Change float to left */
+    position: relative;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
 }
 
-.button-container {
-    margin-bottom: 10px;
+.question-avatar img {
+    width: 100%;
+    height: 100%;
 }
 
-.comment-container {
-    margin-top: 10px;
+.question-box .question-head {
+    background: #FCFCFC;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    border-radius: 4px 4px 0 0;
 }
 
-.comment-input {
-    width: calc(100% - 80px);
-    padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.comment-button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.question-box .question-head button {
+    float: right;
+    margin-left: 14px;
+    position: relative;
+    top: 2px;
+    color: #4a2179;
+    background: #c0a2ea;
     cursor: pointer;
-    font-size: 16px;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.comment-button:hover {
-    background-color: #0056b3;
+.question-box .question-head button:hover {
+    color: #9265c7;
 }
 
-.comment {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+
+
+.question-box .question-content {
+    background: #FFF;
+    padding: 12px;
+    font-size: 15px;
+    color: #595959;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+    word-break: break-all;
+}
+
+
+/** =====================
+ * Responsive
+ ========================*/
+@media only screen and (max-width: 766px) {
+    .questions-container {
+        width: 480px;
+    }
+
+    .questions-list .question-box {
+        width: 390px;
+    }
+
+}
+.comment-box1{
+    display: flex;
+}
+.comment-box1 input{
+    flex:1;
+    width: 100%;
     padding: 10px;
-    margin-top: 10px;
-}
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
 
-.comment p {
-    margin: 0;
 }
-.question-container .button-container button {
-    padding: 10px 15px; /* Adjust padding */
-    margin-right: 10px; /* Add margin between buttons */
-    background-color: #28a745; /* Green color for upvote button */
+.comment-box1 input:focus{
+    outline: none; /* Remove default focus outline */
+    border-color: #f6cff3; /* Change border color when input is focused */
+    box-shadow: 0 0 5px rgb(146, 101, 199); /* Add shadow when input is focused */
 }
-
-.question-container .button-container button.downvote {
-    background-color: #dc3545; /* Red color for downvote button */
+.comment-box1 Button{
+    padding: 10px 20px;
+    border: 1px solid #f6cff3;
+    background-color: #f6cff3;
+    color: #9265c7;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+.comment-container {
+    margin-top: 20px;
+    margin-left: 50px; /* Shift to the right */
+    width: auto;
+    clear: both; /* Clear floats */
+    border: 2px solid #f6cff3; /* Add border */
+    background-color: #f4f4f4; /* Add background color */
+    padding: 15px; /* Add padding for spacing */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+}
+.question-box .question-name {
+    color: #283035;
+    font-size: 14px;
+    font-weight: 700;
+    float: left;
+    margin-right: 10px;
 }
