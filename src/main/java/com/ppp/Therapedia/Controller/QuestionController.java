@@ -13,12 +13,12 @@ public class QuestionController {
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private QuestionService questionService;
-    @PostMapping("/add")
+    @PostMapping
     public String add(@RequestBody Question question){
         questionService.saveQuestion(question);
         return"question is added";
     }
-    @GetMapping("/getall")
+    @GetMapping
     public List<Question> getAllQuestions(){
         return questionService.getAllQuestions();
     }

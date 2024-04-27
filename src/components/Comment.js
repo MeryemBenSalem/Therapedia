@@ -1,16 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Comment.css';
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded"; // Import the CSS file
 
 const Comment = ({ comment }) => {
+    const [voted, setVoted] = useState(null);
+    const [upvotes, setUpvotes] = useState(comment.upvotes);
+    const [downvotes, setDownvotes] = useState(comment.downvotes);
+
     const handleUpvote = () => {
-        // Implement upvote functionality for the comment
+        if (voted === null) {
+            setUpvotes(prevUpvotes => prevUpvotes + 1);
+            setVoted('up');
+        }
     };
 
     const handleDownvote = () => {
-        // Implement downvote functionality for the comment
+        if (voted === null) {
+            setDownvotes(prevDownvotes => prevDownvotes + 1);
+            setVoted('down');
+        }
     };
 
     return (
@@ -20,11 +30,10 @@ const Comment = ({ comment }) => {
                 <div className="comment-box">
                     <div className="comment-head">
                         <h6 className="comment-name by-author">test user</h6>
-                        <Button variant={"contained"} startIcon={<ArrowDownwardRoundedIcon/>}>({comment.downvotes})</Button>
-                        <Button variant={"contained"} startIcon={<ArrowUpwardRoundedIcon/>}>({comment.upvotes})</Button>
+                        <Button variant={"contained"} startIcon={<ArrowDownwardRoundedIcon/>} onClick={handleDownvote} disabled={voted !== null || downvotes > comment.downvotes}>{downvotes}</Button>
+                        <Button variant={"contained"} startIcon={<ArrowUpwardRoundedIcon/>} onClick={handleUpvote} disabled={voted !== null || upvotes > comment.upvotes}>{upvotes}</Button>
                     </div>
                     <div className="comment-content">{comment.text}</div>
-
                 </div>
             </li>
         </ul>
@@ -32,4 +41,3 @@ const Comment = ({ comment }) => {
 };
 
 export default Comment;
-

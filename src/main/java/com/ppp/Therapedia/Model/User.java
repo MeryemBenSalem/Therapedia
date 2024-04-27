@@ -23,11 +23,10 @@ public class User {
     // Ajoutez d'autres propriétés et méthodes si nécessaire
     @OneToMany
     private List <Question> QuestionList;
-    public User(Long id, String username, String email, List<Question> questionList) {
+    public User(Long id, String username, String email) {
         this.idUser = id;
         this.username = username;
         this.email = email;
-        QuestionList = questionList;
     }
     public User(){}
     public Long getId() {
