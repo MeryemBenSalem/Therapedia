@@ -33,7 +33,7 @@ function JournalHero({ onAddClick, onViewClick, image }) {
                 <div className="journal-hero-text">
                     <h1 className="journal-hero-title">Welcome to Your Journal</h1>
                     <p className="journal-hero-description">
-                        Write down your thoughts, memories, and experiences. Keep track of your journey.
+                        Write down your thoughts, memories, and experiences.
                     </p>
                     <div className="journal-hero-buttons">
                         <button className="journal-hero-button" onClick={onAddClick}>
