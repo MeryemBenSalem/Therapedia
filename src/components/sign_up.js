@@ -34,8 +34,16 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission here, e.g., send data to backend
-    console.log(formData);
+    console.log(formData)
+    // Send a POST request to your backend endpoint
+    fetch("http://localhost:8080/patient/add",{
+      method: 'POST',
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(formData)
+    })
+    .then(()=>{
+        console.log("New Patient added")
+    })
   };
 
   return (
