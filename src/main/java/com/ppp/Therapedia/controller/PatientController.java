@@ -29,15 +29,32 @@ public class PatientController extends ProfileController {
         return patientService.getAllPatients();
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Patient> get(@PathVariable Integer id){
-//        try{
-//            Patient patient=patientService.get(id);
-//            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
-//        }catch (NoSuchElementException e) {
-//            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
-//        }
-//    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> get(@PathVariable Integer id){
+        try{
+            Patient patient=patientService.get(id);
+            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+        }catch (NoSuchElementException e) {
+            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
+        }
+    }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Patient> update(@RequestBody Patient patient,
+                                          @PathVariable Integer id){
+        try {
+            Patient existingPatient= patientService.get(id);
+            patientService.savePatient(patient);
+            return new ResponseEntity<>(HttpStatus.OK);
+        }catch (NoSuchElementException e) {
+            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public String delete(@PathVariable Integer id){
+        patientService.delete(id);
+        return "Deleted Patient";
+    }
 
 }

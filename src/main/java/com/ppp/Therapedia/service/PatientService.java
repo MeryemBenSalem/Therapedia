@@ -19,6 +19,11 @@ public class PatientService extends ProfileService{
         return (Patient) saveProfile(patient);
     }
 
+    @Override
+    public Patient get(Integer id) {
+        return patientRepository.findById(Long.valueOf(id)).orElse(null);
+    }
+
 
     public List<Patient> getAllPatients() {
         return getAllProfiles().stream()
