@@ -17,9 +17,10 @@ public class PatientServiceImpl implements PatientService{
     public Patient savePatient(Patient patient) {
         return patientRepository.save(patient);
     }
-
     @Override
     public List<Profile> getAllPatients() {
         return patientRepository.findAll();
     }
+
+
 }

@@ -4,9 +4,12 @@ import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.model.Profile;
 import com.ppp.Therapedia.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RestController
 @RequestMapping("/patient")
@@ -24,6 +27,16 @@ public class PatientController extends ProfileController {
     @GetMapping("/getAll")
     public List<Profile> getAllPatients(){
         return patientService.getAllPatients();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> get(@PathVariable Integer id){
+        try{
+            Patient patient=patientService.get(id);
+            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+        }catch (NoSuchElementException e) {
+            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
+        }
     }
 
 

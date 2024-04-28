@@ -8,4 +8,6 @@ import java.util.List;
 public interface PatientService extends ProfileService {
     public Patient savePatient(Patient patient);
     public List<Profile> getAllPatients();
+
+
 }
