@@ -25,19 +25,19 @@ public class PatientController extends ProfileController {
     }
 
     @GetMapping("/getAll")
-    public List<Profile> getAllPatients(){
+    public List<Patient> getAllPatients(){
         return patientService.getAllPatients();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Patient> get(@PathVariable Integer id){
-        try{
-            Patient patient=patientService.get(id);
-            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
-        }catch (NoSuchElementException e) {
-            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
-        }
-    }
+//    @GetMapping("/{id}")
+//    public ResponseEntity<Patient> get(@PathVariable Integer id){
+//        try{
+//            Patient patient=patientService.get(id);
+//            return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+//        }catch (NoSuchElementException e) {
+//            return new ResponseEntity<Patient>(HttpStatus.NOT_FOUND);
+//        }
+//    }
 
 
 }
