@@ -1,8 +1,8 @@
 // sign_up.js
 import React, { useState } from 'react';
-import './sign_up_doc.css'; 
-import logo from '../assets/logo.png';  
-import cond from '../assets/terms&conditions.pdf';  
+import '../Styles/sign_up.css'; 
+import logo from '../Assets/logo.png';  
+import cond from '../Assets/terms&conditions.pdf';  
 import { Link } from 'react-router-dom';
 
 
@@ -49,14 +49,14 @@ const SignUp = () => {
       </div>
 
       <h1>Ready to get started ?</h1>
-      <h2>Join Therapedia & Make a Difference </h2>
+      <h2>Create your Therapedia Account</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
         
           <input
             type="text"
             name="firstName"
-            placeholder= " 👨🏻‍⚕️  First Name"
+            placeholder= " 👤  First Name"
             value={formData.firstName}
             onChange={handleChange}
             required
@@ -64,7 +64,7 @@ const SignUp = () => {
           <input
             type="text"
             name="lastName"
-            placeholder=" 👨🏻‍⚕️  Last Name"
+            placeholder=" 👤  Last Name"
             value={formData.lastName}
             onChange={handleChange}
             required
@@ -99,60 +99,66 @@ const SignUp = () => {
           />
         </div>
         <div className="form-group">
-          <input 
+          <input
             type="number"
             name="phone"
             placeholder=" 📞  Phone Number"
             value={formData.phone}
             onChange={handleChange}
-            style={{ width: '540px' }} 
           /> &nbsp; &nbsp;
-          <div className='license'>
           <input
             type="number"
-            name="license"
-            placeholder=" 🔢  License Number"
-            value={formData.licenseNumber}
+            name="emergencyContact"
+            placeholder=" 📞  Emergency Contact"
+            value={formData.emergencyContact}
             onChange={handleChange}
-            style={{ width: '540px' }} 
-          /> </div>
+          />
+        </div>
+        <div className="form-group">
+           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 📅 &nbsp; Date of Birth:  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <input
+            type="date"
+            name="dateOfBirth"
+            placeholder="Date of Birth"
+            value={formData.dateOfBirth}
+            onChange={handleChange}
+          />
         </div>
         <div className="form-group">
         <div className="input-container">
-  <div className='specialization'>
+  <div className='genderco'>
   <select
-    name="specialization"
-    value={formData.specialization}
+    name="gender"
+    value={formData.gender}
     onChange={handleChange}
     required
   >
-    <option value=""> 🎓  specialization</option>
-    <option value="male">Clinical Psychology</option>
-    <option value="female">Psychiatry</option>
-    <option value="male">Counseling</option>
+    <option value=""> 🚻  Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="male">Non-Binary</option>
     <option value="other">Other</option>
+    <option value="female">Prefer Not to Say</option>
   </select>
   </div>
-  <div>
-  <input
-            type="number"
-            name="yearsOfExperience"
-            placeholder=" 💼  Years of Experience"
-            value={formData.yearsOfExperience}
-            onChange={handleChange}
-          />
-          </div>
 </div>
         </div>
         <div className="form-group">
           <textarea
-            name="Affiliations"
-            placeholder=" 📝  Professional Affiliations"
-            value={formData.Affiliations}
+            name="medicalHistory"
+            placeholder=" 📝  Medical History"
+            value={formData.medicalHistory}
             onChange={handleChange}
           ></textarea>
         </div>
-        
+        <div className="form-group">
+          <textarea
+            name="reasonForTherapy"
+            placeholder=" 📝  Reason for Seeking Therapy"
+            value={formData.reasonForTherapy}
+            onChange={handleChange}
+          ></textarea>
+        </div>
         <div className="form-group" style={{ display: 'flex', alignItems: 'center' }}>
   <input
     type="checkbox"
