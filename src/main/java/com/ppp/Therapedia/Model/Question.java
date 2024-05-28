@@ -1,5 +1,6 @@
 package com.ppp.Therapedia.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -11,22 +12,22 @@ public class Question {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id") // This column will store the ID of the user
-    private Long userId; // ID of the user who posted the question
+    @JoinColumn(name = "user_id") // This establishes the foreign key relationship// This column will store the ID of the user
+    private Integer userId; // ID of the user who posted the question
 
     @Column(name = "content")
     private String content;
 
     @Column(name = "upvotes")
-    private int upvotes;
+    private Integer upvotes;
 
     @Column(name = "downvotes")
-    private int downvotes;
+    private Integer downvotes;
 
     @Column(name = "date")
     private Date date;
-
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Comment> comments;
 
     // Getters and setters
@@ -39,11 +40,10 @@ public class Question {
         this.id = id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Integer getUserId() {
+        return this.userId;
     }
-
-    public void setUserId(Long userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -55,7 +55,7 @@ public class Question {
         this.content = content;
     }
 
-    public int getUpvotes() {
+    public Integer getUpvotes() {
         return upvotes;
     }
 
@@ -63,7 +63,7 @@ public class Question {
         this.upvotes = upvotes;
     }
 
-    public int getDownvotes() {
+    public Integer getDownvotes() {
         return downvotes;
     }
 

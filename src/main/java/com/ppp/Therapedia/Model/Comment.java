@@ -24,8 +24,8 @@ public class Comment {
     @Column(name = "date")
     private Date date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "question.id")
+    @ManyToOne(fetch = FetchType.EAGER) // Eagerly load the associated Question
+    @JoinColumn(name = "question_id")
     private Question question; // The question that this comment belongs to
 
     // Constructors, getters, and setters

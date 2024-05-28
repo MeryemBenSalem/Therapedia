@@ -6,7 +6,7 @@ body, html {
 
 body {
     /* Gradient from top to bottom, red to blue */
-    background-image: linear-gradient(to bottom, #eebae6, #d969e0);
+    background-image: linear-gradient(to bottom, #eebae6, #ec8181);
 }
 /* Center the ForumPage content */
 .container {
@@ -17,7 +17,7 @@ body {
 .container button{
     padding: 10px 20px; /* Add padding */
     margin-left: 10px; /* Add margin to separate from input */
-    background-color: #88187f; /* Set background color */
+    background-color: #ce7272; /* Set background color */
     color: #f6cff3; /* Set text color */
     border: none; /* Remove border */
     border-radius: 4px; /* Add border radius */

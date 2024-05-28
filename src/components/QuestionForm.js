@@ -12,7 +12,7 @@ const QuestionForm = ({ onAddQuestion }) => {
         if (newQuestion.trim() !== '') {
             // Create a new question object
             const question = {
-                text: newQuestion,
+                content: newQuestion,
                 upvotes: 0,
                 downvotes: 0,
                 comments: [],

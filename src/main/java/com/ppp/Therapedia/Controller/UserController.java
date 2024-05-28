@@ -1,26 +1,33 @@
 package com.ppp.Therapedia.Controller;
 
-
 import com.ppp.Therapedia.Model.User;
 import com.ppp.Therapedia.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/Users")
 public class UserController {
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+
     @Autowired
     private UserService userService;
-    @PostMapping("/addUser")
-    public String add(@RequestBody User user){
+
+    @PostMapping
+    public String addUser(@RequestBody User user) {
         userService.saveUser(user);
-        return"user is added";
+        return "User is added";
     }
-    @GetMapping("/getallUsers")
-    public List<User> getAllUsers(){
+
+    @GetMapping
+    public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/{id}") // New endpoint to fetch user by ID
+    public Optional<User> getUserById(@PathVariable("id") Integer id) {
+        return userService.getUserById(id);
     }
 }
