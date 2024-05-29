@@ -2,9 +2,9 @@ import React from "react";
 import InformationCard from "./InformationCard";
 import { faBrain, faUserMd, faComments } from '@fortawesome/free-solid-svg-icons';
 
-import "../Styles/Info.css";
+import "../Styles/Services.css";
 
-function Info() {
+function Services() {
   return (
     <div className="info-section" id="services">
       <div className="info-title-content">
@@ -40,4 +40,4 @@ function Info() {
     </div>
   );
 }
-export default Info;
+export default Services;

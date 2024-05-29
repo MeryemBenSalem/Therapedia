@@ -71,6 +71,8 @@
 /* Steps */
 .about-text-step {
     margin: 16px 0;
+    background: transparent;
+
 }
 
 .about-text-sTitle {
@@ -78,6 +80,8 @@
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .7px;
+    background: transparent;
+
 }
 
 .about-text-description {
@@ -86,6 +90,8 @@
     font-family: 'Rubik', sans-serif;
     letter-spacing: .7px;
     line-height: 1.6rem;
+    background: transparent;
+
 }
 
 .fa-icon {
@@ -96,6 +102,8 @@
 @media screen and (max-width: 1000px) {
     .about-section {
         display: block;
+        background: transparent;
+
     }
 
     .about-image-content {
@@ -111,6 +119,8 @@
 
     .about-text-content {
         width: 100%;
+        background: transparent;
+
     }
 }
 

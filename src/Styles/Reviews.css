@@ -20,10 +20,14 @@
     font-size: 32px;
     font-weight: bold;
     letter-spacing: .7px;
+    background: transparent;
+
 }
 
 .rw-text-num {
     color: #3A5267; /* Light blue */
+    background: transparent;
+
 }
 
 .rw-text-desc {
@@ -34,6 +38,8 @@
     font-weight: bold;
     letter-spacing: .7px;
     line-height: 2.6rem;
+    background: transparent;
+
 }
 
 .rw-text-format {
@@ -42,6 +48,8 @@
     justify-content: flex-start;
     align-items: center;
     position: relative;
+    background: transparent;
+
 }
 
 .rw-text-quote1 {
@@ -53,6 +61,8 @@
     font-size: 40px;
     font-weight: bold;
     letter-spacing: 2px;
+    background: transparent;
+
 }
 
 .rw-text-quote2 {
@@ -64,6 +74,8 @@
     font-size: 40px;
     font-weight: bold;
     letter-spacing: 2px;
+    background: transparent;
+
 }
 
 .rw-review {
@@ -74,6 +86,8 @@
     font-size: 24px;
     letter-spacing: .7px;
     line-height: 2.2rem;
+    background: transparent;
+
 }
 
 .rw-authors {
@@ -117,34 +131,48 @@
 
 .rw-next-btn:hover {
     color: #3A5267; /* Light blue */
+    background: transparent;
+
 }
 
 /* Responsive */
 @media screen and (max-width: 700px) {
     .review-section {
         letter-spacing: .8px;
+        background: transparent;
+
     }
 
     .rw-text-title {
         font-size: 22px;
+        background: transparent;
+
     }
 
     .rw-text-desc {
         font-size: 28px;
+        background: transparent;
+
     }
 
     .rw-review {
         font-size: 22px;
         letter-spacing: .7px;
         line-height: 1.8rem;
+        background: transparent;
+
     }
 
     .rw-reviewer-name {
         font-size: 20px;
+        background: transparent;
+
     }
 
     .rw-next-btn {
         margin: 0 16px 0 0;
         font-size: 40px;
+        background: transparent;
+
     }
 }
