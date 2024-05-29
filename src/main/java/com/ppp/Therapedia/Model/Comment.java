@@ -15,11 +15,9 @@ public class Comment {
     @Column(name = "content")
     private String content;
 
-    @Column(name = "upvotes")
-    private int upvotes;
+    @Column(name = "votes")
+    private int votes;
 
-    @Column(name = "downvotes")
-    private int downvotes;
 
     @Column(name = "date")
     private Date date;
@@ -54,21 +52,14 @@ public class Comment {
         this.content = content;
     }
 
-    public int getUpvotes() {
-        return upvotes;
+    public int getVotes() {
+        return votes;
     }
 
-    public void setUpvotes(int upvotes) {
-        this.upvotes = upvotes;
+    public void setVotes(int votes) {
+        this.votes = votes;
     }
 
-    public int getDownvotes() {
-        return downvotes;
-    }
-
-    public void setDownvotes(int downvotes) {
-        this.downvotes = downvotes;
-    }
 
     public Date getDate() {
         return date;

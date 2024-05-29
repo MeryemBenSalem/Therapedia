@@ -1,14 +1,7 @@
-/**
- * Oscuro: #283035
- * Azul: #03658c
- * Detalle: #c7cacb
- * Fondo: #dee1e3
- ----------------------------------*/
+/* General styles */
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -26,19 +19,13 @@ body {
     background: #dee1e3;
 }
 
-/** ====================
- * Lista de Comentarios
- =======================*/
-
-
-.comments-list  {
+/* Comment List */
+.comments-list {
     margin-top: 30px;
     position: relative;
+    padding-left: 50px; /* Adjusted padding to provide space for the line */
 }
 
-/**
- * Lineas / Detalles
- -----------------------*/
 .comments-list:before {
     content: '';
     width: 2px;
@@ -58,17 +45,13 @@ body {
     width: 7px;
     height: 7px;
     border: 3px solid #dee1e3;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
 }
-
-
-
 
 .comments-list li {
     margin-bottom: 15px;
     display: flex;
+    align-items: flex-start;
     position: relative;
 }
 
@@ -80,34 +63,24 @@ body {
     width: 0;
 }
 
-/**
- * Avatar
- ---------------------------*/
+/* Comment Item */
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Avatar */
 .comments-list .comment-avatar {
     width: 65px;
     height: 65px;
     position: relative;
     z-index: 99;
-    float: left; /* Change float to left */
+    float: left;
     border: 3px solid #FFF;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
     border-radius: 4px;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     box-shadow: 0 1px 2px rgba(0,0,0,0.2);
     overflow: hidden;
-}
-
-.comments-list .comment-box {
-    flex:1;
-    margin-left:20px;
-    float: left; /* Change float to left */
-    position: relative;
-    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
-    word-break: break-all;
 }
 
 .comments-list .comment-avatar img {
@@ -115,7 +88,23 @@ body {
     height: 100%;
 }
 
+/* Comment Box */
+.comment-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
 
+.comments-list .comment-box {
+    flex: 1;
+    margin-left: 20px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    word-break: break-all;
+    background: #FFF;
+    border-radius: 4px;
+    overflow: hidden;
+}
 
 .comments-list .comment-box:before, .comments-list .comment-box:after {
     content: '';
@@ -136,35 +125,16 @@ body {
     left: -12px;
 }
 
-
+/* Comment Head */
 .comment-box .comment-head {
     background: #FCFCFC;
     padding: 10px 12px;
     border-bottom: 1px solid #E5E5E5;
     overflow: hidden;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
     border-radius: 4px 4px 0 0;
 }
 
-.comment-box .comment-head button {
-    float: right;
-    margin-left: 14px;
-    position: relative;
-    top: 2px;
-    color: #4a2179;
-    background: #c0a2ea;
-    cursor: pointer;
-    -webkit-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
-.comment-box .comment-head button:hover {
-    color: #9265c7;
-}
-
-.comment-box .comment-name {
+.comment-box .comment-head .comment-name {
     color: #283035;
     font-size: 14px;
     font-weight: 700;
@@ -172,33 +142,65 @@ body {
     margin-right: 10px;
 }
 
+.comment-box .comment-head .comment-date {
+    color: #595959;
+    font-size: 12px;
+    float: right;
+}
 
-
-
+/* Comment Content */
 .comment-box .comment-content {
-    background: #FFF;
     padding: 12px;
     font-size: 15px;
     color: #595959;
-    -webkit-border-radius: 0 0 4px 4px;
-    -moz-border-radius: 0 0 4px 4px;
-    border-radius: 0 0 4px 4px;
-    word-break: break-all;}
+}
 
+/* Vote Buttons */
+.vote-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    position: relative;
+}
 
-/** =====================
- * Responsive
- ========================*/
+.vote-buttons button {
+    margin: 5px 0;
+    padding: 10px 10px; /* Adjust padding to make buttons smaller */
+    font-size: 10px; /* Adjust font size to make buttons smaller */
+     /* Set minimum height to make buttons smaller */
+    color: #4a2179;
+    background: #c0a2ea;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.vote-buttons button:hover {
+    color: #9265c7;
+}
+
+.vote-buttons .score {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
 @media only screen and (max-width: 766px) {
     .comments-container {
-        width: 480px;
+        width: 100%;
+        padding: 0 10px;
     }
 
     .comments-list .comment-box {
-        width: 390px;
+        width: 100%;
     }
 
     .reply-list .comment-box {
-        width: 320px;
+        width: 100%;
+    }
+
+    .vote-buttons {
+        margin-right: 10px;
     }
 }

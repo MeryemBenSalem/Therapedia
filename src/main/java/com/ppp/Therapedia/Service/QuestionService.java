@@ -25,7 +25,7 @@ public class QuestionService {
         if (optionalQuestion.isPresent()) {
             Question question = optionalQuestion.get();
             // Increment the upvotes count
-            question.setUpvotes(question.getUpvotes() + 1);
+            question.setVotes(question.getVotes() + 1);
             // Save the updated question back to the database
             questionRepository.save(question);
         } else {
@@ -40,7 +40,7 @@ public class QuestionService {
         if (optionalQuestion.isPresent()) {
             Question question = optionalQuestion.get();
             // Increment the downvotes count
-            question.setDownvotes(question.getDownvotes() + 1);
+            question.setVotes(question.getVotes() - 1);
             // Save the updated question back to the database
             questionRepository.save(question);
         } else {

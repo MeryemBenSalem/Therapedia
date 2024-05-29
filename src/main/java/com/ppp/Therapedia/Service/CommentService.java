@@ -30,7 +30,7 @@ public class CommentService {
         if (optionalQuestion.isPresent()) {
             Comment comment = optionalQuestion.get();
             // Increment the upvotes count
-            comment.setUpvotes(comment.getUpvotes() + 1);
+            comment.setVotes(comment.getVotes() + 1);
             // Save the updated question back to the database
             commentRepository.save(comment);
         } else {
@@ -45,7 +45,7 @@ public class CommentService {
         if (optionalComment.isPresent()) {
             Comment comment = optionalComment.get();
             // Increment the downvotes count
-            comment.setDownvotes(comment.getDownvotes() + 1);
+            comment.setVotes(comment.getVotes() - 1);
             // Save the updated question back to the database
             commentRepository.save(comment);
         } else {

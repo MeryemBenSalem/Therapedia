@@ -13,8 +13,7 @@ const QuestionForm = ({ onAddQuestion }) => {
             // Create a new question object
             const question = {
                 content: newQuestion,
-                upvotes: 0,
-                downvotes: 0,
+                votes:0,
                 comments: [],
             };
 

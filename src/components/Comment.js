@@ -4,10 +4,9 @@ import { Button } from "@mui/material";
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded";
 
-const Comment = ({ comment, onUpvote, onDownvote }) => {
-    const [voted, setVoted] = useState(null);
-    const [upvotes, setUpvotes] = useState(comment.upvotes);
-    const [downvotes, setDownvotes] = useState(comment.downvotes);
+const Comment = ({ comment, onVote}) => {
+    const [voted, setVoted] = useState(0);
+    const [votes, setVotes] = useState(comment.votes);
     const [user, setUser] = useState(null);
 
     useEffect(() => {
@@ -29,7 +28,7 @@ const Comment = ({ comment, onUpvote, onDownvote }) => {
     };
 
     const handleUpvote = async () => {
-        if (voted === null) {
+        if (voted === 0) {
             try {
                 const response = await fetch(`http://localhost:8080/Comments/${comment.id}/upvote`, {
                     method: 'PUT',
@@ -37,17 +36,33 @@ const Comment = ({ comment, onUpvote, onDownvote }) => {
                 if (!response.ok) {
                     throw new Error('Failed to upvote comment');
                 }
-                setUpvotes(prevUpvotes => prevUpvotes + 1);
-                setVoted('up');
-                onUpvote();
+                setVotes(prevVotes => prevVotes + 1);
+                setVoted(1);
+
             } catch (error) {
                 console.error('Error upvoting comment:', error);
             }
         }
+        else if (voted ===-1){
+            try {
+                const response = await fetch(`http://localhost:8080/Comments/${comment.id}/upvote`, {
+                    method: 'PUT',
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to upvote comment');
+                }
+                setVotes(prevVotes => prevVotes + 1);
+                setVoted(0);
+
+            } catch (error) {
+                console.error('Error upvoting comment:', error);
+            }
+
+        }
     };
 
     const handleDownvote = async () => {
-        if (voted === null) {
+        if (voted === 0) {
             try {
                 const response = await fetch(`http://localhost:8080/Comments/${comment.id}/downvote`, {
                     method: 'PUT',
@@ -55,33 +70,55 @@ const Comment = ({ comment, onUpvote, onDownvote }) => {
                 if (!response.ok) {
                     throw new Error('Failed to downvote comment');
                 }
-                setDownvotes(prevDownvotes => prevDownvotes + 1);
-                setVoted('down');
-                onDownvote();
+                setVotes(prevVotes => prevVotes - 1);
+                setVoted(-1);
+
             } catch (error) {
                 console.error('Error downvoting comment:', error);
             }
         }
+        else if (voted ===1){
+            try {
+                const response = await fetch(`http://localhost:8080/Comments/${comment.id}/downvote`, {
+                    method: 'PUT',
+                });
+                if (!response.ok) {
+                    throw new Error('Failed to downvote comment');
+                }
+                setVotes(prevVotes => prevVotes - 1);
+                setVoted(0);
+
+            } catch (error) {
+                console.error('Error downvoting comment:', error);
+            }
+
+        }
     };
 
-    // Function to format date
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
     };
 
+
     return (
         <ul id="comments-list" className="comments-list">
-            <li>
-                <div className="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt="" /></div>
-                <div className="comment-box">
-                    <div className="comment-head">
-                        <h6 className="comment-name by-author">{user ? user.username : 'Anonymous'}</h6>
-                        <Button variant={"contained"} startIcon={<ArrowDownwardRoundedIcon />} onClick={handleDownvote} disabled={voted !== null || downvotes > comment.downvotes}>{downvotes}</Button>
-                        <Button variant={"contained"} startIcon={<ArrowUpwardRoundedIcon />} onClick={handleUpvote} disabled={voted !== null || upvotes > comment.upvotes}>{upvotes}</Button>
+            <li className="comment-item">
+                <div className="vote-buttons">
+                    <Button variant={"contained"} onClick={handleUpvote} disabled={voted === 1}>+</Button>
+                    <span className="question-score">{votes}</span>
+                    <Button variant={"contained"} onClick={handleDownvote} disabled={voted === -1}>-</Button>
+                </div>
+                <div className="comment-content-wrapper">
+                    <div className="comment-avatar"><img
+                        src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""/></div>
+                    <div className="comment-box">
+                        <div className="comment-head">
+                            <h6 className="comment-name by-author">{user ? user.username : 'Anonymous'}</h6>
+                            <div className="comment-date">Posted on {formatDate(comment.date)}</div>
+                        </div>
+                        <div className="comment-content">{comment.content || 'No content'}</div>
                     </div>
-                    <div className="comment-content">{comment.content || 'No content'}</div>
-                    <div className="comment-date">Posted on {formatDate(comment.date)}</div>
                 </div>
             </li>
         </ul>

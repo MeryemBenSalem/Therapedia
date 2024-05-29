@@ -3,21 +3,17 @@ import Comment from './Comment';
 import './Question.css';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import { Button } from '@mui/material';
-import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
-import ArrowDownwardRoundedIcon from '@mui/icons-material/ArrowDownwardRounded';
+
 
 const Question = ({ question, onVote }) => {
     const [comments, setComments] = useState([]);
-    const [voted, setVoted] = useState(null);
+    const [voted, setVoted] = useState(0);
     const [newComment, setNewComment] = useState('');
-    const [upvotes, setUpvotes] = useState(question.upvotes);
-    const [downvotes, setDownvotes] = useState(question.downvotes);
+    const [votes, setVotes] = useState(question.votes); // Changed to 'votes'
     const [user, setUser] = useState(null);
 
     useEffect(() => {
-        // Fetch comments belonging to the question
         fetchComments(question.id);
-        // Fetch user information
         fetchUser(question.userId);
     }, [question.id, question.userId]);
 
@@ -26,8 +22,7 @@ const Question = ({ question, onVote }) => {
             const response = await fetch(`http://localhost:8080/Comments/question/${questionId}`);
             if (response.ok) {
                 const data = await response.json();
-                // Sort the comments based on the difference between upvotes and downvotes
-                const sortedComments = data.sort((a, b) => (b.upvotes - b.downvotes) - (a.upvotes - a.downvotes));
+                const sortedComments = data.sort ((a, b) => (b.votes - a.votes));
                 setComments(sortedComments);
             } else {
                 console.error('Failed to fetch comments');
@@ -60,16 +55,14 @@ const Question = ({ question, onVote }) => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    content: newComment, // Use 'content' instead of 'text'
-                    upvotes: 0, // Initialize upvotes to 0
-                    downvotes: 0, // Initialize downvotes to 0
-                    userId: 1, // Provide the user ID, replace '1' with the actual user ID
-                    date: new Date().toISOString(), // Use current date and time
-                    question: { id: question.id } // Provide the question ID in the format expected by the server
+                    content: newComment,
+                    votes:0,
+                    userId: 1,
+                    date: new Date().toISOString(),
+                    question: { id: question.id }
                 }),
             });
             if (response.ok) {
-                // Add the new comment to the local state
                 const createdComment = await response.json();
                 setComments(prevComments => [...prevComments, createdComment]);
                 setNewComment('');
@@ -81,51 +74,75 @@ const Question = ({ question, onVote }) => {
         }
     };
 
-
     const handleUpvote = async () => {
-        if (voted === null) {
-            setUpvotes(prevUpvotes => prevUpvotes + 1);
-            setVoted('up');
-            onVote(question.id, 'upvote'); // Call the onVote function with question id and vote type
+        // Check if the user didn't vote before or voted down
+        if (voted === 0) {
+            setVotes(prevVotes => prevVotes + 1);
+            setVoted(1);
+            onVote(question.id, 'upvote');
+        }
+        else if (voted ===-1){
+            setVotes(prevVotes => prevVotes + 1);
+            setVoted(0);
+            onVote(question.id, 'upvote');
+
         }
     };
+
+    const handleDownvote = async () => {
+        // Check if the user didn't vote before or voted up
+        if (voted === 0) {
+            setVotes(prevVotes => prevVotes - 1);
+            setVoted(-1);
+            onVote(question.id, 'downvote');
+        }
+        else if (voted === 1){
+            setVotes(prevVotes => prevVotes - 1);
+            setVoted(0);
+            onVote(question.id, 'downvote');
+        }
+
+    };
+
+
+
+
     const formatDate = (dateString) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString(undefined, options);
-    };
-    const handleDownvote = async () => {
-        if (voted === null) {
-            setDownvotes(prevDownvotes => prevDownvotes + 1);
-            setVoted('down');
-            onVote(question.id, 'downvote'); // Call the onVote function with question id and vote type
-        }
     };
 
     return (
         <div className="questions-list">
             <li>
-                <div className="question-avatar"><img
-                    src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""/></div>
-                <div className="question-box">
-                    <div className="question-head">
-                        {user && <h6 className="question-name by-author">{user.username}</h6>}
-                        {question.date && <span className="question-date">Posted on {formatDate(question.date)}</span>}
-                        <Button variant={"contained"} startIcon={<ArrowDownwardRoundedIcon/>} onClick={handleDownvote}
-                                disabled={voted !== null}>{downvotes}</Button>
-                        <Button variant={"contained"} startIcon={<ArrowUpwardRoundedIcon/>} onClick={handleUpvote}
-                                disabled={voted !== null}>{upvotes}</Button>
-                    </div>
-                    <div className="question-content">{question.content}</div>
-                    <div className="comment-box1">
-                        <input
-                            type="text"
-                            value={newComment}
-                            onChange={(e) => setNewComment(e.target.value)}
-                            className="comment-input"
-                            placeholder="Add a comment..."
-                        />
-                        <Button startIcon={<AddBoxRoundedIcon/>} onClick={handleAddComment}
-                                className="comment-button"></Button>
+                <div className="question-item">
+                    <div className="question-content-wrapper">
+                        <div className="vote-container">
+                            <Button variant={"contained"} onClick={handleUpvote} disabled={voted === 1}>+</Button>
+                            <span className="question-score">{votes}</span>
+                            <Button variant={"contained"} onClick={handleDownvote} disabled={voted === -1}>-</Button>
+                        </div>
+                        <div className="question-avatar">
+                            <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""/>
+                        </div>
+                        <div className="question-box">
+                            <div className="question-head">
+                                {user && <h6 className="question-name by-author">{user.username}</h6>}
+                                {question.date &&
+                                    <span className="question-date">Posted on {formatDate(question.date)}</span>}
+                            </div>
+                            <div className="question-content">{question.content}</div>
+                            <div className="comment-box1">
+                                <input
+                                    type="text"
+                                    value={newComment}
+                                    onChange={(e) => setNewComment(e.target.value)}
+                                    className="comment-input"
+                                    placeholder="Add a comment..."
+                                />
+                                <Button startIcon={<AddBoxRoundedIcon/>} onClick={handleAddComment} className="comment-button"></Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </li>
@@ -135,6 +152,7 @@ const Question = ({ question, onVote }) => {
                 ))}
             </div>
         </div>
+
     );
 };
 
