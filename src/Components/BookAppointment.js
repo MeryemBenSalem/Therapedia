@@ -36,9 +36,8 @@ function BookAppointment() {
     <div className="section-container">
       <div className="hero-section">
         <div className="text-section">
-          <p className="text-headline">❤️ Mental Health comes first</p>
           <h2 className="text-title">
-            Find Your Doctor and Make an Appointment
+            Find Your Doctor <br></br>  & Make an Appointment
 
           </h2>
           <p className="text-descritpion">

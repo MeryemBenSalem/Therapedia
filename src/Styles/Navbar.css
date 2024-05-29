@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
+    height: 20px;
     background-color: #FCF1F5; 
     
 
@@ -34,6 +34,7 @@
     color: #000000; /* Black */
     font-size: 18px;
     letter-spacing: .8px;
+    margin-top: 5px;
 }
 
 .navbar-links:hover {
@@ -118,7 +119,6 @@
     flex-direction: column;
     font-size: 24px;
     gap: 24px;
-    text-align: center;
 }
 
 .mobile-navbar-links li a {
@@ -128,6 +128,8 @@
     font-weight: bold;
     letter-spacing: .8px;
     transition: color .3s ease-in-out;
+    margin-top: 0%;
+
 }
 
 .mobile-navbar-links li a:hover {

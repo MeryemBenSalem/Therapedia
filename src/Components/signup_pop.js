@@ -35,7 +35,7 @@ function SignupPop({ show, onClose }) {
 
         </div>
         <hr className="modal-line" />
-        <p className="modal-signin-text">Already have an account? <Link to="/sign_in">Sign in</Link></p>
+        <p className="modal-signin-text">Already have an account? <Link to="./Sign_in">Sign in</Link></p>
         
       </div>
       

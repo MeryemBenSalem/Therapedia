@@ -26,15 +26,20 @@
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
+    margin-left: 5%;
+    padding-top: 25px;
+
 }
 .text-descritpion {
-    width: 475px;
+    width: 620px;
     margin: 32px 0;
     color: rgb(77, 75, 75);
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
     letter-spacing: .7px;
     line-height: 1.6rem;
+    margin-left: 5%;
+
 }
 .text-appointment-btn {
     padding: 14px 20px;
@@ -48,6 +53,8 @@
     letter-spacing: .8px;
     cursor: pointer;
     transition: all .4s ease;
+    margin: auto;
+    margin-left: 25%;
 }
 .text-appointment-btn:hover {
     color: #68283D;
@@ -55,11 +62,11 @@
     border: 1px solid #68283D;
 }
 .text-stats {
-    margin-top: 40px;
+    margin-top: 25px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 48px;
+    gap: 30px;
     background: transparent;
 
 }

@@ -1,9 +1,11 @@
 import React from "react";
 import DoctorCard from "./DoctorCard";
-import profile1 from "../Assets/profile-1.png";
-import profile2 from "../Assets/profile-2.png";
-import profile3 from "../Assets/profile-3.png";
-import profile4 from "../Assets/profile-4.png";
+import profile1 from "../Assets/Aziza.jpg";
+import profile2 from "../Assets/Baryoucha.jpg";
+import profile3 from "../Assets/Arij.jpg";
+import profile4 from "../Assets/Skan.jpg";
+import profile5 from "../Assets/loulou.jpg";
+
 import "../Styles/Doctors.css";
 
 function Doctors() {
@@ -25,29 +27,36 @@ function Doctors() {
       <div className="dt-cards-content">
         <DoctorCard
           img={profile1}
-          name="Dr. Kathryn Murphy"
-          title="General Surgeons"
+          name="Dr. Aziza NAGARA"
+          title="Cognitive Behavioral Therapy (CBT)"
           stars="4.9"
           reviews="1800"
         />
         <DoctorCard
           img={profile2}
-          name="Dr. Jacob Jones"
-          title="Hematologists"
+          name="Dr. Amine HAMDI"
+          title="Family and Marriage Therapy"
           stars="4.8"
           reviews="700"
         />
         <DoctorCard
           img={profile3}
-          name="Dr. Jenny Wilson"
-          title="Endocrinologists"
+          name="Dr. Arij AGUEL"
+          title="Trauma and PTSD Therapy"
           stars="4.7"
           reviews="450"
         />
         <DoctorCard
           img={profile4}
-          name="Dr. Albert Flores"
-          title="Hematologists"
+          name="Dr. Skander GRITLI"
+          title="Addiction Counseling"
+          stars="4.8"
+          reviews="500"
+        />
+        <DoctorCard
+          img={profile5}
+          name="Dr. Meryem BEN SALEM"
+          title="Child and Adolescent Therapy"
           stars="4.8"
           reviews="500"
         />
