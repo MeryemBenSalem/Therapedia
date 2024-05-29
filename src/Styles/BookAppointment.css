@@ -12,6 +12,7 @@
     width: 50%;
     max-width: 100%;
     text-align: center;
+    background: transparent;
 }
 
 .ba-image1 {
@@ -22,6 +23,7 @@
 /* Text */
 .ba-text-content {
     width: 50%;
+    background: transparent;
 }
 
 .ba-title {

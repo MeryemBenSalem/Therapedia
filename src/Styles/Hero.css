@@ -1,3 +1,4 @@
+
 .hero-section {
     padding: 32px;
     display: flex;
@@ -5,12 +6,14 @@
     align-items: center;
     gap: 24px;
     background: linear-gradient(to bottom  , #B0C4D3, #FCF1F5);
+    
 }
 
 /* Text section */
 .text-section {
     width: 60%;
     padding: 0 32px;
+    background: transparent;
 }
 
 .text-headline {
@@ -66,10 +69,12 @@
     justify-content: flex-start;
     align-items: center;
     gap: 48px;
+    background: transparent;
 }
 
 .text-stats-container {
     text-align: center;
+    background: transparent;
 }
 
 .text-stats-container > p {
@@ -92,6 +97,7 @@
     width: 40%;
     max-width: 100%;
     text-align: center;
+    background: transparent;
 }
 
 .hero-image1 {
@@ -173,3 +179,4 @@
         right: 32px;
     }
 }
+

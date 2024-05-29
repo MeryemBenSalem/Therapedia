@@ -1,11 +1,19 @@
 import React from "react";
+import Navbar from "../Components/Navbar";
+import Hero from "../Components/Hero";
+import Info from "../Components/Info";
+import About from "../Components/About";
+import Reviews from "../Components/Reviews";
+import Doctors from "../Components/Doctors";
+import BookAppointment from "../Components/BookAppointment";
+import Footer from "../Components/Footer";
 
 
  
 
 function Home() {
   return (
-<<<<<<< HEAD
+   
     <div className="home-section" style={{ backgroundColor: "#B0C4D3" }}>
       <Navbar />
       <Hero />
@@ -15,10 +23,6 @@ function Home() {
       <Reviews />
       <Doctors />
       <Footer />
-=======
-    <div className="home-section">
-
->>>>>>> af4dd6ef71e7a64c652f8d94d0d53667e964c452
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Doctor from "../Assets/Arij.png";
+import Doctor from "../Assets/profile-1.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendarCheck, faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate  } from "react-router-dom";

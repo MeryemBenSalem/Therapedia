@@ -14,6 +14,7 @@
     width: 50%;
     max-width: 100%;
     text-align: center;
+    background: transparent;
 }
 
 .about-image1 {
@@ -24,6 +25,7 @@
 /* Text */
 .about-text-content {
     width: 50%;
+    background: transparent;
 }
 
 .about-title {
@@ -111,3 +113,4 @@
         width: 100%;
     }
 }
+

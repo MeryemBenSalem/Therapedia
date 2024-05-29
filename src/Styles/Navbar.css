@@ -3,8 +3,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-    background-color: #B0C4D3; 
+    height: 40px;
+    background-color: #FCF1F5; 
     
 
 }
@@ -40,6 +40,12 @@
     color: #68283D; /* Dark red */
 }
 
+.navbar-btn-container {
+    margin-left: auto; /* Pushes the button to the right */
+    background: transparent;
+
+  }
+  
 .navbar-btn {
     padding: 14px 20px;
     color: #F5F5F5; /* Light gray */
@@ -52,6 +58,7 @@
     letter-spacing: .8px;
     cursor: pointer;
     transition: all .4s ease;
+
 }
 
 .navbar-btn:hover {
@@ -143,7 +150,7 @@
 
 .logo-container {
     position: absolute;
-    top: 0px;
+    top: center;
     left: 20px;
     z-index: 1; 
 }

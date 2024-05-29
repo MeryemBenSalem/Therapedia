@@ -10,6 +10,7 @@
 /* Text */
 .rw-text-content {
     width: 100%;
+    background: transparent;
 }
 
 .rw-text-title {
@@ -81,6 +82,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    background: transparent;
 }
 
 .rw-reviewer-name {
@@ -88,6 +90,7 @@
     font-size: 24px;
     font-weight: bold;
     letter-spacing: .8px;
+    background: transparent;
 }
 
 .rw-reviewer-place {
@@ -97,6 +100,7 @@
     font-size: 18px;
     font-weight: bold;
     letter-spacing: .8px;
+    background: transparent;
 }
 
 /* Buttons */
@@ -108,6 +112,7 @@
     outline: transparent;
     font-size: 48px;
     cursor: pointer;
+    background: transparent;
 }
 
 .rw-next-btn:hover {
