@@ -1,23 +1,40 @@
 package com.ppp.Therapedia.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
 
 @Entity
+@Table(name = "Profile", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Profile {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "email")
     private String email;
     private String password;
 
     private String phone;
     private Boolean agreement;
+
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "Profile_roles",
+            joinColumns = @JoinColumn(
+                    name = "Profile_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(
+                    name = "Role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
+
 
     public String getLastName() {
         return lastName;
@@ -79,4 +96,11 @@ public class Profile {
     }
 
 
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Collection<Role> roles) {
+        this.roles = roles;
+    }
 }
