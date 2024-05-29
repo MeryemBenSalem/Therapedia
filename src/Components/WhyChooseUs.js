@@ -26,10 +26,7 @@ function WhyChooseUs() {
           <span>Why Choose Therapedia</span>
         </h3>
         <p className="ba-description">
-          Discover the reasons to choose Therapedia for your mental health needs.
-          Experience expert care, convenience, and personalized solutions,
-          making your well-being our top priority. Join us on a journey to
-          better health and a happier life.
+        Discover the reasons to choose Therapedia for your mental health needs. Experience expert care, convenience, and personalized solutions, making your well-being our top priority. Join us on a journey to better health and a happier life.
         </p>
 
         <p className="ba-checks ba-check-first">

@@ -16,27 +16,26 @@ function About() {
           <span>About Us</span>
         </h3>
         <p className="about-description">
-          Welcome to Therapedia, your trusted partner for accessible and
-          personalized healthcare. Our expert doctors offer online consultations
-          and specialized services, prioritizing your well-being. Join us on
-          this journey towards a healthier you.
+        Welcome to Therapedia, your trusted partner for accessible and personalized mental health care. 
+        <br></br>Our expert doctors offer online consultations and specialized services, prioritizing your well-being. 
+        <br></br>Join us on this journey towards a healthier, happier you.
         </p>
 
         <h4 className="about-text-title">Your Solutions</h4>
 
         <SolutionStep
           title="Choose a Specialist"
-          description="Find your perfect specialist and book with ease at Therapedia. Expert doctors prioritize your health, offering tailored care."
+          description="Find your perfect specialist and book with ease at Therapedia. Our expert doctors prioritize your health, offering tailored care to meet your unique needs."
         />
 
         <SolutionStep
           title="Make a Schedule"
-          description="Choose the date and time that suits you best, and let our dedicated team of medical professionals ensure your well-being with personalized care."
+          description="Choose the date and time that suits you best, and let our dedicated team of mental health professionals ensure your well-being with personalized care."
         />
-
+        
         <SolutionStep
           title="Get Your Solutions"
-          description="Our experienced doctors and specialists are here to provide expert advice and personalized treatment plans, helping you achieve your best possible health."
+          description="Our experienced doctors and specialists are here to provide expert advice and personalized treatment plans, helping you achieve your best possible mental health."
         />
       </div>
 

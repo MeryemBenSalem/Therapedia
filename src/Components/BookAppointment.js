@@ -36,14 +36,13 @@ function BookAppointment() {
     <div className="section-container">
       <div className="hero-section">
         <div className="text-section">
-          <p className="text-headline">❤️ Health comes first</p>
+          <p className="text-headline">❤️ Mental Health comes first</p>
           <h2 className="text-title">
-            Find your Doctor and make an Appointments
+            Find Your Doctor and Make an Appointment
+
           </h2>
           <p className="text-descritpion">
-            Talk to online doctors and get medical advice, online prescriptions,
-            refills and medical notes within minutes. On-demand healthcare
-            services at your fingertips.
+          Connect with our expert mental health professionals for timely medical advice, online prescriptions, refills, and medical notes within minutes. <br></br>Enjoy the convenience of on-demand healthcare services at your fingertips.
           </p>
           <button
             className="text-appointment-btn"
@@ -54,17 +53,17 @@ function BookAppointment() {
           </button>
           <div className="text-stats">
             <div className="text-stats-container">
-              <p>145k+</p>
-              <p>Receive Patients</p>
+              <p>20k+</p>
+              <p>Patients Served</p>
             </div>
 
             <div className="text-stats-container">
-              <p>50+</p>
+              <p>45+</p>
               <p>Expert Doctors</p>
             </div>
 
             <div className="text-stats-container">
-              <p>10+</p>
+              <p>7+</p>
               <p>Years of Experience</p>
             </div>
           </div>

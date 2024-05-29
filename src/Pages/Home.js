@@ -11,15 +11,6 @@ import Footer from "../Components/Footer";
 
 
 
-/*import Hero from "../Components/Hero";
-
-
-
-      
-      
-      
-*/
-
  
 
 function Home() {
