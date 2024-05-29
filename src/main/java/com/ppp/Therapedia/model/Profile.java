@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.util.Collection;
 
+
 @Entity
 @Table(name = "Profile", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 @Inheritance(strategy = InheritanceType.JOINED)

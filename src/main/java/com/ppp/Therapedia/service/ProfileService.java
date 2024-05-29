@@ -7,6 +7,8 @@ import com.ppp.Therapedia.model.Profile;
 import com.ppp.Therapedia.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,6 +19,11 @@ public class ProfileService {
     @Autowired
 //    private PatientRepository patientRepository;
     private ProfileRepository<Profile> profileRepository;
+
+    public Profile login(String email, String password) {
+        Profile user = profileRepository.findByUsernameAndPassword(email, password);
+        return user;
+    }
 
     public Profile saveProfile(Profile profile){
         return profileRepository.save(profile);

@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProfileRepository<T extends Profile> extends JpaRepository<T, Long> {
-    //methods specific to Profile or common to Profile and Patient
+    Profile findByUsernameAndPassword(String email, String password);
 }
