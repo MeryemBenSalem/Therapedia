@@ -1,6 +1,5 @@
 import React from "react";
 import "../Styles/Footer.css";
-import SubscribeNewsletter from "./SubscribeNewsletter";
 import { Link } from "react-router-dom";
 import logo2 from '../Assets/logo2.png'; 
 
@@ -19,7 +18,6 @@ function Footer() {
             </p>
           </div>
 
-          <SubscribeNewsletter />
           
         </div>
 
