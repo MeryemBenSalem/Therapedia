@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Doctor")
 @DiscriminatorValue("doctor")
 public class Doctor extends Profile{
     private String licenseNumber;

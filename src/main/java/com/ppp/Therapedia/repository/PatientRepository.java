@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 public interface PatientRepository extends ProfileRepository<Patient> {
-    @Query("SELECT p FROM Patient p")
+    @Query("SELECT p FROM Patient p WHERE TYPE(p) = Patient")
     List<Patient> findAllPatients();
 
 }
