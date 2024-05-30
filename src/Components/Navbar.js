@@ -5,7 +5,7 @@ import { faBars, faXmark, faUserCircle } from "@fortawesome/free-solid-svg-icons
 import { Link } from "react-router-dom";
 import SignupPop from "./signup_pop"; // Import the SignupPop component
 import "../Styles/Navbar.css";
-import logo from '../Assets/logo.png';
+import logo from '../assets/logo.png';
 
 function Navbar() {
   const [nav, setNav] = useState(false);
