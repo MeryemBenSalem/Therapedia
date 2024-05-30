@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "patients")
+@Table(name = "Patient")
 public class Patient extends Profile {
     private String emergencyContact;
     private String dateOfBirth;

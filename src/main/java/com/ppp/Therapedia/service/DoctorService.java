@@ -3,6 +3,7 @@ package com.ppp.Therapedia.service;
 import com.ppp.Therapedia.model.Doctor;
 import com.ppp.Therapedia.model.Role;
 import com.ppp.Therapedia.repository.DoctorRepository;
+import com.ppp.Therapedia.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,9 +28,10 @@ public class DoctorService extends ProfileService{
     }
 
     public List<Doctor> getAllDoctors() {
-        return getAllProfiles().stream()
-                .map(profile -> (Doctor) profile)
-                .collect(Collectors.toList());
+//        return getAllProfiles().stream()
+//                .map(profile -> (Doctor) profile)
+//                .collect(Collectors.toList());
+        return doctorRepository.findAllDoctors();
     }
 
 

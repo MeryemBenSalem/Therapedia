@@ -7,7 +7,8 @@ import java.util.Collection;
 
 @Entity
 @Table(name = "Profile", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "dtype")
 public class Profile {
 
     @Id

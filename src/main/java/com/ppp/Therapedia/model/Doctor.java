@@ -1,10 +1,12 @@
 package com.ppp.Therapedia.model;
 
+import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "doctors")
+@Table(name = "Doctor")
+@DiscriminatorValue("doctor")
 public class Doctor extends Profile{
     private String licenseNumber;
     private String specialization;

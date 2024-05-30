@@ -29,9 +29,10 @@ public class PatientService extends ProfileService{
 
 
     public List<Patient> getAllPatients() {
-        return getAllProfiles().stream()
-                .map(profile -> (Patient) profile)
-                .collect(Collectors.toList());
+//        return getAllProfiles().stream()
+//                .map(profile -> (Patient) profile)
+//                .collect(Collectors.toList());
+        return patientRepository.findAllPatients();
     }
 
 
