@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/LegalDocs.css";
+import logo2 from '../assets/logo2.png'; 
+
 
 function LegalDocs() {
   useEffect(() => {
@@ -10,59 +12,55 @@ function LegalDocs() {
   return (
     <div className="legal-section-title">
       <h1 className="legal-siteTitle">
-        <Link to="/">
-          Health <span className="legal-siteSign">+</span>
-        </Link>
+      <img src={logo2} alt="Therapedia Logo" className="logo" />
       </h1>
 
       <div className="legal-text-content">
         <p className="legal-title">General Info</p>
         <p className="legal-description">
-          Welcome to Health Plus, your trusted online healthcare platform. Our
-          mission is to provide accessible and personalized healthcare services
-          to individuals seeking expert medical advice and treatment. By using
-          our platform, you agree to the terms outlined in our Privacy Policy
-          and Terms of Service.
+        Welcome to Therapedia, your trusted online platform for psychology and mental health 
+        services. Our mission is to provide accessible and personalized mental health care to 
+        individuals seeking expert advice and support. By using our platform, you agree to the 
+        terms outlined in our Privacy Policy and Terms of Service.
         </p>
 
-        <p className="legal-title">Privacy Policy</p>
+        <p className="legal-title">Your Privacy Matters</p>
         <p className="legal-description">
-          Your privacy is paramount to us. Our Privacy Policy outlines how we
-          collect, use, and protect your personal and medical information. We
-          ensure secure data handling, and you can trust that your information
-          is treated with the utmost confidentiality.
+        Your privacy is paramount to us. At Therapedia, we understand the importance of 
+        safeguarding your personal and sensitive information. Our Privacy Policy outlines how 
+        we collect, use, and protect your data. We ensure secure data handling practices, 
+        and you can trust that your information is treated with the utmost confidentiality.
         </p>
 
         <p className="legal-title">Terms of Service</p>
         <p className="legal-description">
-          When using Health Plus, you agree to our Terms of Service. This
-          includes guidelines for using our platform, interacting with doctors,
-          and the responsibilities of both parties. It's essential to understand
-          these terms to ensure a smooth experience for all users.
+        When using Therapedia, you agree to our Terms of Service. This includes guidelines for 
+        using our platform, interacting with therapists and doctors, and the responsibilities 
+        of both parties. It's essential to understand these terms to ensure a smooth experience 
+        for all users.
         </p>
 
         <p className="legal-title">Consultations</p>
         <p className="legal-description">
-          Our platform connects you with expert doctors who provide online
-          consultations. These consultations are not a replacement for in-person
-          medical visits but serve as a convenient option for medical advice,
-          prescriptions, and guidance. It's crucial to provide accurate and
-          complete information to receive the best possible care.
+        Our platform connects you with expert therapists and doctors who provide online 
+        consultations. These consultations offer a convenient option for mental health 
+        advice, counseling, and support. While our services are valuable, they are not a 
+        substitute for in-person therapy or emergency medical care. It's crucial to provide 
+        accurate and honest information to receive the best possible support.
         </p>
 
         <p className="legal-title">How it Works</p>
         <p className="legal-description">
-          Health Plus is designed to simplify healthcare access. You can choose
-          a specialist, schedule an appointment, and engage in a virtual
-          consultation. Our specialists offer personalized advice and treatment
-          plans tailored to your needs. Please remember that emergencies require
-          immediate medical attention and should be directed to your local
-          medical facility.
+        Therapedia is designed to simplify access to mental health care. You can choose a 
+        therapist or doctor, schedule an appointment, and engage in a virtual consultation. 
+        Our professionals offer personalized advice and treatment plans tailored to your 
+        mental health needs. Please remember that in case of emergencies, immediate medical 
+        attention should be sought from your local healthcare provider or emergency services.
         </p>
       </div>
 
       <div className="legal-footer">
-        <p>© 2013-2023 Health+. All rights reserved.</p>
+        <p>© 2024 Therapedia. All rights reserved.</p>
       </div>
     </div>
   );

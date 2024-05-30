@@ -2,6 +2,8 @@ import React from "react";
 import "../Styles/Footer.css";
 import { Link } from "react-router-dom";
 import logo2 from '../assets/logo2.png'; 
+import terms from '../assets/terms&conditions.pdf';  
+
 
 function Footer() {
   return (
@@ -52,14 +54,9 @@ function Footer() {
               <Link to={"/legal"}>Privacy Policy</Link>
             </li>
             <li>
-              <Link to={"/legal"}>Terms of Service</Link>
+            <a href={terms} target="_blank" rel="noopener noreferrer">Terms & Conditions</a>
             </li>
-            <li>
-              <Link to={"/legal"}>Disclaimer</Link>
-            </li>
-            <li>
-              <Link to={"/legal"}>Accessibility Statement</Link>
-            </li>
+            
           </ul>
         </div>
 
