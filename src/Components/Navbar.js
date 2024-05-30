@@ -7,6 +7,7 @@ import SignupPop from "./signup_pop"; // Import the SignupPop component
 import "../Styles/Navbar.css";
 import logo from '../assets/logo.png';
 
+
 function Navbar() {
   const [nav, setNav] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -39,33 +40,32 @@ function Navbar() {
       </Link>
 
       {/* Desktop */}
+      <div className="itt" >
       <ul className="navbar-items">
-        <li>
-          <Link to="/" className="navbar-links">
-            Home
-          </Link>
-        </li>
-        <li>
-          <a href="#services" className="navbar-links">
-            Services
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="navbar-links">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#reviews" className="navbar-links">
-            Reviews
-          </a>
-        </li>
+      
         <li>
           <a href="#doctors" className="navbar-links">
             Our Doctors
           </a>
         </li>
+
+        <li>
+          <Link to="/blogs" className="navbar-links">
+          Blogs & Articles
+          </Link>
+        </li>
+        <li>
+        <Link to="/forum" className="navbar-links">
+          Discussion Forum
+          </Link>
+        </li>
+        <li>
+        <Link to="/journaling" className="navbar-links">
+          Journaling
+          </Link>
+        </li>
       </ul>
+      </div>
 
       {/* Mobile */}
       <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>

@@ -27,6 +27,7 @@
 
 .navbar-items > li {
     list-style-type: none;
+    text-align: right;
 }
 
 .navbar-links {
@@ -118,7 +119,7 @@
     display: flex;
     flex-direction: column;
     font-size: 24px;
-    gap: 24px;
+    gap: 10px;
 }
 
 .mobile-navbar-links li a {
@@ -126,14 +127,14 @@
     color: #000000; /* Black */
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    letter-spacing: .8px;
+    letter-spacing: .2px;
     transition: color .3s ease-in-out;
     margin-top: 0%;
 
 }
 
 .mobile-navbar-links li a:hover {
-    color: #68283D; /* Dark red */
+    color: darkred; /* Dark red */
 }
 
 /* Responsive */
@@ -161,3 +162,4 @@
     width: 250px; 
     height: auto; 
 }
+
