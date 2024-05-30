@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProfileRepository<T extends Profile> extends JpaRepository<T, Long> {
-    Profile findByEmailAndPassword(String email, String password);
+//    Profile findByEmailAndPassword(String email, String password);
 }

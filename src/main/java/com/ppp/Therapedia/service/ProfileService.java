@@ -18,10 +18,10 @@ public class ProfileService {
 //    private PatientRepository patientRepository;
     private ProfileRepository<Profile> profileRepository;
 
-    public Profile login(String email, String password) {
-        Profile user = profileRepository.findByEmailAndPassword(email, password);
-        return user;
-    }
+//    public Profile login(String email, String password) {
+//        Profile user = profileRepository.findByEmailAndPassword(email, password);
+//        return user;
+//    }
 
     public Profile saveProfile(Profile profile){
         return profileRepository.save(profile);
@@ -41,9 +41,5 @@ public class ProfileService {
         profileRepository.deleteById(Long.valueOf(id));
     }
 
-    public List<Doctor> getAllDoctors() {
-            return getAllProfiles().stream()
-                    .map(profile -> (Doctor) profile)
-                    .collect(Collectors.toList());
-        }
+
 }
