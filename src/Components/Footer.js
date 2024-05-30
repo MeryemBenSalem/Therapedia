@@ -5,16 +5,19 @@ import logo2 from '../assets/logo2.png';
 
 function Footer() {
   return (
-    <div className="footer-section">
+    <div class="footer-section"  >
       
       <div className="footer-container">
         <div className="ft-info">
           <div className="ft-info-p1">
-            <p className="ft-description">
-              <div className="image">
+            <p className="ft-description back">
+              <div className="image back">
             <img src={logo2} alt="Therapedia Logo" className="logo" />
-            </div>
-              Connect with mental health professionals and access a range of therapeutic services tailored to your needs. Our platform offers confidential counseling sessions, psychiatric evaluations, and online therapy sessions to support your mental well-being.
+            </div >
+              Connect with mental health professionals and access a range of therapeutic services 
+              tailored to your needs. Our platform offers confidential counseling sessions, 
+              psychiatric evaluations, and online therapy sessions to support your mental 
+              well-being.
             </p>
           </div>
 
@@ -28,13 +31,13 @@ function Footer() {
               <a href="#services">Psychological Counseling</a>
             </li>
             <li>
-              <a href="#services">Journaling</a>
-            </li>
-            <li>
               <a href="#services">Online Therapy Sessions</a>
             </li>
             <li>
               <a href="#services">Forum Discussion</a>
+            </li>
+            <li>
+              <a href="#services">Journaling</a>
             </li>
             <li>
               <a href="#services">Blogs</a>

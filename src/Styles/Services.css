@@ -52,7 +52,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 42px;
-    margin-top: 20px;
+    margin-top: 5px;
     background: transparent;
 
 
@@ -64,6 +64,8 @@
     border-radius: 12px;
     background-color: #E4DDDD;
     position: relative;
+    margin-top: 5px;
+
 }
 
 .info-card-title {
