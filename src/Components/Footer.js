@@ -67,7 +67,7 @@ function Footer() {
               <a href="mailto:support@therapedia.com">support@therapedia.com</a>
             </li>
             <li>
-              <a href="tel:+1234567890">+1 (234) 567-890</a>
+              <a href="tel:+21675366677">(+216) 75 366 677</a>
             </li>
           </ul>
         </div>
