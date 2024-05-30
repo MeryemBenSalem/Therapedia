@@ -1,8 +1,8 @@
 // sign_up.js
 import React, { useState } from 'react';
-import './sign_up.css'; 
-import logo from '../assets/logo.png';  
-import cond from '../assets/terms&conditions.pdf';  
+import '../Styles/sign_up.css'; 
+import logo from '../Assets/logo.png';  
+import cond from '../Assets/terms&conditions.pdf';  
 import { Link } from 'react-router-dom';
 
 

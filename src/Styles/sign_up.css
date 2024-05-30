@@ -1,10 +1,8 @@
 /* sign_up.css */
 html {
-  background-color: #fcf1f6; 
+  background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);
 }
-div {
-  background-color: #fcf1f6; 
-}
+
 
 .logo-container {
   

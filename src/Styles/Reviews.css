@@ -1,0 +1,178 @@
+.review-section {
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(to bottom, #B0C4D3, #FCF1F5);
+}
+
+/* Text */
+.rw-text-content {
+    width: 100%;
+    background: transparent;
+}
+
+.rw-text-title {
+    margin: 16px 0;
+    color: #44312B; /* Dark brown */
+    font-family: 'Rubik', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    background: transparent;
+
+}
+
+.rw-text-num {
+    color: #3A5267; /* Light blue */
+    background: transparent;
+
+}
+
+.rw-text-desc {
+    margin: 16px 0;
+    color: #000000; /* Black */
+    font-family: 'Rubik', sans-serif;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: .7px;
+    line-height: 2.6rem;
+    background: transparent;
+
+}
+
+.rw-text-format {
+    margin: 64px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    background: transparent;
+
+}
+
+.rw-text-quote1 {
+    position: absolute;
+    top: -18px;
+    left: -24px;
+    color: #3A5267; /* Light blue */
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: transparent;
+
+}
+
+.rw-text-quote2 {
+    position: absolute;
+    right: -18px;
+    bottom: -24px;
+    color: #3A5267; /* Light blue */
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: transparent;
+
+}
+
+.rw-review {
+    display: block;
+    margin: 0 0 0 8px;
+    color: #000000; /* Black */
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;
+    letter-spacing: .7px;
+    line-height: 2.2rem;
+    background: transparent;
+
+}
+
+.rw-authors {
+    margin: 0 0 0 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+}
+
+.rw-reviewer-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    background: transparent;
+}
+
+.rw-reviewer-place {
+    margin: 6px 0 0 0;
+    color: #6F7074; /* Gray */
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    background: transparent;
+}
+
+/* Buttons */
+.rw-next-btn {
+    margin: 0 24px 0 0;
+    color: #000000; /* Black */
+    border: 1px solid transparent;
+    background-color: transparent;
+    outline: transparent;
+    font-size: 48px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.rw-next-btn:hover {
+    color: #3A5267; /* Light blue */
+    background: transparent;
+
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+    .review-section {
+        letter-spacing: .8px;
+        background: transparent;
+
+    }
+
+    .rw-text-title {
+        font-size: 22px;
+        background: transparent;
+
+    }
+
+    .rw-text-desc {
+        font-size: 28px;
+        background: transparent;
+
+    }
+
+    .rw-review {
+        font-size: 22px;
+        letter-spacing: .7px;
+        line-height: 1.8rem;
+        background: transparent;
+
+    }
+
+    .rw-reviewer-name {
+        font-size: 20px;
+        background: transparent;
+
+    }
+
+    .rw-next-btn {
+        margin: 0 16px 0 0;
+        font-size: 40px;
+        background: transparent;
+
+    }
+}
