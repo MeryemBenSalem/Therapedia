@@ -9,6 +9,6 @@ import java.util.List;
 
 @Repository
 public interface DoctorRepository extends ProfileRepository<Doctor> {
-    @Query("SELECT d FROM Doctor d")
+    @Query("SELECT d FROM Doctor d WHERE TYPE(d) = Doctor")
     List<Doctor> findAllDoctors();
 }
