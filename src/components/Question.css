@@ -24,7 +24,7 @@ body {
     margin-top: 20px;
     margin-left: 20px;
     clear: both;
-    border: 2px solid #c0a2ea;
+    border: 2px solid #68283d;
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;
@@ -87,7 +87,7 @@ body {
 }
 
 .question-box .question-head .question-name {
-    color: #2d042a;
+    color: #68283d;
     font-size: 16px;
     font-family: "Cursive", serif;
     font-weight: 700;
@@ -128,14 +128,14 @@ body {
 .comment-box1 input:focus {
     outline: none;
     border-color: #f6cff3;
-    box-shadow: 0 0 5px rgb(146, 101, 199);
+    box-shadow: 0 0 5px rgb(104, 40, 61);
 }
 
 .comment-box1 Button {
     padding: 10px 20px;
     border: 1px solid #f6cff3;
     background-color: #f6cff3;
-    color: #9265c7;
+    color: #68283d;
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
@@ -154,14 +154,14 @@ body {
     margin: 5px 0;
     padding: 10px 10px; /* Adjust padding to make buttons smaller */
     font-size: 15px; /* Adjust font size to make buttons smaller */ /* Set minimum height to make buttons smaller */
-    color: #4a2179;
-    background: #c0a2ea;
+    color: #eebecd;
+    background: #68283d;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .vote-container Button:hover {
-    color: #9265c7;
+    color: #ec608d;
 }
 
 .question-score {
@@ -186,7 +186,7 @@ body {
     margin-left: 50px;
     width: auto;
     clear: both;
-    border: 2px solid #f6cff3;
+    border: 2px solid #68283d;
     background-color: #f4f4f4;
     padding: 15px;
     border-radius: 8px;

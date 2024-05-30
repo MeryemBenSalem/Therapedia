@@ -6,7 +6,7 @@
 }
 
 a {
-    color: #f6cff3;
+    color: #68283d;
     text-decoration: none;
 }
 
@@ -169,14 +169,14 @@ body {
     padding: 10px 10px; /* Adjust padding to make buttons smaller */
     font-size: 10px; /* Adjust font size to make buttons smaller */
      /* Set minimum height to make buttons smaller */
-    color: #4a2179;
-    background: #c0a2ea;
+    color: #fddce6;
+    background: #68283d;
     cursor: pointer;
     transition: color 0.3s ease;
 }
 
 .vote-buttons button:hover {
-    color: #9265c7;
+    color: #68283d;
 }
 
 .vote-buttons .score {
