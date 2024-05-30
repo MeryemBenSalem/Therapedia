@@ -39,12 +39,17 @@ function Reviews() {
 
         <p className="rw-text-desc">Don't believe us, Check clients word</p>
 
+        <div> 
+          <br></br>
+          <br></br>
+          </div>
+
+        <div className="review-container">
         <p className="rw-text-format">
           <span className="rw-text-quote1">''</span>
           <span className="rw-review">{rMessage}</span>
           <span className="rw-text-quote2">''</span>
         </p>
-
         <div className="rw-authors">
           <div className="rw-names">
             <p className="rw-reviewer-name">{rName}</p>
@@ -67,6 +72,7 @@ function Reviews() {
               →
             </button>
           </div>
+        </div>
         </div>
       </div>
     </div>
