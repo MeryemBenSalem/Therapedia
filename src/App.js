@@ -11,6 +11,9 @@ import SignUp from './Pages/sign_up';
 import SignUpDoc from './Pages/sign_up_doc'; 
 import Home from './Pages/Home'; 
 import Legal from './Pages/Legal'; 
+import Sign_in from './Pages/Sign_in';
+
+
 
 
 
@@ -25,6 +28,8 @@ function App() {
         <Route path="/sign_up_doc" element={<SignUpDoc />} />
         <Route path="/" element={<Home />} />
         <Route path="/Legal" element={<Legal />} />
+        <Route path="/Sign_in" element={<Sign_in />} />
+
 
 
       </Routes>
