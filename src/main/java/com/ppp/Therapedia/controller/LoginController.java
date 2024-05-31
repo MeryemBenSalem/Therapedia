@@ -17,14 +17,14 @@
 //    @Autowired
 //    private ProfileService profileService;
 //
-//    @GetMapping("/login")
+//    @GetMapping("/Sign_in")
 //    public ModelAndView login() {
-//        ModelAndView mav = new ModelAndView("login");
+//        ModelAndView mav = new ModelAndView("Sign_in");
 //        mav.addObject("user", new Profile());
 //        return mav;
 //    }
 //
-//    @PostMapping("/login")
+//    @PostMapping("/Sign_in")
 //    public String login(@ModelAttribute("user") Profile user ) {
 //        Profile oauthUser = profileService.login(user.getEmail(), user.getPassword());
 //        System.out.print(oauthUser);
@@ -35,7 +35,7 @@
 //
 //
 //        } else {
-//            return "redirect:/login";
+//            return "redirect:/Sign_in";
 //
 //
 //        }

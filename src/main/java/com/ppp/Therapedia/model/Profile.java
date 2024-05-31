@@ -25,6 +25,17 @@ public class Profile {
     private String email;
     private String password;
 
+    public Profile(Integer id, String firstName, String lastName, String email, String password, String phone, Boolean agreement, Collection<Role> roles) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.phone = phone;
+        this.agreement = agreement;
+        this.roles = roles;
+    }
+
     private String phone;
     private Boolean agreement;
 

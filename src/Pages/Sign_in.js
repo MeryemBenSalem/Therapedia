@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import '../Styles/sign_in.css';
-import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 
 const Sign_in = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: ''
     });
+
+    const history = useHistory();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -16,10 +18,22 @@ const Sign_in = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Handle form submission here
-        console.log(formData);
+        try {
+            const response = await axios.post('http://localhost:8080/profile/login', formData);
+            if (response.status === 200) {
+                // Redirect to home or another page on successful login
+                history.push('/');
+            } else {
+                // Handle login failure
+                alert('Login failed. Please check your credentials.');
+            }
+        } catch (error) {
+            // Handle error
+            alert('An error occurred. Please try again.');
+            console.error('There was an error!', error);
+        }
     };
 
     return (

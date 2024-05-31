@@ -13,5 +13,6 @@ import java.util.List;
 public interface ProfileRepository<T extends Profile> extends JpaRepository<T, Long> {
 //    @Query("SELECT p FROM profile p WHERE TYPE(p) = Doctor")
 //    List<Doctor> findAllDoctors();
-//    Profile findByEmailAndPassword(String email, String password);
+    Profile findByEmailAndPassword(String email, String password);
+    Profile findByEmail(String email);
 }
