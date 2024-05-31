@@ -1,11 +1,12 @@
 /* sign_up.css */
 html {
-    background-color: #fcf1f6; 
-  }
-  div {
-    background-color: #fcf1f6; 
-  }
+  background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);}
+
+  body {
+    background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);}
+
   
+
   .logo-container {
     /* Style the logo container */
     position: absolute;
@@ -29,6 +30,8 @@ html {
       display: flex;
       flex-direction: column;
       align-items: center;
+
+
     }
     
     h1{  

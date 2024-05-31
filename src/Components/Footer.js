@@ -34,9 +34,10 @@ function Footer() {
             </li>
             <li>
               <a href="#services">Online Therapy Sessions</a>
+              
             </li>
             <li>
-              <a href="#services">Forum Discussion</a>
+              <a href="#bookappointment">Forum Discussion</a>
             </li>
             <li>
               <a href="#services">Journaling</a>

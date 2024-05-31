@@ -39,7 +39,7 @@ const SignUp = () => {
   };
 
   return (
-    
+
     <div className="sign-up-container">
         <div className="close-button-container">
     <Link to="/welcome" className="close-button">x</Link>
@@ -169,7 +169,7 @@ const SignUp = () => {
       
       </form>
     </div>
-  );
+    );
 };
 
 export default SignUp;
