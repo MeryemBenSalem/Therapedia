@@ -36,6 +36,32 @@ const Sign_in = () => {
         }
     };
 
+    /*const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch('/profile/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+            const data = await response.text();
+            if (response.ok) {
+                console.log(data);
+                // Redirect to the home page or dashboard
+                window.location.href = '/home';
+            } else {
+                console.log(data);
+                // Show error message
+                alert('Invalid email or password');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };*/
+
+
     return (
         <div className="container">
             <div className="sign-in-container">

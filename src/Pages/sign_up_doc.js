@@ -19,12 +19,6 @@ const SignUp = () => {
     specialization: '',
     licenseNumber: '',
     yearsOfExperience: '',
-    //emergencyContact: '',
-    //dateOfBirth: '',
-    //nationality: '',
-    //gender: '',
-    //medicalHistory: '',
-    //reasonForTherapy: '',
     agreement: false
   });
 
@@ -36,20 +30,40 @@ const SignUp = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData)
-    // Send a POST request to your backend endpoint
-    fetch("http://localhost:8080/doctor/add",{
-      method: 'POST',
-      headers: {'Content-Type': 'application/json',},
-      body: JSON.stringify(formData)
-    })
-        .then(()=>{
-          console.log("New Doctor added")
-        })
-  };
+    console.log(formData);
 
+    try {
+      const response = await fetch("http://localhost:8080/doctor/signup", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        // Handle successful signup and session creation
+        console.log("New user added");
+
+        // Optionally store session info in local storage or state
+        const sessionData = await response.json();
+        localStorage.setItem('session', JSON.stringify(sessionData));
+
+        // Redirect to the home page or another page
+        history.push('/');
+      } else {
+        // Handle signup failure
+        console.error('Signup failed');
+        alert('Signup failed. Please try again.');
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error('There was an error!', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
   return (
     
     <div className="sign-up-container">

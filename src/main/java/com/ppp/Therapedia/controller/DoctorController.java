@@ -4,6 +4,7 @@ package com.ppp.Therapedia.controller;
 import com.ppp.Therapedia.model.Doctor;
 import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.service.DoctorService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,11 +20,32 @@ public class DoctorController extends ProfileController {
     @Autowired
     private DoctorService doctorService;
 
+    @Autowired
+    private HttpSession session;
+
     @PostMapping("/add")
     public String add(@RequestBody Doctor doctor){
         doctorService.saveDoctor(doctor);
         return "New Doc is added";
     }
+
+    @PostMapping("/signup")
+
+     public ResponseEntity<?> signup(@RequestBody Doctor doctor) {
+        try {
+            // Save the new profile
+            doctorService.saveDoctor(doctor);
+
+            // Create a session attribute
+            session.setAttribute("user", doctor);
+
+            // Return success response
+            return new ResponseEntity<>("Successfully signed up.", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed to sign up. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
     @GetMapping("/getAll")
     public List<Doctor> getAllDoctors(){

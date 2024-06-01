@@ -2,11 +2,13 @@ package com.ppp.Therapedia.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import java.io.Serializable;
 
 @Entity
 @DiscriminatorValue("doctor")
-public class Doctor extends Profile{
+public class Doctor extends Profile implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String licenseNumber;
     private String specialization;
     private String yearsOfExperience;

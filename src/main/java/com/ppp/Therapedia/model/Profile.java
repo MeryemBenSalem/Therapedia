@@ -2,14 +2,17 @@ package com.ppp.Therapedia.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Collection;
+
 
 
 @Entity
 @Table(name = "Profile", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "dtype")
-public class Profile {
+public class Profile implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
