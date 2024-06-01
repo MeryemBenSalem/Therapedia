@@ -34,7 +34,7 @@ function Doctors() {
         />
         <DoctorCard
           img={profile2}
-          name="Dr. Amine HAMDI"
+          name="Dr. Amine BARYOUCHA"
           title="Family and Marriage Therapy"
           stars="4.8"
           reviews="700"

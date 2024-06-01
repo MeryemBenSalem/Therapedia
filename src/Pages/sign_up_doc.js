@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import '../Styles/sign_up_doc.css'; 
 import logo from '../assets/logo.png';  
 import cond from '../assets/terms&conditions.pdf';  
-import { Link } from 'react-router-dom';
 
 
 
@@ -39,14 +38,14 @@ const SignUp = () => {
   };
 
   return (
-
-    <div className="sign-up-container">
-        <div className="close-button-container">
-    <Link to="/welcome" className="close-button">x</Link>
-  </div>
-      <div className="logo-container">
+    <div className="container">
+       <div className="logo-container">
         <img src={logo} alt="Therapedia Logo" className="logo" />
       </div>
+
+    <div className="sign-up-container">
+        
+     
 
       <h1>Ready to get started ?</h1>
       <h2>Join Therapedia & Make a Difference </h2>
@@ -168,6 +167,7 @@ const SignUp = () => {
         <button type="submit">Sign Up</button>
       
       </form>
+    </div>
     </div>
     );
 };

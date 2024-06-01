@@ -1,9 +1,11 @@
 .footer-section {
-    background-color: #1B2433;
+    background-color: linear-gradient(to bottom, #B0C4D3 , #FCF1F5);
+    ;
+    padding: 20px 0; /* Reduced padding to decrease height */
 }
 
 .footer-container {
-    padding: 40px;
+    padding: 20px; /* Reduced padding to decrease height */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -24,11 +26,9 @@
     letter-spacing: .8px;
 }
 
-
-
 .ft-description {
     width: 420px;
-    margin: 16px 0 40px;
+    margin: 16px 0 20px; /* Adjusted margin to reduce height */
     color: #293241;
     font-family: 'Rubik', sans-serif;
     font-size: 20px;
@@ -38,7 +38,7 @@
 
 /* Lists */
 .ft-list-title {
-    margin: 16px 0;
+    margin: 16px 0; /* Adjusted margin to reduce height */
     font-family: 'Rubik', sans-serif;
     font-size: 24px;
     font-weight: bold;
@@ -61,7 +61,7 @@
 }
 
 .ft-list-items li {
-    margin: 24px 0;
+    margin: 16px 0; /* Adjusted margin to reduce height */
     font-family: 'Rubik', sans-serif;
     font-size: 16px;
     font-weight: bold;
@@ -74,13 +74,13 @@
 
 /* CopyRight */
 .ft-copyright {
-    padding: 12px 40px; /* Adjust padding */
+    padding: 10px 20px; /* Reduced padding to decrease height */
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: #343639;
     font-family: 'Rubik', sans-serif;
-    font-size: 18px; /* Adjust font size */
+    font-size: 16px; /* Adjusted font size */
     font-weight: bold;
     letter-spacing: .8px;
 }
@@ -88,25 +88,24 @@
 /* Responsive */
 @media screen and (max-width: 700px) {
     .footer-container {
-        padding: 24px;
+        padding: 12px; /* Reduced padding for small screens */
         flex-wrap: wrap; /* Allow wrapping on small screens */
     }
     .ft-description {
         width: 100%;
-        margin: 16px 0 24px;
+        margin: 12px 0; /* Adjusted margin to reduce height */
     }
     .ft-input {
         width: 100%;
-        margin: 16px 0;
+        margin: 12px 0; /* Adjusted margin to reduce height */
     }
     .ft-btn {
         width: 100%;
-        margin: 0 0 16px;
+        margin: 0 0 12px; /* Adjusted margin to reduce height */
     }
     .ft-copyright {
-        padding: 18px;
+        padding: 12px; /* Reduced padding for small screens */
         display: block;
         text-align: center;
     }
-   
 }

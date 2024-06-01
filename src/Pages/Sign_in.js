@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../Styles/sign_in.css';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';  
+
 
 const Sign_in = () => {
     const [formData, setFormData] = useState({
@@ -24,7 +26,15 @@ const Sign_in = () => {
 
     return (
         <div className="container">
+
+           
+
             <div className="sign-in-container">
+
+            <div className="logo-container">
+        <img src={logo} alt="Therapedia Logo" className="logo" />
+      </div>
+
                 <h1>Welcome Back!</h1>
                 <h2>Sign In to Your Account</h2>
                 <form onSubmit={handleSubmit}>

@@ -5,12 +5,7 @@
     align-items: center;
     height: 20px;
     background-color: #FCF1F5; 
-    
-
 }
-
-
-
 
 .navbar-items {
     list-style-type: none;
@@ -20,9 +15,8 @@
     gap: 32px;
     font-family: 'Rubik', sans-serif;
     position: absolute;
-    top: 33px;
-    left: 380px;
-    
+    top: 20px; /* Adjusted value to move the items to the top */
+    left: 250px; /* Adjusted value to move items to the left */
 }
 
 .navbar-items > li {
@@ -32,22 +26,23 @@
 
 .navbar-links {
     text-decoration: none;
-    color: #000000; /* Black */
+    color: #68283D ;
     font-size: 18px;
+    font-weight: bold; /* Bold */
     letter-spacing: .8px;
     margin-top: 5px;
 }
 
 .navbar-links:hover {
-    color: #68283D; /* Dark red */
+    color: red; /* Dark red */
 }
 
 .navbar-btn-container {
     margin-left: auto; /* Pushes the button to the right */
     background: transparent;
+    margin-right: 0px; /* Adjusted value to move the button to the right */
+}
 
-  }
-  
 .navbar-btn {
     padding: 14px 20px;
     color: #F5F5F5; /* Light gray */
@@ -60,7 +55,7 @@
     letter-spacing: .8px;
     cursor: pointer;
     transition: all .4s ease;
-
+    margin-right: 0px; /* Adjusted value to move the button to the right */
 }
 
 .navbar-btn:hover {
@@ -130,7 +125,6 @@
     letter-spacing: .2px;
     transition: color .3s ease-in-out;
     margin-top: 0%;
-
 }
 
 .mobile-navbar-links li a:hover {
@@ -161,5 +155,6 @@
 .logo {
     width: 250px; 
     height: auto; 
+    top: 10px; /* Adjusted value to move the items to the top */
+    margin-top: -5px;
 }
-
