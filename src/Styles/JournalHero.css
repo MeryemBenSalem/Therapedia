@@ -89,16 +89,4 @@
 .journal-scroll-up.show-scroll {
     opacity: 1;
 }
-p {
-    font-weight:lighter;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 30em;
-    animation: keyframes 5s steps(500) ;
-}
 
-@keyframes keyframes{
-
-    from{ width: 0px;}
-
-}
