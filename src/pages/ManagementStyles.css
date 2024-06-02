@@ -1,0 +1,85 @@
+.container {
+  background-color: #D1B3BC;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.management-list {
+  list-style: none;
+  padding: 0;
+}
+
+.management-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.management-item span {
+  color: #333;
+}
+
+.delete-button {
+  background-color: #68283D;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #69443f;
+}
+
+.card.bg-custom1 {
+  background-color: #3A5267;
+}
+
+.card.bg-custom2 {
+  background-color: #AD8291;
+}
+
+.card.bg-custom3 {
+  background-color: #68283D;
+}
+
+.card {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.5rem;
+}
+
+.card-body-icon {
+  font-size: 3rem;
+  opacity: 0.4;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.card-footer {
+  padding: 0.5rem;
+}

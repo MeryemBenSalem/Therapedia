@@ -57,7 +57,12 @@ class ProfilePage extends React.Component {
                                 </div>
                             </div>
                            
-                            <button type="submit" className="btn btn-default">Submit</button>
+                            <div className="row">
+                                <div className="col">
+                                    <button type="submit" className="btn btn-follow">Follow</button>
+                                    <button type="submit" className="btn btn-message">Message</button>
+                                </div>
+                            </div>
                         </form>
                 </div>
             

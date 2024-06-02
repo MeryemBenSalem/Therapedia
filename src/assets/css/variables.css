@@ -13,10 +13,10 @@
     --grey: #a1a1a1;
     --blue-dark: rgb(7, 71, 166);
     --blue-normal: #1976D2;
-    --red-normal: #D32F2F;
-    --red-dark: #B71C1C;
-    --green-dark: #004D40;
-    --green-normal: #00897B;
+    --red-normal: #926585;
+    --red-dark: #704c4c;
+    --green-dark: #4d002f;
+    --green-normal: #890054;
     --orange-dark: #E65100;
     --orange-normal: #F57C00;
     --yellow-dark: #F57F17;
@@ -40,4 +40,26 @@
     --sidenav-color: var(--white);
     --sidenav-active-color: var(--secondary-color);
     --sidenav-background-color: var(--theme-color);
+
+    /* New colors */
+    --color-1: #F5F5F5;
+    --color-2: #751d3d;
+    --color-3: #D1B3BC;
+    --color-4: #AD8291;
+    --color-5: #68283D;
+    --color-6: #B0C4D3;
+    --color-7: #AAB2B9;
+    --color-8: #3A5267;
+    --color-9: #343639;
+
+    /* Update existing color variables with new colors */
+    --light-grey: var(--color-1);
+    --secondary-color: var(--color-2);
+    --secondary-color-dark: var(--color-3);
+    --blue-normal: var(--color-4);
+    --brown-normal: var(--color-5);
+    --theme-color: var(--color-6);
+    --sidenav-background-color: var(--color-7);
+    --blue-grey: var(--color-8);
+    --grey: var(--color-9);
 }

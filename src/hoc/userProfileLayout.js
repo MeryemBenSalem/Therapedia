@@ -27,7 +27,7 @@ const userProfileLayout = (ChildComponent) => {
                             <!-- SIDEBAR USER TITLE --> */}
                             <div className="profile-usertitle">
                                 <div className="profile-usertitle-name">
-                                    Tarun Dhiman
+                                    Nagara Aziza 
                                 </div>
                                 <div className="profile-usertitle-job">
                                     Software Engineer

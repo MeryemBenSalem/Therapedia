@@ -33,13 +33,15 @@ a, a:hover, a:focus {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #6d7fcc;
+  background: #878fb4;
 }
 
 /* The sidebar menu */
+/* The sidebar menu */
+/* The sidebar menu */
 .sidenav {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 200px; /* Set the width of the sidebar */
+  width: 300px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -47,13 +49,26 @@ ul ul a {
   background-color: var(--sidenav-background-color); /* Black */
   color: var(--sidenav-color);
   overflow-x: hidden; /* Disable horizontal scroll */
-  overflow-y: hidden;
+  overflow-y: auto; /* Enable vertical scroll */
 }
+
+/* The header */
+.navbar {
+  margin-left: 23px; /* Add margin to avoid overlap with the sidebar */
+}
+
+
 
 .sidebar-items {
   height: calc(100% - 100px) !important;
   padding-top: 10px;
 }
+
+/* Adjust the logo size */
+.sidebar-heading img {
+  width: 150px; /* Set the width of the logo */
+}
+
 
 /* The navigation menu links */
 .sidenav a {
@@ -611,3 +626,21 @@ table tbody tr:focus-within, table tbody tr:hover {
 .modal.left .modal-body, .modal.right .modal-body {
   padding: 15px 15px 15px;
 }
+.bg-custom1 {
+  background-color: #D1B3BC;
+}
+
+.bg-custom2 {
+  background-color: #AD8291;
+}
+
+.bg-custom3 {
+  background-color: #68283D;
+}
+.dashboard-container {
+  background: linear-gradient(to bottom, #B0C4D3, #AAB2B9);
+}
+
+
+
+

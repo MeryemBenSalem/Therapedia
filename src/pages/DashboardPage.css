@@ -1,0 +1,108 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #B0C4D3, #ffffff); /* Apply background to body */
+}
+
+.dashboard-container {
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container {
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 20px; /* Add margin between charts */
+  width: 80%; /* Adjust as needed */
+  min-height: 300px; /* Adjust as needed */
+  background-color: #fff; /* White background for chart container */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+  padding: 10px 20px 20px; /* Padding inside the container */
+}
+
+.chart-header {
+  text-align: center; /* Center the chart header */
+  margin-bottom: 10px; /* Reduce margin between header and chart */
+}
+
+.canvas-container {
+  height: 100%;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card-body-icon {
+  font-size: 3rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+}
+
+.card-body {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+}
+
+.card-footer {
+  background: rgba(0, 0, 0, 0.1);
+  border-top: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bg-custom1 {
+  background-color: #3A5267; /* Color for User Management */
+}
+
+.bg-custom2 {
+  background-color: #AD8291; /* Color for Therapist Management */
+}
+
+.bg-custom3 {
+  background-color: #68283D; /* Color for Content Management */
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.row + .row {
+  margin-top: 1.5rem;
+}
+
+.legend-container {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.legend-container ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legend-container li {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.legend-container span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+}
