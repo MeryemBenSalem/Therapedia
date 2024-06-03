@@ -18,7 +18,7 @@ class Sidebar extends React.Component {
                 </div>
                 <ul className="list-unstyled ps-0">
                     <li className="mb-1" style={{ backgroundColor: "#68283D" }}>
-                        <Link className="text-white" to="/" style={{ padding: "10px 15px", display: "block" }}>
+                        <Link className="text-white" to="/dashboard" style={{ padding: "10px 15px", display: "block" }}>
                             <i className="fa fa-dashboard"></i> Dashboard
                         </Link>
                     </li>

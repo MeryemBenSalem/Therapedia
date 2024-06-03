@@ -1,50 +1,104 @@
 import React, { useState, useEffect } from 'react';
-import './ManagementStyles.css';
+import axios from 'axios';
 
 const UserManagement = () => {
-  const [users, setUsers] = useState([]);
+    const [patients, setPatients] = useState([]);
+    const [name, setName] = useState('');
+    const [emergencyContact, setEmergencyContact] = useState('');
+    const [dateOfBirth, setDateOfBirth] = useState('');
+    const [gender, setGender] = useState('');
+    const [medicalHistory, setMedicalHistory] = useState('');
+    const [reasonForTherapy, setReasonForTherapy] = useState('');
 
-  useEffect(() => {
-    // Mock data for demonstration purposes
-    const mockUsers = [
-      { id: 1, name: 'John Doe', email: 'john.doe@example.com', createdAt: '2022-06-01' },
-      { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', createdAt: '2022-06-02' },
-      { id: 3, name: 'Michael Johnson', email: 'michael.johnson@example.com', createdAt: '2022-06-03' },
-    ];
-    setUsers(mockUsers);
+    useEffect(() => {
+        fetchPatients();
+    }, []);
 
-    // Uncomment this to fetch real data from an API
-    // fetch('/api/users')
-    //   .then(response => response.json())
-    //   .then(data => setUsers(data));
-  }, []);
+    const fetchPatients = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/patient/getAll');
+            if (Array.isArray(response.data)) {
+                setPatients(response.data);
+            } else {
+                setPatients([]);
+            }
+        } catch (error) {
+            console.error('Error fetching patients:', error);
+            setPatients([]);
+        }
+    };
 
-  const deleteUser = (userId) => {
-    // Delete user from the list
-    setUsers(users.filter(user => user.id !== userId));
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post('http://localhost:8080/patient/add', {
+                name,
+                emergencyContact,
+                dateOfBirth,
+                gender,
+                medicalHistory,
+                reasonForTherapy
+            });
+            console.log(response.data);
+            fetchPatients(); // Refresh the list after adding a patient
+            // Clear form inputs after submission
+            setName('');
+            setEmergencyContact('');
+            setDateOfBirth('');
+            setGender('');
+            setMedicalHistory('');
+            setReasonForTherapy('');
+        } catch (error) {
+            console.error('Error saving patient:', error);
+        }
+    };
 
-    // Uncomment this to delete user from an API
-    // fetch(`/api/users/${userId}`, { method: 'DELETE' })
-    //   .then(() => setUsers(users.filter(user => user.id !== userId)));
-  };
+    const handleDelete = async (id) => {
+        try {
+            const response = await axios.delete(`http://localhost:8080/patient/${id}`);
+            console.log(response.data);
+            fetchPatients(); // Refresh the list after deletion
+        } catch (error) {
+            console.error('Error deleting patient:', error);
+        }
+    };
 
-  return (
-    <div className="container">
-      <h2>User Management</h2>
-      <ul className="management-list">
-        {users.map(user => (
-          <li key={user.id} className="management-item">
-            <div>
-              <span><strong>Name:</strong> {user.name}</span><br />
-              <span><strong>Email:</strong> {user.email}</span><br />
-              <span><strong>Created At:</strong> {user.createdAt}</span>
-            </div>
-            <button className="delete-button" onClick={() => deleteUser(user.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div>
+            <h1>User Management</h1>
+            <form onSubmit={handleSubmit}>
+                <label>Name:</label>
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+                <br />
+                <label>Emergency Contact:</label>
+                <input type="text" value={emergencyContact} onChange={(e) => setEmergencyContact(e.target.value)} required />
+                <br />
+                <label>Date of Birth:</label>
+                <input type="text" value={dateOfBirth} onChange={(e) => setDateOfBirth(e.target.value)} required />
+                <br />
+                <label>Gender:</label>
+                <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} required />
+                <br />
+                <label>Medical History:</label>
+                <textarea value={medicalHistory} onChange={(e) => setMedicalHistory(e.target.value)} required />
+                <br />
+                <label>Reason for Therapy:</label>
+                <textarea value={reasonForTherapy} onChange={(e) => setReasonForTherapy(e.target.value)} required />
+                <br />
+                <button type="submit">Add Patient</button>
+            </form>
+
+            <h2>Patients List</h2>
+            <ul>
+                {patients.map((patient) => (
+                    <li key={patient.id}>
+                        {patient.name} - {patient.emergencyContact} - {patient.dateOfBirth} - {patient.gender}
+                        <button onClick={() => handleDelete(patient.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default UserManagement;
