@@ -1,0 +1,177 @@
+.footer-section {
+    background-color: #343639; /* Dark brown */
+}
+
+.footer-container {
+    padding: 20px; /* Reduced padding */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    color: #F5F5F5; /* Light gray */
+    border-bottom: 2px solid #D1B3BC; /* Light pink */
+    border-radius: 2px;
+}
+
+.ft-description {
+    width: 420px;
+    margin: 10px 0 20px; /* Reduced margins */
+    color: #D1B3BC; /* Light pink */
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px; /* Reduced font size */
+    letter-spacing: .8px;
+    line-height: 1.5rem; /* Reduced line height */
+}
+
+.ft-input-title {
+    color: #F5F5F5; /* Light gray */
+    font-family: 'Rubik', sans-serif;
+    font-size: 20px; /* Reduced font size */
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-input {
+    width: 280px; /* Adjusted width */
+    margin: 10px 8px 0 0; /* Reduced margins */
+    padding: 14px 20px; /* Reduced padding */
+    color: #F5F5F5; /* Light gray */
+    background-color: #D1B3BC;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    outline: transparent;
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px; /* Reduced font size */
+    letter-spacing: .8px;
+}
+
+.ft-btn {
+    padding: 10px 16px; /* Reduced padding */
+    color: #F5F5F5; /* Light gray */
+    border: 2px solid transparent;
+    border-radius: 50px;
+    outline: transparent;
+    background-color: #68283D; /* Dark red */
+    font-size: 16px; /* Reduced font size */
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.ft-btn:hover {
+    color: #68283D; /* Dark red */
+    background-color: #D1B3BC; /* Light pink */
+    border: 2px solid #68283D; /* Dark red */
+}
+
+/* Lists */
+.ft-list-title {
+    margin: 10px 0; /* Reduced margins */
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px; /* Reduced font size */
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-list-items {
+    list-style-type: none;
+}
+
+.ft-list-items li a {
+    text-decoration: none;
+    color: #9F6074; /* Medium pink */
+    padding: 0 0 2px 0;
+    border-bottom: 2px dotted transparent;
+    transition: border .2s ease;
+}
+
+.ft-list-items li {
+    margin: 12px 0; /* Reduced margins */
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-list-items li a:hover {
+    border-bottom: 2px dotted #9F6074; /* Medium pink */
+}
+
+/* CopyRight */
+.ft-copyright {
+    padding: 12px 20px; /* Reduced padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #D1B3BC; /* Light pink */
+    font-family: 'Rubik', sans-serif;
+    font-size: 16px; /* Reduced font size */
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.ft-social-links li a {
+    width: 36px; /* Adjusted width */
+    height: 36px; /* Adjusted height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #D1B3BC; /* Light pink */
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ft-social-links li a svg {
+    width: 20px; /* Adjusted width */
+    height: 20px; /* Adjusted height */
+    padding: 1px;
+}
+
+.ft-social-links li a svg path {
+    fill: #D1B3BC; /* Light pink */
+}
+
+.ft-social-links li a:hover,
+.ft-social-links li a:hover svg path {
+    fill: #68283D; /* Dark red */
+    border: 2px solid #68283D; /* Dark red */
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+    .footer-container {
+        padding: 12px; /* Reduced padding */
+    }
+    .ft-description {
+        width: 100%;
+        margin: 10px 0 12px; /* Reduced margins */
+    }
+    .ft-input {
+        width: 100%;
+        margin: 12px 0; /* Reduced margins */
+    }
+    .ft-btn {
+        width: 100%;
+        margin: 0 0 12px; /* Reduced margins */
+    }
+    .ft-copyright {
+        padding: 12px; /* Reduced padding */
+        display: block;
+        text-align: center;
+    }
+    .ft-social-links {
+        margin: 12px 0 0; /* Reduced margins */
+    }
+}
+
+

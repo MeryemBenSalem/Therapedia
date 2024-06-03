@@ -1,0 +1,163 @@
+.navbar-section {
+    padding: 32px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    background-color: #FCF1F5; 
+    
+
+}
+
+
+
+
+.navbar-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    top: 33px;
+    left: 380px;
+    
+}
+
+.navbar-items > li {
+    list-style-type: none;
+}
+
+.navbar-links {
+    text-decoration: none;
+    color: #000000; /* Black */
+    font-size: 18px;
+    letter-spacing: .8px;
+    margin-top: 5px;
+}
+
+.navbar-links:hover {
+    color: #68283D; /* Dark red */
+}
+
+.navbar-btn-container {
+    margin-left: auto; /* Pushes the button to the right */
+    background: transparent;
+
+  }
+  
+.navbar-btn {
+    padding: 14px 20px;
+    color: #F5F5F5; /* Light gray */
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #68283D; /* Dark red */
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+
+}
+
+.navbar-btn:hover {
+    color: #68283D; /* Dark red */
+    background-color: #D1B3BC; /* Light brown */
+    border: 1px solid #68283D; /* Dark red */
+}
+
+/* Hamburger Icon */
+.mobile-nav {
+    display: none;
+}
+
+.hamb-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.hamb-icon:hover {
+    color: #68283D; /* Dark red */
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #F5F5F5; /* Light gray */
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    transition: left .5s ease-in-out;
+}
+
+.mobile-navbar-close {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+
+.mobile-navbar-close .hamb-icon:hover {
+    color: rgb(255, 22, 22);
+}
+
+.open-nav {
+    left: 0;
+}
+
+.mobile-navbar-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    gap: 24px;
+}
+
+.mobile-navbar-links li a {
+    text-decoration: none;
+    color: #000000; /* Black */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: .8px;
+    transition: color .3s ease-in-out;
+    margin-top: 0%;
+
+}
+
+.mobile-navbar-links li a:hover {
+    color: #68283D; /* Dark red */
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .navbar-btn, .navbar-items {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+}
+
+.navbar-btn {
+    text-decoration: none; /* Remove underline */
+}
+
+.logo-container {
+    position: absolute;
+    top: center;
+    left: 20px;
+    z-index: 1; 
+}
+
+.logo {
+    width: 250px; 
+    height: auto; 
+}
