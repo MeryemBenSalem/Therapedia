@@ -1,52 +1,45 @@
 export const customerReviews = [
     {
-      "name": "Esther Howard",
-      "location": "Texas, USA",
-      "message": "Health Plus transformed my healthcare experience! The online consultations were so convenient, and the doctors were knowledgeable and caring."
+      "name": "Salma Ben Mohamed",
+      "location": "Monastir, Tunisia",
+      "message": "Therapedia transformed my mental health experience! The online consultations were so convenient, and the doctors were knowledgeable and caring."
+  },
+    {
+      "name": "Ahmed Othmeni",
+      "location": "Bizerte, Tunisia",
+      "message": "Finally, a healthcare platform that puts patients first! The service provided comprehensive care and regular follow-ups. Thank you, Therapedia!"
+
     },
     {
-      "name": "John Doe",
-      "location": "California, USA",
-      "message": "I found the perfect specialist for my condition through Health Plus. The personalized treatment plan made all the difference. Thank you for prioritizing my health!"
-    },
-    {
-      "name": "Alice Smith",
-      "location": "New York, USA",
+      "name": "Sarra Tlili",
+      "location": "Nabeul, Tunisia",
       "message": "Booking appointments was a breeze, and the service exceeded my expectations. The doctors truly listen and provide effective solutions. 5 stars!"
     },
+    
     {
-      "name": "Bob Johnson",
-      "location": "Florida, USA",
-      "message": "Health Plus is a game-changer! The emergency care saved me during a critical situation. Grateful for their quick and efficient support."
+      "name": "Selim Ben Mohamed",
+      "location": "Jendouba, Tunisia",
+      "message": "I used to hate doctor consultations, but Therapedia made it a pleasant experience. The therapist was gentle and professional. I'll definitely be back!"
     },
     {
-      "name": "Jane Brown",
-      "location": "Washington, USA",
-      "message": "I used to dread dental visits, but Health Plus made it a pleasant experience. The dentist was gentle and professional. I'll definitely be back!"
+      "name": "Kacem Abidi",
+      "location": "Jendouba, Tunisia",
+      "message": "I found the perfect specialist for my condition through Therapedia. The personalized treatment plan made all the difference. Thank you for prioritizing my mental health!"
+
     },
     {
-      "name": "Robert Wilson",
-      "location": "Texas, USA",
-      "message": "Finally, a healthcare platform that puts patients first! The heart disease service provided comprehensive care and regular follow-ups. Thank you, Health Plus!"
+      "name": "Mohamed Ben Salem",
+      "location": "Sfax, Tunisia",
+      "message": "I've been using Therapedia for a variety of health concerns, and each time, I received exceptional care. It's my go-to for all mental health needs!"
     },
     {
-      "name": "Mary Lee",
-      "location": "California, USA",
-      "message": "I've been using Health Plus for a variety of health concerns, and each time, I received exceptional care. It's my go-to for all medical needs!"
+      "name": "Saber Ben Ahmed",
+      "location": "Sousse, Tunisia",
+      "message": "I highly recommend Therapedia for online consultations. It's convenient, secure, and the doctors are top-notch. Great job, team!"
     },
     {
-      "name": "David Miller",
-      "location": "Texas, USA",
-      "message": "I highly recommend Health Plus for online consultations. It's convenient, secure, and the doctors are top-notch. Great job, team!"
+      "name": "Meryem Jaouedi",
+      "location": "Gafsa, Tunisia",
+      "message":"Therapedia is a game-changer! The emergency care saved me during a critical situation. Grateful for their quick and efficient support."
     },
-    {
-      "name": "Sarah Johnson",
-      "location": "Florida, USA",
-      "message": "The convenience of accessing medical notes online was fantastic. Health Plus made managing my health records hassle-free! Best Healthcare services."
-    },
-    {
-      "name": "Michael Brown",
-      "location": "New York, USA",
-      "message": "As a busy professional, Health Plus has been a lifesaver. Quick prescriptions and refills without compromising on quality care. Thank you!"
-    }
 ];
