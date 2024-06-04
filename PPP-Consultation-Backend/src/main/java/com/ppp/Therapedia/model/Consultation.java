@@ -16,7 +16,7 @@ public class Consultation {
     private Doctor doctor;
 
     @ManyToOne
-    @JoinColumn(name = "patient_id")
+    @JoinColumn(name = "patient_id" , nullable = true)
     private Patient patient;
 
     private LocalDateTime dateTime;

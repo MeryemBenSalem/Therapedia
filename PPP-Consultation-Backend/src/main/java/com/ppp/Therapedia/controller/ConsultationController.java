@@ -25,6 +25,7 @@ public class ConsultationController {
 
     private static final Logger logger = LoggerFactory.getLogger(ConsultationController.class);
 
+
     @PostMapping("/doctor/{doctorId}")
     public ResponseEntity<String> addConsultation(@PathVariable Integer doctorId, @RequestBody Consultation consultation) {
         try {
@@ -71,6 +72,28 @@ public class ConsultationController {
                 doctorData.put("doctorId", consultation.getDoctor().getId());
                 doctorData.put("doctorName", consultation.getDoctor().getFirstName() + " " + consultation.getDoctor().getLastName());
                 data.put("doctor", doctorData);
+                return data;
+            }).collect(Collectors.toList());
+            return new ResponseEntity<>(response, HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    @GetMapping("/doctor/{doctorId}/NotAvailable")
+    public ResponseEntity<List<Map<String, Object>>> getNotAvailableConsultationsByDoctorId(@PathVariable Integer doctorId) {
+        try {
+            List<Consultation> consultations = consultationService.findNotAvailableConsultationsByDoctorId(doctorId);
+            if (consultations.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            List<Map<String, Object>> response = consultations.stream().map(consultation -> {
+                Map<String, Object> data = new HashMap<>();
+                data.put("consultationId", consultation.getId());
+                data.put("consultationTime", consultation.getDateTime()); // Assurez-vous que votre entité Consultation a un champ dateTime
+                Map<String, Object> patientData = new HashMap<>();
+                patientData.put("patientId", consultation.getPatient().getId());
+                patientData.put("patientName", consultation.getPatient().getFirstName() + " " + consultation.getPatient().getLastName());
+                data.put("patient", patientData);
                 return data;
             }).collect(Collectors.toList());
             return new ResponseEntity<>(response, HttpStatus.OK);

@@ -1,39 +1,235 @@
-.consultation-container {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .consultation-container h2 {
-    font-size: 24px;
+/* consultation.css */
+
+/* Styles for the calendar container */
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9rem; /* Ajoute un espace de 2 rem autour du conteneur mel fou9 w mel louta */
+    background-color: #FCF1F5;
+    font-family: 'Times New Roman', serif;
+}
+
+/* Styles for the header */
+.header {
+    margin-bottom: 1rem;
+}
+
+.header .title {
+    font-size: 2rem;
     font-weight: bold;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input,
-  textarea,
-  select {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
-    background-color: darkpink;
-    color: white;
-    padding: 5px 10px;
+    color: #68283D;
+
+}
+
+.header .subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3A5267;
+
+}
+
+/* Styles for the tabs */
+.tabs {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.tab-button {
+    padding: 1rem 1rem;
     border: none;
-    border-radius: 5px;
+    background-color: transparent;
     cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #c6396a;
-  }
-  
+    font-size: 15px;
+    border-radius: 0.5rem;
+}
+
+.tab-button.active-tab {
+    color: WHITE;
+    background-color: #68283D;
+    font-weight: bold;
+}
+
+.tab-button.inactive-tab {
+    color: #666;
+}
+
+/* Styles for the calendar content */
+.calendar-content {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 2rem;
+    border-radius: 2rem;
+
+}
+
+/* Styles for the calendar grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    border-radius: 2rem;
+
+}
+
+/* Styles for the month heading */
+.month-heading {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Styles for the weekdays */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+
+}
+
+.weekdays .weekday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #000;
+
+
+}
+
+.weekdays .weekend {
+    color: rgba(239, 69, 9, 0.82);
+    background-color: #ffedc6;
+    border-radius: 0.5rem 0.5rem 0 0;
+
+
+}
+
+/* Styles for the days */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+
+
+
+}
+
+.days .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+    border-radius: 0.25rem;
+    background-color: #f0f0f0;
+    border: none; /* Ensure there is no border */
+
+}
+
+.days .weekend {
+    background-color: #ffedc6;
+    border-radius: 0 0 0.5rem 0.5rem;
+    border: none; /* Ensure there is no border */
+}
+
+/* Styles for the selected day */
+.selected {
+    background-color: #B0C4D3;
+    border: none;
+    width: 64px; /* Largeur de la zone de sélection */
+    height: 40px; /* Hauteur de la zone de sélection */
+
+}
+.day-button{
+    border: none;
+
+
+}
+
+.selected-day {
+    background-color: #c53030;
+    color: #006064;
+    border: none; /* Ensure there is no border */
+}
+
+/* Styles for the disabled days */
+.disabled-day {
+    color: #918f8f;
+    background-color: #fee2e2;
+    cursor: not-allowed;
+    width: 80%;
+    height: 80%;
+    max-width: 50px; /* Ajustez selon vos besoins */
+    max-height: 50px; /* Ajustez selon vos besoins */
+    border: none; /* Ensure there is no border */
+    border-radius: 0.25rem; /* Ajustez le rayon selon vos préférences */
+}
+
+/* Styles for the today indicator */
+.today {
+    color: #2c5282;
+    background-color: #ebf8ff;
+}
+
+/* Styles for the available times indicator */
+.available-times {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    /* transform: translate(-50%, -4rem); */
+    background-color: #2d3748;
+    color: #a0aec0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.6875rem;
+
+}
+
+.available-times.visible {
+
+}
+
+/* Styles for the reservation time selection */
+.reservation-time-selection {
+    margin-top: 1rem;
+}
+
+.reservation-time {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.reservation-time label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #68283D;
+}
+
+.reservation-time.selected {
+    background-color: #bee3f8;
+    display: block;
+}
+
+/* Styles for the reservation confirmation button */
+.confirm-button {
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.625rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+}
+
+.confirm-button.available {
+    background-color: #0d9488;
+    color: #fff;
+}
+
+.confirm-button.unavailable {
+    background-color: #cbd5e0;
+    border-radius: 2rem;
+
+}

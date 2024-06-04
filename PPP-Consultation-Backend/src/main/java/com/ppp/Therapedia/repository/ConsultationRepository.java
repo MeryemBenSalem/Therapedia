@@ -9,7 +9,7 @@ public interface ConsultationRepository extends JpaRepository<Consultation, Inte
     List<Consultation> findByDoctorIdAndAvailable(Integer doctorId, boolean available);
     List<Consultation> findByDoctorId(Integer doctorId);
     List<Consultation> findByDoctorIdAndAvailableTrue(Integer doctorId);
-
+    List<Consultation> findByDoctorIdAndAvailableFalse(Integer doctorId);
     List<Consultation> findByPatientIdAndAvailableFalse(Integer patientId);
 
 

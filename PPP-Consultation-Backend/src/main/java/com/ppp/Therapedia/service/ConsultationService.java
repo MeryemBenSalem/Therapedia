@@ -55,6 +55,9 @@ public class ConsultationService {
     public List<Consultation> findAvailableConsultationsByDoctorId(Integer doctorId) {
         return consultationRepository.findByDoctorIdAndAvailableTrue(doctorId);
     }
+    public List<Consultation> findNotAvailableConsultationsByDoctorId(Integer doctorId) {
+        return consultationRepository.findByDoctorIdAndAvailableFalse(doctorId);
+    }
 
     public void reserveConsultation(Integer consultationId, Integer patientId) throws Exception {
         Consultation consultation = consultationRepository.findById(consultationId).orElseThrow(() -> new Exception("Consultation not found"));
