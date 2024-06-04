@@ -34,5 +34,5 @@ public class CommentController {
         commentService.downvoteComment(commentId);
     }
 
-    // Add more endpoints as needed
+
 }

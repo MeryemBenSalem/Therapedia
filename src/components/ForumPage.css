@@ -7,14 +7,9 @@ body, html {
 body {
     background : linear-gradient(#d5b7f5,#fdf8e2,#ffddd3);
     background-size:300% 300% ;
-    animation: color 30s ease-in-out infinite;
+
 }
-@keyframes color {
-    0%{
-        background-position: 0 50%;
-    }
-    
-}
+
 .header {
     font-family: "Cursive", serif;
     display: flex;
