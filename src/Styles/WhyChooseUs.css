@@ -1,46 +1,45 @@
-.about-section {
+.ba-section {
     padding: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background: #B7B7A4;
-    background: linear-gradient(to bottom, #B0C4D3 , #FCF1F5);
-
-
+    background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);
 }
 
 /* Image */
-.about-image-content {
+.ba-image-content {
     width: 50%;
     max-width: 100%;
     text-align: center;
     background: transparent;
 }
 
-.about-image1 {
+.ba-image1 {
     width: 80%;
     height: auto;
 }
 
 /* Text */
-.about-text-content {
+.ba-text-content {
     width: 50%;
     background: transparent;
 }
 
-.about-title {
+.ba-title {
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     font-weight: bold;
+    letter-spacing: .7px;
     color: #3A5267;
+
 }
 
-.about-title > span {
+.ba-title > span {
     position: relative;
 }
 
-.about-title span::before {
+.ba-title span::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -51,76 +50,71 @@
     bottom: -12px;
 }
 
-.about-description {
+.ba-description {
     margin: 32px 0;
     color: #44312B; /* Dark brown */
     font-family: 'Rubik', sans-serif;
     font-size: 18px;
-    letter-spacing: .7px;
-    line-height: 1.7rem;
+    letter-spacing: .8px;
+    line-height: 1.8rem;
 }
 
-.about-text-title {
-    margin: 0 0 24px 0;
-    color: #44312B; /* Dark brown */
-    font-family: 'Poppins', sans-serif;
-    font-size: 24px;
+/* Checks */
+.ba-checks {
+    margin: 28px 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
     font-weight: bold;
     letter-spacing: .7px;
 }
 
-/* Steps */
-.about-text-step {
-    margin: 16px 0;
-    background: transparent;
-
+.ba-check-first {
+    margin-top: 40px;
 }
 
-.about-text-sTitle {
+.ba-check-last {
+    margin-bottom: 40px;
+}
+
+/* Book Appointment Button */
+.ba-appointment-btn {
+    padding: 18px 24px;
+    color: #F5F5F5; /* Light gray */
+    border: 1px solid transparent;
+    border-radius: 50px;
+    outline: transparent;
+    background-color: #68283D; /* Dark red */
+    font-size: 20px;
     font-family: 'Rubik', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: .7px;
-    background: transparent;
-
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
 }
 
-.about-text-description {
-    margin: 8px 24px;
-    color: #44312B; /* Dark brown */
-    font-family: 'Rubik', sans-serif;
-    letter-spacing: .7px;
-    line-height: 1.6rem;
-    background: transparent;
-
-}
-
-.fa-icon {
+.ba-appointment-btn:hover {
     color: #68283D; /* Dark red */
+    background-color: transparent;
+    border: 1px solid #68283D; /* Dark red */
 }
 
 /* Responsive */
 @media screen and (max-width: 1000px) {
-    .about-section {
+    .ba-section {
         display: block;
-        background: transparent;
-
     }
 
-    .about-image-content {
+    .ba-image-content {
         width: 100%;
         max-width: 100%;
         margin: 0 0 32px 0;
     }
 
-    .about-image1 {
+    .ba-text-content {
         width: 100%;
-        height: 100%;
     }
 
-    .about-text-content {
-        width: 100%;
-        background: transparent;
-
+    .ba-image1 {
+        width: 80%;
+        height: 80%;
     }
 }

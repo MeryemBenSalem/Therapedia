@@ -31,6 +31,7 @@
 
 .centered-text {
     text-align: center;
+    font-size: 15px;
 }
 
 .specialist {
@@ -42,9 +43,9 @@
 }
 ._background2 {
         font-family: poppins, sans-serif;
-        margin-top: 30px;
+        margin-top: 40px;
         left: 40%;
-        top: 40%;
+        top: 20%;
         width: 200px;
         height: 200px;
         border-radius: 45px;
@@ -69,11 +70,14 @@
         
     }
     ._background2 img {
-        width: 130px;
+        width: 120px;
         height: auto;
         position: absolute;
-        top: 40%;
+        top: 45%;
         margin-left: -12%;
+    }
+    ._background2-clicked {
+        background-color: #4d3672; /* Change this to your desired color */
     }
     .styled{
         margin: 20px 35%;
