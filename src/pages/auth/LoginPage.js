@@ -28,6 +28,13 @@ class LoginPage extends Component {
         event.preventDefault();
         const { email, password } = this.state;
 
+        // Static login check
+        if (email === "admin_Aziza@gmail.com" && password === "azizaaziza") {
+            console.log("Static login successful");
+            window.location.href = 'http://localhost:3000/dashboard';
+            return;
+        }
+
         try {
             const response = await axios.post('http://localhost:9090/admin/signin', { email, password }, {
                 withCredentials: true // Ensure credentials are sent with the request
@@ -35,7 +42,6 @@ class LoginPage extends Component {
             if (response.status === 200) {
                 // Successful login, redirect to dashboard or set session
                 console.log("Login successful");
-                // Example: redirect to dashboard
                 window.location.href = 'http://localhost:3000/dashboard';
             } else {
                 // Handle other status codes or errors
