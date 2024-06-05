@@ -54,7 +54,7 @@ export default function Card({ doctor }) {
                 </ul>
                 <div className="button-box">
                     <button className="book">
-                        <a href={`/Doctors/${doctor.id}`}>Book an Appointment</a>
+                        <a href={`/Therapedia/Doctors/${doctor.id}`}>Book an Appointment</a>
                     </button>
                 </div>
             </div>

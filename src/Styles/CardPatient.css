@@ -3,12 +3,14 @@
     max-height: 90%;
     overflow-y: auto; /* Enable vertical scrolling */
     margin: 20px auto; /* Center the container and add margin */
+    display: flex; /* Use Flexbox */
+    flex-direction: column; /* Arrange children in a column */
+    align-items: center; /* Center children vertically */
+    justify-content: center; /* Center children horizontally */
 }
 
-.card {
+.cardPatient {
     padding: 50px;
-    width: 70%;
-    height: 40%;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
@@ -19,22 +21,12 @@
     transition: all 0.1s ease;
 }
 
-.column1 {
-    width: 40%;
-    padding: 0 20px;
-    box-sizing: border-box;
+.cardPatient img {
+    max-width: 80%; /* Limit the width of the image to 100% of its container's width */
+    height: auto;
+    padding:auto;/* Allow the height of the image to adjust proportionally to its width */
 }
 
-.card img {
-    max-width: 80%; /* Limite la largeur de l'image à 100% de la largeur de son conteneur */
-    height: auto; /* Permet à la hauteur de l'image de s'ajuster proportionnellement à sa largeur */
-}
-
-.column2 {
-    width: 50%;
-    padding: 0 10px;
-    box-sizing: border-box;
-}
 
 .dateofConsultation-box,
 .education-box,

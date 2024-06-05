@@ -7,12 +7,11 @@ export default function Card({ patient }) {
 
     return (
         <div className="container">
-            <div className="card" ref={cardRef}>
+            <div className="cardPatient" ref={cardRef}>
                 <div className="column1">
                     <img
                         src={img6141} 
                         alt={patient.name}
-                        className="doctor-img"
                     />
                 </div>
                 <div className="column2">
@@ -21,7 +20,7 @@ export default function Card({ patient }) {
                     </h1>
                     <ul className="dateofConsultation-box">
                         <li>
-                            <strong>dateofConsultation:</strong>
+                            <strong>date of Consultation:</strong>
                             <br />
                             {patient.dateofConsultation}
                         </li>

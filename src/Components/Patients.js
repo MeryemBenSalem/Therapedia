@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card.js';
+import Card from './CardPatient.js';
 import axios from 'axios';
 
 const Patients = () => {

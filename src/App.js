@@ -22,7 +22,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/legal" element={<Legal />} />
             <Route path="/Doctors" element={<Doctors />} />
-            <Route path="/Doctors/id" element={<Doctor_Description />} />
+            <Route path="/Doctors/:id" element={<Doctor_Description />} />
+            <Route path="/Consultation" element={<Consultation/>} />
             <Route path="/Patient" element={<Consultation />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="*" element={<NotFound />} />
