@@ -15,14 +15,14 @@ const UserManagement = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:9090/patient/getAll')
+        fetch('http://localhost:8080/patient/getAll')
             .then(response => response.json())
             .then(data => setUsers(data))
             .catch(error => setError(error.message));
     }, []);
 
     const deleteUser = (userId) => {
-        fetch(`http://localhost:9090/patient/${userId}`, {
+        fetch(`http://localhost:8080/patient/${userId}`, {
             method: 'DELETE'
         })
             .then(() => setUsers(users.filter(user => user.id !== userId)))
@@ -30,7 +30,7 @@ const UserManagement = () => {
     };
 
     const addUser = () => {
-        fetch('http://localhost:9090/patient/add', {
+        fetch('http://localhost:8080/patient/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -45,7 +45,7 @@ const UserManagement = () => {
             })
             .then(() => {
                 // Fetch the updated list of users
-                return fetch('http://localhost:9090/patient/getAll')
+                return fetch('http://localhost:8080/patient/getAll')
                     .then(response => response.json())
                     .then(data => setUsers(data));
             })
@@ -53,7 +53,7 @@ const UserManagement = () => {
     };
 
     const updateUser = () => {
-        fetch(`http://localhost:9090/patient/${editingUser.id}`, {
+        fetch(`http://localhost:8080/patient/${editingUser.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ const UserManagement = () => {
         })
             .then(() => {
                 // Fetch the updated list of users
-                return fetch('http://localhost:9090/patient/getAll')
+                return fetch('http://localhost:8080/patient/getAll')
                     .then(response => response.json())
                     .then(data => setUsers(data));
             })

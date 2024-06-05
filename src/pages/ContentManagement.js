@@ -13,13 +13,13 @@ const ContentManagement = () => {
     const [editingContent, setEditingContent] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:9090/api/articles/getAll')
+        fetch('http://localhost:8080/api/articles/getAll')
             .then(response => response.json())
             .then(data => setContents(data));
     }, []);
 
     const deleteContent = (contentId) => {
-        fetch(`http://localhost:9090/api/articles/${contentId}`, { method: 'DELETE' })
+        fetch(`http://localhost:8080/api/articles/${contentId}`, { method: 'DELETE' })
             .then(response => {
                 if (response.ok) {
                     setContents(contents.filter(content => content.id !== contentId));
@@ -51,7 +51,7 @@ const ContentManagement = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (editingContent) {
-            fetch(`http://localhost:9090/api/articles/${editingContent.id}`, {
+            fetch(`http://localhost:8080/api/articles/${editingContent.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const ContentManagement = () => {
                     console.error('Error updating the content:', error);
                 });
         } else {
-            fetch('http://localhost:9090/api/articles/create', {
+            fetch('http://localhost:8080/api/articles/create', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

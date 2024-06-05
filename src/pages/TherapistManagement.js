@@ -18,14 +18,14 @@ const TherapistManagement = () => {
     }, []);
 
     const fetchTherapists = () => {
-        fetch('http://localhost:9090/doctor/getAll')
+        fetch('http://localhost:8080/doctor/getAll')
             .then(response => response.json())
             .then(data => setTherapists(data))
             .catch(error => setError(error.message));
     };
 
     const deleteTherapist = (therapistId) => {
-        fetch(`http://localhost:9090/doctor/${therapistId}`, {
+        fetch(`http://localhost:8080/doctor/${therapistId}`, {
             method: 'DELETE'
         })
             .then(() => {
@@ -35,7 +35,7 @@ const TherapistManagement = () => {
     };
 
     const addTherapist = () => {
-        fetch('http://localhost:9090/doctor/add', {
+        fetch('http://localhost:8080/doctor/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const TherapistManagement = () => {
             })
             .then(() => {
                 // Fetch the updated list of users
-                return fetch('http://localhost:9090/doctor/getAll')
+                return fetch('http://localhost:8080/doctor/getAll')
                     .then(response => response.json())
                     .then(data => setTherapists(data));
             })
@@ -58,7 +58,7 @@ const TherapistManagement = () => {
     };
 
     const updateTherapist = () => {
-        fetch(`http://localhost:9090/doctor/${editingTherapist.id}`, {
+        fetch(`http://localhost:8080/doctor/${editingTherapist.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
