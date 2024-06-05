@@ -148,10 +148,10 @@ class DashboardPage extends React.Component {
                 <div className="card-body-icon">
                   <i className="fa fa-fw fa-file-text"></i>
                 </div>
-                <div className="mr-5">Content Management</div>
+                <div className="mr-5">Blogs Management</div>
               </div>
               <Link className="card-footer text-white clearfix small z-1" to="/admin/content">
-                <span className="float-left">Manage content</span>
+                <span className="float-left">Manage Blogs content</span>
                 <span className="float-right">
                   <i className="fa fa-angle-right"></i>
                 </span>

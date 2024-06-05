@@ -2,68 +2,165 @@ import React, { useState, useEffect } from 'react';
 import './ContentManagement.css';
 
 const ContentManagement = () => {
-  const [contents, setContents] = useState([]);
+    const [contents, setContents] = useState([]);
+    const [newContent, setNewContent] = useState({
+        title: '',
+        content: '',
+        category: '',
+        postedBy: '',
+        image: '',
+    });
+    const [editingContent, setEditingContent] = useState(null);
 
-  useEffect(() => {
-    // Mock data for demonstration purposes
-    const mockContents = [
-      { id: 1, title: 'Overcoming Anxiety', body: 'Anxiety is a normal part of life, but sometimes it can be overwhelming. Here are some tips to manage anxiety...', author: 'John Doe', status: 'Pending' },
-      { id: 2, title: 'Coping with Depression', body: 'Depression is more than just feeling sad. It can affect all aspects of life. Here are some ways to cope...', author: 'Jane Smith', status: 'Pending' },
-      { id: 3, title: 'Mindfulness Meditation', body: 'Mindfulness meditation can help you stay grounded and present. Learn how to practice mindfulness...', author: 'Michael Johnson', status: 'Pending' },
-    ];
-    setContents(mockContents);
+    useEffect(() => {
+        fetch('http://localhost:9090/api/articles/getAll')
+            .then(response => response.json())
+            .then(data => setContents(data));
+    }, []);
 
-    // Uncomment this to fetch real data from an API
-    // fetch('/api/contents')
-    //   .then(response => response.json())
-    //   .then(data => setContents(data));
-  }, []);
+    const deleteContent = (contentId) => {
+        fetch(`http://localhost:9090/api/articles/${contentId}`, { method: 'DELETE' })
+            .then(response => {
+                if (response.ok) {
+                    setContents(contents.filter(content => content.id !== contentId));
+                } else {
+                    console.error('Failed to delete the content');
+                }
+            });
+    };
 
-  const deleteContent = (contentId) => {
-    // Delete content from the list
-    setContents(contents.filter(content => content.id !== contentId));
+    const modifyContent = (content) => {
+        setEditingContent(content);
+        setNewContent({
+            title: content.title,
+            content: content.content,
+            category: content.category,
+            postedBy: content.postedBy,
+            image: content.image,
+        });
+    };
 
-    // Uncomment this to delete content from an API
-    // fetch(`/api/contents/${contentId}`, { method: 'DELETE' })
-    //   .then(() => setContents(contents.filter(content => content.id !== contentId)));
-  };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setNewContent({
+            ...newContent,
+            [name]: value,
+        });
+    };
 
-  const acceptContent = (contentId) => {
-    // Accept content by updating its status
-    setContents(contents.map(content => content.id === contentId ? { ...content, status: 'Accepted' } : content));
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (editingContent) {
+            fetch(`http://localhost:9090/api/articles/${editingContent.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newContent),
+            })
+                .then(response => response.json())
+                .then(updatedContent => {
+                    setContents(contents.map(content => (content.id === updatedContent.id ? updatedContent : content)));
+                    setEditingContent(null);
+                    setNewContent({
+                        title: '',
+                        content: '',
+                        category: '',
+                        postedBy: '',
+                        image: '',
+                    });
+                })
+                .catch(error => {
+                    console.error('Error updating the content:', error);
+                });
+        } else {
+            fetch('http://localhost:9090/api/articles/create', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newContent),
+            })
+                .then(response => response.json())
+                .then(createdContent => {
+                    setContents([...contents, createdContent]);
+                    setNewContent({
+                        title: '',
+                        content: '',
+                        category: '',
+                        postedBy: '',
+                        image: '',
+                    });
+                })
+                .catch(error => {
+                    console.error('Error creating the content:', error);
+                });
+        }
+    };
 
-    // Uncomment this to accept content from an API
-    // fetch(`/api/contents/${contentId}/accept`, { method: 'POST' })
-    //   .then(() => setContents(contents.map(content => content.id === contentId ? { ...content, status: 'Accepted' } : content)));
-  };
-
-  const modifyContent = (contentId) => {
-    // Modify content logic (e.g., open a modal to edit content)
-    console.log(`Modify content with ID: ${contentId}`);
-  };
-
-  return (
-    <div className="container">
-      <h2>Content Management</h2>
-      <ul className="management-list">
-        {contents.map(content => (
-          <li key={content.id} className="management-item">
-            <div>
-              <h3>{content.title}</h3>
-              <p>{content.body}</p>
-              <p><strong>Author:</strong> {content.author}</p>
-              <p><strong>Status:</strong> {content.status}</p>
-            </div>
-            <div className="button-group">
-              <button className="accept-button" onClick={() => acceptContent(content.id)}>Accept</button>
-              <button className="modify-button" onClick={() => modifyContent(content.id)}>Modify</button>
-              <button className="delete-button" onClick={() => deleteContent(content.id)}>Delete</button>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    return (
+        <div className="container">
+            <h2>Add New Blog </h2>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    name="title"
+                    value={newContent.title}
+                    onChange={handleChange}
+                    placeholder="Title"
+                    required
+                />
+                <textarea
+                    name="content"
+                    value={newContent.content}
+                    onChange={handleChange}
+                    placeholder="Content"
+                    required
+                />
+                <input
+                    type="text"
+                    name="category"
+                    value={newContent.category}
+                    onChange={handleChange}
+                    placeholder="Category"
+                    required
+                />
+                <input
+                    type="text"
+                    name="postedBy"
+                    value={newContent.postedBy}
+                    onChange={handleChange}
+                    placeholder="Posted By"
+                    required
+                />
+                <input
+                    type="text"
+                    name="image"
+                    value={newContent.image}
+                    onChange={handleChange}
+                    placeholder="Image URL"
+                />
+                <button type="submit">{editingContent ? 'Update' : 'Add'} Article</button>
+            </form>
+            <h2>Blog Content Management</h2>
+            <ul className="management-list">
+                {contents.map(content => (
+                    <li key={content.id} className="management-item">
+                        <div>
+                            <h3>{content.title}</h3>
+                            <p>{content.content}</p>
+                            <p><strong>Category:</strong> {content.category}</p>
+                            <p><strong>Author:</strong> {content.postedBy}</p>
+                        </div>
+                        <div className="button-group">
+                            <button className="modify-button" onClick={() => modifyContent(content)}>Edit</button>
+                            <button className="delete-button" onClick={() => deleteContent(content.id)}>Delete</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
 };
 
 export default ContentManagement;

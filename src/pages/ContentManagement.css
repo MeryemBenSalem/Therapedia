@@ -87,4 +87,11 @@
   .delete-button:hover {
     background-color: #5a3d3a;
   }
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 740px;
+  height: 174px;
+}
   

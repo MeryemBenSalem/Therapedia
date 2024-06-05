@@ -6,34 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b4bf4afe-9726-44b3-a0d1-5ca839cc3a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/blank-page.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/change-password.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/dashboard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/forgot-password.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/left-modal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/loading.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/login.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/preferences.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/profile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/right-modal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/screenshots/table.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/TherapediaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/TherapediaApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Profile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Profile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/DashboardPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ContentManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ContentManagement.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ContentManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ContentManagement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/DashboardPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/DashboardPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/ManagementStyles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ManagementStyles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TherapistManagement.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TherapistManagement.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/TherapistManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/TherapistManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/UserManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/UserManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/auth/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/auth/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/TherapediaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/TherapediaApplication.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +114,7 @@
       <workItem from="1714474176024" duration="61000" />
       <workItem from="1717188144898" duration="1060000" />
       <workItem from="1717354248458" duration="30014000" />
-      <workItem from="1717499075944" duration="16946000" />
+      <workItem from="1717499075944" duration="28245000" />
     </task>
     <servers />
   </component>
