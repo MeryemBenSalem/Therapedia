@@ -1,13 +1,12 @@
-// Navbar.js
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark, faUserCircle, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SignupPop from "./signup_pop"; // Import the SignupPop component
 import "../Styles/Navbar.css";
 import logo from '../assets/logo.png';
 
-function Navbar() {
+function Navbar({ isLoggedIn }) {
   const [nav, setNav] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -23,102 +22,47 @@ function Navbar() {
     setShowModal(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    // Refresh the page
+    window.location.reload();
+  };
+
   return (
-    <div className="navbar-section">
-      <div className="navbar-left navbar-btn-container">
-        {/* Sign In/Sign Up Button */}
-        <button className="navbar-btn" onClick={openModal}>
-          <FontAwesomeIcon icon={faUserCircle} /> Sign Up
-        </button>
-      </div>
-
-      <Link to="/">
-        <div className="logo-container">
-          <img src={logo} alt="Therapedia Logo" className="logo navbar-sign" />
-        </div>
-      </Link>
-
-      {/* Desktop */}
-      <ul className="navbar-items">
-        <li>
-          <Link to="/" className="navbar-links">
-            Home
-          </Link>
-        </li>
-        <li>
-          <a href="#services" className="navbar-links">
-            Services
-          </a>
-        </li>
-        <li>
-          <a href="#about" className="navbar-links">
-            About
-          </a>
-        </li>
-        <li>
-          <a href="#reviews" className="navbar-links">
-            Reviews
-          </a>
-        </li>
-        <li>
-          <a href="#doctors" className="navbar-links">
-            Our Doctors
-          </a>
-        </li>
-      </ul>
-
-      {/* Mobile */}
-      <div className={`mobile-navbar ${nav ? "open-nav" : ""}`}>
-        <div onClick={openNav} className="mobile-navbar-close">
-          <FontAwesomeIcon icon={faXmark} className="hamb-icon" />
+      <div className="navbar-section">
+        <div className="navbar-left navbar-btn-container">
+          {/* Render Logout button if logged in, otherwise render Sign Up button */}
+          {isLoggedIn ? (
+              <button className="navbar-btn" onClick={handleLogout}>
+                <FontAwesomeIcon icon={faSignOutAlt} /> Logout
+              </button>
+          ) : (
+              <button className="navbar-btn" onClick={openModal}>
+                <FontAwesomeIcon icon={faUserCircle} /> Sign Up
+              </button>
+          )}
         </div>
 
-        <ul className="mobile-navbar-links">
-          <li>
-            <Link onClick={openNav} to="/">
-              Home
-            </Link>
-          </li>
-          <li>
-            <a onClick={openNav} href="#services">
-              Services
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#reviews">
-              Reviews
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#doctors">
-              Doctors
-            </a>
-          </li>
-          <li>
-            <a onClick={openNav} href="#contact">
-              Contact
-            </a>
-          </li>
+        <Link to="/">
+          <div className="logo-container">
+            <img src={logo} alt="Therapedia Logo" className="logo navbar-sign" />
+          </div>
+        </Link>
+
+        {/* Desktop */}
+        <ul className="navbar-items">
+          {/* Add other navbar items here */}
         </ul>
-      </div>
 
-      {/* Hamburger Icon */}
-      <div className="mobile-nav">
-        <FontAwesomeIcon
-          icon={faBars}
-          onClick={openNav}
-          className="hamb-icon"
-        />
-      </div>
+        {/* Mobile */}
+        {/* Add mobile navigation here */}
 
-      {/* Render the SignupPop */}
-      <SignupPop show={showModal} onClose={closeModal} />
-    </div>
+        {/* Hamburger Icon */}
+        {/* Add hamburger icon here */}
+
+        {/* Render the SignupPop */}
+        <SignupPop show={showModal} onClose={closeModal} />
+      </div>
   );
 }
 

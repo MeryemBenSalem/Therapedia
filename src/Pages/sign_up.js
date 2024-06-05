@@ -1,9 +1,10 @@
-// sign_up.js
+//sign_up.js
 import React, { useState } from 'react';
 import '../Styles/sign_up.css'; 
 import logo from '../assets/logo.png';
 import cond from '../assets/terms&conditions.pdf';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 
 
@@ -32,7 +33,7 @@ const SignUp = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
 
@@ -46,6 +47,49 @@ const SignUp = () => {
       });
 
       if (response.ok) {
+        console.log("New user added");
+
+        // Check if the response content type is JSON
+        const contentType = response.headers.get("content-type");
+      } else {
+        console.error('Signup failed');
+        alert('Signup failed. Please try again.');
+      }
+    } catch (error) {
+      console.error('There was an error!', error);
+      alert('An error occurred. Please try again.');
+    }
+  };
+
+  const checkSession = async () => {
+    try {
+      const response = await axios.get('http://localhost:8080/patient/checkSession');
+      alert(response.data);
+    } catch (error) {
+      console.error(error);
+      alert('Session check failed!');
+    }
+  };
+
+  /*const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+
+    //try {
+    const response = await fetch("http://localhost:8080/patient/signup", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData)
+    });
+    window.location = 'http://localhost:3000/';
+    //const sessionData = await response.json();
+    //localStorage.setItem('session', JSON.stringify(sessionData));
+    //console.log(sessionData);
+
+  }*/
+      /*if (response.ok) {
         // Handle successful signup and session creation
         console.log("New user added");
         // Optionally store session info in local storage or state
@@ -53,7 +97,7 @@ const SignUp = () => {
         localStorage.setItem('session', JSON.stringify(sessionData));
 
         // Redirect to the home page or another page
-        history.push('/');
+        window.location='http://localhost:3000/'
       } else {
         // Handle signup failure
         console.error('Signup failed');
@@ -64,7 +108,7 @@ const SignUp = () => {
       console.error('There was an error!', error);
       alert('An error occurred. Please try again.');
     }
-  };
+  };*/
 
   return (
     
@@ -207,3 +251,4 @@ const SignUp = () => {
 };
 
 export default SignUp;
+

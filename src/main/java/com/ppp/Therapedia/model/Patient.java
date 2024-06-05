@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @DiscriminatorValue("patient")
-public class Patient extends Profile implements  Serializable {
+public class Patient extends Profile implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String emergencyContact;

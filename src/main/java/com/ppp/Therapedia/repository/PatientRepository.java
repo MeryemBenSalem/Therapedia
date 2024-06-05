@@ -12,5 +12,8 @@ import java.util.List;
 public interface PatientRepository extends ProfileRepository<Patient> {
     @Query("SELECT p FROM Patient p WHERE TYPE(p) = Patient")
     List<Patient> findAllPatients();
+    Patient findByEmail(String email);
+
+
 
 }

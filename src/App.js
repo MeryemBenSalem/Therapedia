@@ -12,8 +12,8 @@ import SignUp from './Pages/sign_up';
 import SignUpDoc from './Pages/sign_up_doc'; 
 import Home from './Pages/Home'; 
 import Appointment from './Pages/Appointment'; 
-
-
+import sign_in from './Pages/Sign_in';
+import Sign_in from "./Pages/Sign_in";
 
 
 function App() {
@@ -25,6 +25,7 @@ function App() {
         <Route path="/sign_up_doc" element={<SignUpDoc />} />
         <Route path="/" element={<Home />} />
         <Route path="/Appointment" element={<Appointment />} />
+          <Route path ="/sign_in" element={<Sign_in/>}/>
       </Routes>
     </Router>
   );

@@ -1,70 +1,67 @@
 package com.ppp.Therapedia.controller;
 
-import com.ppp.Therapedia.model.Profile;
+import com.ppp.Therapedia.model.JwtRequest;
+import com.ppp.Therapedia.model.JwtResponse;
+import com.ppp.Therapedia.model.Patient;
+import com.ppp.Therapedia.service.MyUserDetailsService;
+import com.ppp.Therapedia.service.PatientService;
 import com.ppp.Therapedia.service.ProfileService;
-import jakarta.servlet.http.HttpSession;
+import com.ppp.Therapedia.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.NoSuchElementException;
 @RestController
 @RequestMapping("/profile")
 public class ProfileController {
 
     @Autowired
     private ProfileService profileService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+
+    @Autowired
+    private MyUserDetailsService userDetailsService;
+
+    @Autowired
+    private JwtUtil jwtUtil;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 //    @PostMapping(path = "/Sign_in")
 //    public ResponseEntity<?> loginProfile(@RequestBody Login login) {
 //        LoginResponse
 //    }
 
-    @GetMapping("/login")
-    public String login(Model model){
-        model.addAttribute("user", new Profile());
-        return "login";
-    }
+
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody Profile profile, HttpSession session) {
-        System.out.println("Received email: " + profile.getEmail());
-        System.out.println("Received password: " + profile.getPassword());
-        try {
-            boolean result = profileService.login(profile.getEmail(), profile.getPassword());
-            if (result) {
-                session.setAttribute("user", profile.getEmail()); // Store user email in session
-                return new ResponseEntity<>("Successfully signed in.", HttpStatus.OK);
-            } else {
-                return new ResponseEntity<>("Invalid email or password.", HttpStatus.UNAUTHORIZED);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to sign in. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+
+        // Authenticate using email instead of username
+        authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
+        );
+
+        // Load user details by email
+        final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getEmail());
+
+        // Generate JWT token
+        final String jwt = jwtUtil.generateToken(userDetails);
+
+        return ResponseEntity.ok(new JwtResponse(jwt));
     }
 
-    @GetMapping("/isloggedin")
-    public ResponseEntity<?> isLoggedIn(HttpSession session) {
-        try {
-            String userEmail = (String) session.getAttribute("user");
-            boolean loggedIn = profileService.isUserLoggedIn();
-            return new ResponseEntity<>(loggedIn, HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to check login status.", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
 
-    @GetMapping("/logout")
-    public ResponseEntity<?> logout(HttpSession session) {
-        try {
-            session.invalidate();
-            profileService.logout();
-            return new ResponseEntity<>("Logged out successfully.", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to logout. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+
 
 
 }

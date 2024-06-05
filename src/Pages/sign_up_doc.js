@@ -1,9 +1,12 @@
 // sign_up.js
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import '../Styles/sign_up_doc.css'; 
 import logo from '../assets/logo.png';
 import cond from '../assets/terms&conditions.pdf';
 import { Link } from 'react-router-dom';
+
 
 
 
@@ -44,26 +47,34 @@ const SignUp = () => {
       });
 
       if (response.ok) {
-        // Handle successful signup and session creation
         console.log("New user added");
 
+        // Check if the response content type is JSON
+        const contentType = response.headers.get("content-type");
+        let sessionData;
+
+        if (contentType && contentType.includes("application/json")) {
+          sessionData = await response.json();
+        } else {
+          sessionData = await response.text();
+        }
+
         // Optionally store session info in local storage or state
-        const sessionData = await response.json();
+        // This is only necessary if you need to use the session data on the client side
         localStorage.setItem('session', JSON.stringify(sessionData));
 
         // Redirect to the home page or another page
-        history.push('/');
+        window.location='http://localhost:3000/'
       } else {
-        // Handle signup failure
         console.error('Signup failed');
         alert('Signup failed. Please try again.');
       }
     } catch (error) {
-      // Handle network or other errors
       console.error('There was an error!', error);
       alert('An error occurred. Please try again.');
     }
   };
+
   return (
     
     <div className="sign-up-container">

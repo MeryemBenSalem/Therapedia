@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Sign_in = () => {
     const [formData, setFormData] = useState({
@@ -8,7 +8,7 @@ const Sign_in = () => {
         password: ''
     });
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,11 +20,16 @@ const Sign_in = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(formData);
         try {
             const response = await axios.post('http://localhost:8080/profile/login', formData);
             if (response.status === 200) {
+                // Store token in localStorage
+                const token = response.data.token;
+                console.log('Token:', token); // Log the token
+                localStorage.setItem('token', token);
                 // Redirect to home or another page on successful login
-                history.push('/');
+                navigate('/');
             } else {
                 // Handle login failure
                 alert('Login failed. Please check your credentials.');
@@ -35,32 +40,6 @@ const Sign_in = () => {
             console.error('There was an error!', error);
         }
     };
-
-    /*const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('/profile/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-            const data = await response.text();
-            if (response.ok) {
-                console.log(data);
-                // Redirect to the home page or dashboard
-                window.location.href = '/home';
-            } else {
-                console.log(data);
-                // Show error message
-                alert('Invalid email or password');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };*/
-
 
     return (
         <div className="container">
