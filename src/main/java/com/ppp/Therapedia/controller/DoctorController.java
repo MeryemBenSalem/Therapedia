@@ -60,7 +60,7 @@ public class DoctorController extends ProfileController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Doctor> update(@RequestBody Doctor doctor,
-                                          @PathVariable Integer id){
+                                         @PathVariable Integer id){
         try {
             Doctor existingDoctor= doctorService.get(id);
             doctorService.saveDoctor(doctor);

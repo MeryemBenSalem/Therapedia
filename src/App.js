@@ -1,18 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sign_Up_Doc from './Pages/sign_up_doc';
 import SignUp from './Pages/sign_up';
-import Home from './Pages/Home'; 
+import Home from './Pages/Home';
 import Sign_in from './Pages/Sign_in';
 import {jwtDecode} from "jwt-decode";
 import Legal from './Pages/Legal';
 import {useEffect, useState} from "react";
+import 'font-awesome/css/font-awesome.min.css';
+import './assets/css/app.css';
+import DashboardPage from './Pages/DashboardPage';
 
-
-
-
-
-
-
+import LoginPage from './Pages/auth/LoginPage';
+import ResetPassword from './Pages/auth/ResetPassword';
+import ProfilePage from './Pages/profile/ProfilePage';
+import ChangePasswordPage from './Pages/profile/ChangePasswordPage';
+import UserPreferencesPage from './Pages/profile/UserPreferencesPage';
+import UserManagement from './Pages/UserManagement';
+import TherapistManagement from './Pages/TherapistManagement';
+import ContentManagement from './Pages/ContentManagement';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [username, setUsername] = useState("");
@@ -52,11 +57,19 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Legal" element={<Legal />} />
         <Route path="/Sign_in" element={<Sign_in />} />
+          <Route exact path='/dashboard' element={<DashboardPage />} />
+          <Route exact path='/login' element={<LoginPage />} />
+          <Route exact path='/reset-password' element={<ResetPassword />} />
+          <Route exact path='/profile' element={<ProfilePage />} />
+          <Route exact path='/change-password' element={<ChangePasswordPage />} />
+          <Route exact path='/preferences' element={<UserPreferencesPage />} />
+          <Route exact path='/admin/users' element={<UserManagement />} />
+          <Route exact path='/admin/therapists' element={<TherapistManagement />} />
+          <Route exact path='/admin/content' element={<ContentManagement />} />
       </Routes>
     </Router>
   );
 }
-
 
 
 export default App;
