@@ -2,19 +2,26 @@ package com.ppp.Therapedia.model;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Table;
+import jakarta.persistence.OneToMany;
+import java.util.Set;
 import java.io.Serializable;
+
 
 @Entity
 @DiscriminatorValue("patient")
+@Table(name = "Patient")
 public class Patient extends Profile implements Serializable {
     private static final long serialVersionUID = 1L;
-
     private String emergencyContact;
     private String dateOfBirth;
     private String gender;
     private String medicalHistory;
     private String reasonForTherapy;
+
+    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER, cascade = jakarta.persistence.CascadeType.ALL)
+    private Set<Consultation> consultations;
 
     public String getEmergencyContact() {
         return emergencyContact;
@@ -54,5 +61,13 @@ public class Patient extends Profile implements Serializable {
 
     public void setReasonForTherapy(String reasonForTherapy) {
         this.reasonForTherapy = reasonForTherapy;
+    }
+
+    public Set<Consultation> getConsultations() {
+        return consultations;
+    }
+
+    public void setConsultations(Set<Consultation> consultations) {
+        this.consultations = consultations;
     }
 }

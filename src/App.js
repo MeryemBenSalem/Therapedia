@@ -18,6 +18,14 @@ import UserManagement from './Pages/UserManagement';
 import TherapistManagement from './Pages/TherapistManagement';
 import ContentManagement from './Pages/ContentManagement';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import "./App.css";
+import NotFound from "./Pages/NotFound";
+import Doctors from "./Pages/Doctors";
+import Doctor_Description from "./Pages/Doctor_Description";
+import theme from "./assets/theme";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import Consultation from "./Pages/Consultation";
 
 function App() {
   const [username, setUsername] = useState("");
@@ -50,6 +58,9 @@ function App() {
   };
 
   return (
+    <div className="App">
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
     <Router>
       <Routes>
         <Route path="/sign_up" element={<SignUp />} />
@@ -66,8 +77,15 @@ function App() {
           <Route exact path='/admin/users' element={<UserManagement />} />
           <Route exact path='/admin/therapists' element={<TherapistManagement />} />
           <Route exact path='/admin/content' element={<ContentManagement />} />
+            <Route path="/Doctors" element={<Doctors />} />
+            <Route path="/Doctors/:id" element={<Doctor_Description />} />
+            <Route path="/Consultation" element={<Consultation/>} />
+            <Route path="/Patient" element={<Consultation />} />
+            <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
+    </ThemeProvider>
+      </div>
   );
 }
 

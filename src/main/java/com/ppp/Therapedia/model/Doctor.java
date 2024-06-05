@@ -1,18 +1,24 @@
 package com.ppp.Therapedia.model;
 
 import jakarta.persistence.DiscriminatorValue;
-import jakarta.persistence.Entity;
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import java.util.Set;
 
 @Entity
+@Table(name = "Doctor")
 @DiscriminatorValue("doctor")
 public class Doctor extends Profile implements Serializable {
     private static final long serialVersionUID = 1L;
-
+    
     private String licenseNumber;
     private String specialization;
     private String yearsOfExperience;
     private String Affiliations;
+
+    @OneToMany(mappedBy = "doctor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private Set<Consultation> consultations;
 
     public String getLicenseNumber() {
         return licenseNumber;
@@ -43,6 +49,14 @@ public class Doctor extends Profile implements Serializable {
     }
 
     public void setAffiliations(String affiliations) {
-        Affiliations = affiliations;
+        this.Affiliations = affiliations;
+    }
+
+    public Set<Consultation> getConsultations() {
+        return consultations;
+    }
+
+    public void setConsultations(Set<Consultation> consultations) {
+        this.consultations = consultations;
     }
 }

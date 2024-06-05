@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../Styles/SignUpPopUp.css';
+import '../Styles/signUpPopUp.css';
 import PropTypes from 'prop-types';
 import FrameImage from '../assets/Frame 1.png'; 
 import FrameImage1 from '../assets/logo2.png'; 
