@@ -1,47 +1,61 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import "../Styles/Card.css";
-import img6141 from "../assets/IMG_6141.JPG";
 
-export default function Card({ patient }) {
+export default function Card({ doctor }) {
+    const [xRotation, setXRotation] = useState(0);
+    const [yRotation, setYRotation] = useState(0);
     const cardRef = useRef(null);
 
+    function handleMouseMove(event) {
+        const card = cardRef.current;
+        if (!card) return;
+
+        const { offsetWidth: width, offsetHeight: height } = card;
+        const { clientX, clientY } = event;
+        const x = clientX - card.offsetLeft - width / 2;
+        const y = clientY - card.offsetTop - height / 2;
+        const mult = 40;
+        setXRotation((y / height) * mult);
+        setYRotation((x / width) * mult);
+    }
+
+    function resetTransformations() {
+        setXRotation(0);
+        setYRotation(0);
+    }
+
     return (
-        <div className="container">
-            <div className="card" ref={cardRef}>
-                <div className="column1">
-                    <img
-                        src={img6141} // Utiliser l'image importée
-                        alt={patient.name}
-                        className="doctor-img"
-                    />
-                </div>
-                <div className="column2">
-                    <h1 className="title">
-                        {patient.name}
-                    </h1>
-                    <ul className="dateofConsultation-box">
-                        <li>
-                            <strong>dateofConsultation:</strong>
-                            <br />
-                            {patient.dateofConsultation}
-                        </li>
-                    </ul>
-                    <ul className="education-box">
-                        <li>
-                            <strong>Education:</strong>
-                            <br />
-                            {patient.education.map((edu, index) => (
-                                <span key={index}>{edu}<br /></span>
-                            ))}
-                        </li>
-                    </ul>
-                    <ul className="residency-box">
-                        <li>
-                            <strong>Residency:</strong>
-                            <br />
-                            {patient.residency}
-                        </li>
-                    </ul>
+        <div
+            className="card"
+            ref={cardRef}
+            style={{
+                transform: `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`,
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseMove}
+            onMouseLeave={resetTransformations}
+        >
+            <div className="column1">
+                <img
+                    src={require("../assets/47516338_b7e0_2.png")}
+                    alt={`Doctor ${doctor.firstName} ${doctor.lastName}`}
+                    className="doctor-img"
+                />
+            </div>
+            <div className="column2">
+                <h1 className="title">{`Dr. ${doctor.firstName} ${doctor.lastName}`}</h1>
+                <ul className="speciality-box">
+                    <li>{doctor.specialization}</li>
+                </ul>
+                <ul className="info-box">
+                    <li><strong>License Number:</strong> {doctor.licenseNumber}</li>
+                    <li><strong>Years of Experience:</strong> {doctor.yearsOfExperience}</li>
+                    <li><strong>Affiliations:</strong> {doctor.affiliations}</li>
+                </ul>
+                <div className="button-box">
+                    <button className="book">
+                        <a href={`/Doctors/${doctor.id}`}>Book an Appointment</a>
+                    </button>
                 </div>
             </div>
         </div>

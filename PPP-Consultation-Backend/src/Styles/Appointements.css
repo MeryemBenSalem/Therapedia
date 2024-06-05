@@ -1,0 +1,123 @@
+/* Appointments.css */
+
+.card1 {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 ;
+  height: 240px;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.speciality-box,
+.education-box {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.speciality-box li,
+.education-box li {
+  font-size: 18px;
+  color: #666;
+  padding: 0;
+}
+
+.education-box li strong {
+  font-size: 20px;
+  color: #000;
+}
+
+.button-box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.book {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px; /* Set a specific width for the button */
+  text-align: center;
+}
+
+.book:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for popup */
+.popup {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10%;
+  text-align: center;
+  width:300px;
+  height: 200px;
+}
+
+.popup p {
+  margin-top: 20%;
+  margin-bottom: 10px;
+}
+
+.popup button {
+  margin: 0 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 20%;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+
+.popup button:hover {
+  background-color: rgba(1, 14, 28, 0.567); /* Adjust the color and opacity as needed */
+  border-color: rgba(1, 14, 28, 0.567); /* Match the background color */
+  color: white; /* Text color on hover */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #f00; /* Change color on hover if desired */
+}
