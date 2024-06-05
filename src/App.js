@@ -10,6 +10,7 @@ import SignupForm from "./Components/SignupForm"; // Import the SignupForm compo
 import theme from "./Assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import Consultation from "./Pages/Consultation";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/legal" element={<Legal />} />
             <Route path="/Doctors" element={<Doctors />} />
             <Route path="/Doctors/id" element={<Doctor_Description />} />
+            <Route path="/Patient" element={<Consultation />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
