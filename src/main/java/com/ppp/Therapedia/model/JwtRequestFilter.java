@@ -1,7 +1,7 @@
 package com.ppp.Therapedia.model;
 
 import com.ppp.Therapedia.service.MyUserDetailsService;
-import com.ppp.Therapedia.util.JwtUtil;
+import com.ppp.Therapedia.model.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;

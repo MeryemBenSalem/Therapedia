@@ -5,7 +5,7 @@ import com.ppp.Therapedia.model.JwtResponse;
 import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.service.MyUserDetailsService;
 import com.ppp.Therapedia.service.PatientService;
-import com.ppp.Therapedia.util.JwtUtil;
+import com.ppp.Therapedia.model.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

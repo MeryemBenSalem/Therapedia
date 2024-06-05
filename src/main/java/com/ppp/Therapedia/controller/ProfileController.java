@@ -6,7 +6,7 @@ import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.service.MyUserDetailsService;
 import com.ppp.Therapedia.service.PatientService;
 import com.ppp.Therapedia.service.ProfileService;
-import com.ppp.Therapedia.util.JwtUtil;
+import com.ppp.Therapedia.model.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,21 +45,16 @@ public class ProfileController {
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
-
-        // Authenticate using email instead of username
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
         );
 
-        // Load user details by email
         final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getEmail());
 
-        // Generate JWT token
         final String jwt = jwtUtil.generateToken(userDetails);
 
         return ResponseEntity.ok(new JwtResponse(jwt));
     }
-
 
 
 
