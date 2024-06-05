@@ -2,80 +2,147 @@ import React, { useState, useEffect } from 'react';
 import './TherapistManagement.css';
 
 const TherapistManagement = () => {
-  const [therapists, setTherapists] = useState([]);
-  const [newTherapists, setNewTherapists] = useState([]);
+    const [therapists, setTherapists] = useState([]);
+    const [newTherapist, setNewTherapist] = useState({
+        email: '',
+        licenseNumber: '',
+        specialization: '',
+        yearsOfExperience: '',
+        affiliations: ''
+    });
+    const [editingTherapist, setEditingTherapist] = useState(null);
+    const [error, setError] = useState(null);
 
-  useEffect(() => {
-    // Mock data for demonstration purposes
-    const mockTherapists = [
-      { id: 1, name: 'Therapist One', email: 'therapist.one@example.com', createdAt: '2022-06-01', isNew: false },
-      { id: 2, name: 'Therapist Two', email: 'therapist.two@example.com', createdAt: '2022-06-02', isNew: true },
-      { id: 3, name: 'Therapist Three', email: 'therapist.three@example.com', createdAt: '2022-06-03', isNew: true },
-    ];
+    useEffect(() => {
+        fetchTherapists();
+    }, []);
 
-    setTherapists(mockTherapists.filter(therapist => !therapist.isNew));
-    setNewTherapists(mockTherapists.filter(therapist => therapist.isNew));
+    const fetchTherapists = () => {
+        fetch('http://localhost:9090/doctor/getAll')
+            .then(response => response.json())
+            .then(data => setTherapists(data))
+            .catch(error => setError(error.message));
+    };
 
-    // Uncomment this to fetch real data from an API
-    // fetch('/api/therapists')
-    //   .then(response => response.json())
-    //   .then(data => setTherapists(data));
-  }, []);
+    const deleteTherapist = (therapistId) => {
+        fetch(`http://localhost:9090/doctor/${therapistId}`, {
+            method: 'DELETE'
+        })
+            .then(() => {
+                setTherapists(therapists.filter(therapist => therapist.id !== therapistId));
+            })
+            .catch(error => setError(error.message));
+    };
 
-  const deleteTherapist = (therapistId) => {
-    // Delete therapist from the list
-    setTherapists(therapists.filter(therapist => therapist.id !== therapistId));
+    const addTherapist = () => {
+        fetch('http://localhost:9090/doctor/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newTherapist)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Failed to add therapist: ${response.status} ${response.statusText}`);
+                }
+                return response.text();
+            })
+            .then(() => {
+                // Fetch the updated list of users
+                return fetch('http://localhost:9090/doctor/getAll')
+                    .then(response => response.json())
+                    .then(data => setTherapists(data));
+            })
+            .catch(error => setError(error.message));
+    };
 
-    // Uncomment this to delete therapist from an API
-    // fetch(`/api/therapists/${therapistId}`, { method: 'DELETE' })
-    //   .then(() => setTherapists(therapists.filter(therapist => therapist.id !== therapistId)));
-  };
+    const updateTherapist = () => {
+        fetch(`http://localhost:9090/doctor/${editingTherapist.id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(editingTherapist)
+        })
+            .then(() => {
+                fetchTherapists();
+            })
+            .catch(error => setError(error.message));
+    };
 
-  const handleAccept = (therapistId) => {
-    // Implement accept logic here
-    console.log(`Accepted therapist with ID ${therapistId}`);
-  };
+    const handleInputChange = (e, isEditing = false) => {
+        const { name, value } = e.target;
+        if (isEditing) {
+            setEditingTherapist({ ...editingTherapist, [name]: value });
+        } else {
+            setNewTherapist({ ...newTherapist, [name]: value });
+        }
+    };
 
-  const handleReject = (therapistId) => {
-    // Implement reject logic here
-    console.log(`Rejected therapist with ID ${therapistId}`);
-  };
+    return (
+        <div className="container">
+            <h2>Therapists Management</h2>
+            <ul className="management-list">
+                {therapists.map(therapist => (
+                    <li key={therapist.id} className="management-item">
+                        <div>
+                            <span><strong>Email:</strong> {therapist.email}</span><br />
+                            <span><strong>License Number:</strong> {therapist.licenseNumber}</span><br />
+                            <span><strong>Specialization:</strong> {therapist.specialization}</span><br />
+                            <span><strong>Years of Experience:</strong> {therapist.yearsOfExperience}</span><br />
+                            <span><strong>Affiliations:</strong> {therapist.affiliations}</span>
+                        </div>
+                        <button className="edit-button" onClick={() => setEditingTherapist(therapist)}>Edit</button>
+                        <button className="delete-button" onClick={() => deleteTherapist(therapist.id)}>Delete</button>
+                    </li>
+                ))}
+            </ul>
 
-  return (
-    <div className="container">
-      <h2>New Therapists</h2>
-      <ul className="management-list">
-        {newTherapists.map(therapist => (
-          <li key={therapist.id} className="management-item">
-            <div>
-              <span><strong>Name:</strong> {therapist.name}</span><br />
-              <span><strong>Email:</strong> {therapist.email}</span><br />
-              <span><strong>Created At:</strong> {therapist.createdAt}</span>
-            </div>
-            <div className="button-group">
-              <button className="action-button accept-button" onClick={() => handleAccept(therapist.id)}>Accept</button>
-              <button className="action-button reject-button" onClick={() => handleReject(therapist.id)}>Reject</button>
-            </div>
-            <button className="action-button delete-button" onClick={() => deleteTherapist(therapist.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-
-      <h2>Existing Therapists</h2>
-      <ul className="management-list">
-        {therapists.map(therapist => (
-          <li key={therapist.id} className="management-item">
-            <div>
-              <span><strong>Name:</strong> {therapist.name}</span><br />
-              <span><strong>Email:</strong> {therapist.email}</span><br />
-              <span><strong>Created At:</strong> {therapist.createdAt}</span>
-            </div>
-            <button className="action-button delete-button" onClick={() => deleteTherapist(therapist.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+            <h2>Add New Therapist</h2>
+            <form onSubmit={e => {
+                e.preventDefault();
+                editingTherapist ? updateTherapist() : addTherapist();
+            }}>
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={editingTherapist ? editingTherapist.email : newTherapist.email}
+                    onChange={e => handleInputChange(e, !!editingTherapist)}
+                />
+                <input
+                    type="text"
+                    name="licenseNumber"
+                    placeholder="License Number"
+                    value={editingTherapist ? editingTherapist.licenseNumber : newTherapist.licenseNumber}
+                    onChange={e => handleInputChange(e, !!editingTherapist)}
+                />
+                <input
+                    type="text"
+                    name="specialization"
+                    placeholder="Specialization"
+                    value={editingTherapist ? editingTherapist.specialization : newTherapist.specialization}
+                    onChange={e => handleInputChange(e, !!editingTherapist)}
+                />
+                <input
+                    type="text"
+                    name="yearsOfExperience"
+                    placeholder="Years of Experience"
+                    value={editingTherapist ? editingTherapist.yearsOfExperience : newTherapist.yearsOfExperience}
+                    onChange={e => handleInputChange(e, !!editingTherapist)}
+                />
+                <input
+                    type="text"
+                    name="affiliations"
+                    placeholder="Affiliations"
+                    value={editingTherapist ? editingTherapist.affiliations : newTherapist.affiliations}
+                    onChange={e => handleInputChange(e, !!editingTherapist)}
+                />
+                <button type="submit">{editingTherapist ? "Update Therapist" : "Add Therapist"}</button>
+            </form>
+        </div>
+    );
 };
 
 export default TherapistManagement;

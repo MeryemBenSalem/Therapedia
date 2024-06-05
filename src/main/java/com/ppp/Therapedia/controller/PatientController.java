@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 @RestController
-@RequestMapping("/patients")
+@RequestMapping("/patient")
 @CrossOrigin(origins = "http://localhost:3000")
 public class PatientController extends ProfileController {
 

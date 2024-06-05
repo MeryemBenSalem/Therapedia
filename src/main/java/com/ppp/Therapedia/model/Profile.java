@@ -1,6 +1,7 @@
 package com.ppp.Therapedia.model;
 
 import jakarta.persistence.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -19,6 +20,7 @@ public class Profile implements Serializable {
     private Integer id;
 
     @Column(name = "first_name")
+    @NotNull
     private String firstName;
 
     @Column(name = "last_name")

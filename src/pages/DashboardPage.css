@@ -1,8 +1,6 @@
 html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to bottom, #B0C4D3, #ffffff); /* Apply background to body */
+
+  background: linear-gradient( #B0C4D3, #ffffff); /* Apply background to body */
 }
 
 .dashboard-container {

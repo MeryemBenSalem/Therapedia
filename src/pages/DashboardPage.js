@@ -116,10 +116,10 @@ class DashboardPage extends React.Component {
                 <div className="card-body-icon">
                   <i className="fa fa-fw fa-user"></i>
                 </div>
-                <div className="mr-5">User Management</div>
+                <div className="mr-5">Patients Management</div>
               </div>
               <Link className="card-footer text-white clearfix small z-1" to="/admin/users">
-                <span className="float-left">Manage user accounts</span>
+                <span className="float-left">Manage Patient Accounts</span>
                 <span className="float-right">
                   <i className="fa fa-angle-right"></i>
                 </span>

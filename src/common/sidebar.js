@@ -30,7 +30,7 @@ class Sidebar extends React.Component {
                         </Link>
                     </li>
                     <li className="mb-1" style={{ backgroundColor: "#68283D" }}>
-                        <Link className="text-white" to="/login" style={{ padding: "10px 15px", display: "block" }}>
+                        <Link className="text-white" to="/signin" style={{ padding: "10px 15px", display: "block" }}>
                             <i className="fa fa-sign-out" aria-hidden="true"></i> Sign out
                         </Link>
                     </li>
