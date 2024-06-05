@@ -37,8 +37,8 @@ public class DoctorController extends ProfileController {
             doctorService.saveDoctor(doctor);
 
             // Create a session attribute
-            session.setAttribute("user", doctor);
-
+            session.setAttribute("doctor", doctor);
+            System.out.println(session);
             // Return success response
             return new ResponseEntity<>("Successfully signed up.", HttpStatus.OK);
         } catch (Exception e) {

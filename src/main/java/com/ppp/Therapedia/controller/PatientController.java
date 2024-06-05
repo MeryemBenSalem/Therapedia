@@ -2,11 +2,13 @@ package com.ppp.Therapedia.controller;
 
 import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.model.Profile;
+import com.ppp.Therapedia.repository.PatientRepository;
 import com.ppp.Therapedia.service.PatientService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,7 +22,13 @@ public class PatientController extends ProfileController {
     private PatientService patientService;
 
     @Autowired
-    private HttpSession session;
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private PatientRepository patientRepository;
+
+   // @Autowired
+   // private HttpSession session;
 
     @PostMapping("/add")
     public String add(@RequestBody Patient patient){
@@ -34,17 +42,21 @@ public class PatientController extends ProfileController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestBody Patient patient) {
-        try {
-            //Save the new patient
-            patientService.savePatient(patient);
-            //Create a session attribute
-            session.setAttribute("user", patient);
-            //Return success response
-            return new ResponseEntity<>("Successfully signed up.", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to sign up. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public String signup(@RequestBody Patient patient) {
+        patient.setPassword(passwordEncoder.encode(patient.getPassword()));
+        patientRepository.save((patient));
+        return "User registered successfully!";
+    }
+
+    @PostMapping("/login")
+    public String login() {
+        // Spring Security handles login automatically
+        return "Login successful!";
+    }
+
+    @GetMapping("/checkSession")
+    public String checkSession() {
+        return "Session is active!";
     }
 
     @GetMapping("/{id}")

@@ -27,7 +27,7 @@ public class ProfileController {
         return "login";
     }
 
-    @PostMapping("/login")
+    /* @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Profile profile, HttpSession session) {
         System.out.println("Received email: " + profile.getEmail());
         System.out.println("Received password: " + profile.getPassword());
@@ -42,7 +42,7 @@ public class ProfileController {
         } catch (Exception e) {
             return new ResponseEntity<>("Failed to sign in. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    } */
 
     @GetMapping("/isloggedin")
     public ResponseEntity<?> isLoggedIn(HttpSession session) {
