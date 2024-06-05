@@ -71,35 +71,53 @@
 
 /* Styles for popup */
 .popup {
+  display: block;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: white;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  width: 300px;
-  height: 200px;
+  border-radius: 10%;
   text-align: center;
+  width:300px;
+  height: 200px;
 }
 
 .popup p {
-  margin-bottom: 16px;
+  margin-top: 20%;
+  margin-bottom: 10px;
 }
 
 .popup button {
-  padding: 8px 16px;
-  margin: 0 8px;
-  border: none;
-  border-radius: 4px;
+  margin: 0 5px;
+  padding: 8px 12px;
   cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  transition: background-color 0.3s ease;
+  border-radius: 20%;
+  background-color: transparent;
+  border: 1px solid #ccc;
 }
 
 .popup button:hover {
-  background-color: #0056b3;
+  background-color: rgba(1, 14, 28, 0.567); /* Adjust the color and opacity as needed */
+  border-color: rgba(1, 14, 28, 0.567); /* Match the background color */
+  color: white; /* Text color on hover */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #f00; /* Change color on hover if desired */
 }

@@ -20,6 +20,11 @@ function Appointments() {
     // You can add more logic here, such as sending booking request to server, etc.
   };
 
+
+  const handleClose = () => {
+    setShowConfirm(false);
+  };
+
   return (
     <div className="card1" ref={card1Ref}>
       <div className="column">
@@ -44,6 +49,9 @@ function Appointments() {
       </div>
       {showConfirm && (
         <div className="popup">
+          <button className="close-btn" onClick={handleClose}>
+            X
+          </button>
           <p>Confirm booking?</p>
           <button onClick={handleConfirm}>Yes</button>
         </div>
