@@ -18,8 +18,8 @@ function Doctors() {
 
         <p className="dt-description">
           Meet our exceptional team of specialist doctors, dedicated to
-          providing top-notch healthcare services at Health Plus. Trust in their
-          knowledge and experience to lead you towards a healthier and happier
+          providing top-notch healthcare services at Health Plus. <br></br>
+          Trust in their knowledge and experience to lead you towards a healthier and happier
           life.
         </p>
       </div>
@@ -34,7 +34,7 @@ function Doctors() {
         />
         <DoctorCard
           img={profile2}
-          name="Dr. Amine HAMDI"
+          name="Dr. Amine BARYOUCHA"
           title="Family and Marriage Therapy"
           stars="4.8"
           reviews="700"

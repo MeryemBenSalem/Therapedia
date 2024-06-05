@@ -11,16 +11,19 @@ import { jwtDecode } from "jwt-decode";
 
 function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+
     useEffect(() => {
         // Retrieve token from localStorage
         const token = localStorage.getItem("token");
         if (token) {
             const decodedToken = decodeToken(token);
             if (decodedToken) {
+                console.log(decodedToken)
                 setIsLoggedIn(true); // Set isLoggedIn to true if token exists
             }
         }
     }, []);
+
     const decodeToken = (token) => {
         try {
             // Decode the JWT token to get the payload
@@ -33,10 +36,9 @@ function Home() {
         }
     };
 
-
     return (
         <div className="home-section" style={{ backgroundColor: "#B0C4D3" }}>
-            <Navbar isLoggedIn={isLoggedIn} />
+            <Navbar isLoggedIn={isLoggedIn} /> {/* Pass isLoggedIn as a prop */}
             <BookAppointment />
             <Services />
             <About />

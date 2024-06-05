@@ -1,16 +1,10 @@
-// sign_up.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import '../Styles/sign_up_doc.css'; 
 import logo from '../assets/logo.png';
 import cond from '../assets/terms&conditions.pdf';
 import { Link } from 'react-router-dom';
 
-
-
-
-const SignUp = () => {
+const Sign_up_doc = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -49,22 +43,8 @@ const SignUp = () => {
       if (response.ok) {
         console.log("New user added");
 
-        // Check if the response content type is JSON
-        const contentType = response.headers.get("content-type");
-        let sessionData;
-
-        if (contentType && contentType.includes("application/json")) {
-          sessionData = await response.json();
-        } else {
-          sessionData = await response.text();
-        }
-
-        // Optionally store session info in local storage or state
-        // This is only necessary if you need to use the session data on the client side
-        localStorage.setItem('session', JSON.stringify(sessionData));
-
-        // Redirect to the home page or another page
-        window.location='http://localhost:3000/'
+        // Redirect to the home page
+        window.location='http://localhost:3000/';
       } else {
         console.error('Signup failed');
         alert('Signup failed. Please try again.');
@@ -75,138 +55,144 @@ const SignUp = () => {
     }
   };
 
-  return (
-    
-    <div className="sign-up-container">
-        <div className="close-button-container">
-    <Link to="/welcome" className="close-button">x</Link>
-  </div>
-      <div className="logo-container">
-        <img src={logo} alt="Therapedia Logo" className="logo" />
-      </div>
 
-      <h1>Ready to get started ?</h1>
-      <h2>Join Therapedia & Make a Difference </h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-        
-          <input
-            type="text"
-            name="firstName"
-            placeholder= " 👨🏻‍⚕️  First Name"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          /> &nbsp; &nbsp;
-          <input
-            type="text"
-            name="lastName"
-            placeholder=" 👨🏻‍⚕️  Last Name"
-            value={formData.lastName}
-            onChange={handleChange}
-            required
-          />
+  return (
+      <div className="container">
+        <div className="logoContainer">
+          <img src={logo} alt="Therapedia Logo" className="logo" />
         </div>
-        <div className="form-group">
-          <input
-            type="email"
-            name="email"
-            placeholder=" 📧  Email Address"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          /> 
-        </div>
-        <div className="form-group">
-          <input
-            type="password"
-            name="password"
-            placeholder=" 🔒  Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          /> &nbsp; &nbsp;
-          <input
-            type="password"
-            name="confirmPassword"
-            placeholder=" 🔒  Confirm Password"
-            value={formData.confirmPassword}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <input 
-            type="number"
-            name="phone"
-            placeholder=" 📞  Phone Number"
-            value={formData.phone}
-            onChange={handleChange}
-            style={{ width: '540px' }} 
-          /> &nbsp; &nbsp;
-          <div className='license'>
-          <input
-            type="number"
-            name="licenseNumber"
-            placeholder=" 🔢  License Number"
-            value={formData.licenseNumber}
-            onChange={handleChange}
-            style={{ width: '540px' }} 
-          /> </div>
-        </div>
-        <div className="form-group">
-        <div className="input-container">
-  <div className='specialization'>
-  <select
-    name="specialization"
-    value={formData.specialization}
-    onChange={handleChange}
-    required
-  >
-    <option value=""> 🎓  specialization</option>
-    <option value="male">Clinical Psychology</option>
-    <option value="female">Psychiatry</option>
-    <option value="male">Counseling</option>
-    <option value="other">Other</option>
-  </select>
-  </div>
-  <div>
-  <input
-            type="number"
-            name="yearsOfExperience"
-            placeholder=" 💼  Years of Experience"
-            value={formData.yearsOfExperience}
-            onChange={handleChange}
-          />
+        <h1>Ready to get started ?</h1>
+        <h2>Join Therapedia & Make a Difference </h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <input
+                type="text"
+                name="firstName"
+                placeholder="👨🏻‍⚕️ First Name"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+            />
+            &nbsp; &nbsp;
+            <input
+                type="text"
+                name="lastName"
+                placeholder="👨🏻‍⚕️ Last Name"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+            />
           </div>
-</div>
-        </div>
-        <div className="form-group">
+          <div className="form-group">
+            <input
+                type="email"
+                name="email"
+                placeholder="📧 Email Address"
+                value={formData.email}
+                onChange={handleChange}
+                required
+            />
+          </div>
+          <div className="form-group">
+            <input
+                type="password"
+                name="password"
+                placeholder="🔒 Password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+            />
+            &nbsp; &nbsp;
+            <input
+                type="password"
+                name="confirmPassword"
+                placeholder="🔒 Confirm Password"
+                value={formData.confirmPassword}
+                onChange={handleChange}
+                required
+            />
+          </div>
+          <div className="form-group">
+            <input
+                type="number"
+                name="phone"
+                placeholder="📞 Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                style={{ width: '540px' }}
+            />
+            &nbsp; &nbsp;
+            <div className="license">
+              <input
+                  type="number"
+                  name="licenseNumber"
+                  placeholder="🔢 License Number"
+                  value={formData.licenseNumber}
+                  onChange={handleChange}
+                  style={{ width: '540px' }}
+              />
+            </div>
+          </div>
+          <div className="form-group">
+            <div className="input-container">
+              <div className="specialization">
+                <select
+                    name="specialization"
+                    value={formData.specialization}
+                    onChange={handleChange}
+                    required
+                >
+                  <option value="">🎓 Specialization</option>
+                  <option value="clinicalPsychology">Clinical Psychology</option>
+                  <option value="psychiatry">Psychiatry</option>
+                  <option value="counseling">Counseling</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <input
+                  type="number"
+                  name="yearsOfExperience"
+                  placeholder="💼 Years of Experience"
+                  value={formData.yearsOfExperience}
+                  onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className="form-group">
           <textarea
-            name="Affiliations"
-            placeholder=" 📝  Professional Affiliations"
-            value={formData.Affiliations}
-            onChange={handleChange}
+              name="affiliations"
+              placeholder="📝 Professional Affiliations"
+              value={formData.affiliations}
+              onChange={handleChange}
           ></textarea>
-        </div>
-        
-        <div className="form-group" style={{ display: 'flex', alignItems: 'center' }}>
-  <input
-    type="checkbox"
-    name="agreement"
-    checked={formData.agreement}
-    onChange={(e) => setFormData(prevState => ({ ...prevState, agreement: e.target.checked }))}
-    required
-  />
-  <span style={{ marginLeft: '10px' }}>
-    I agree to <a href={cond} target="_blank" rel="noopener noreferrer">the rules and conditions of Therapedia</a>
-  </span>
-</div>
-        <button type="submit">Sign Up</button>
-      
-      </form>
-    </div>
+          </div>
+          <div className="form-group">
+            <input
+                type="checkbox"
+                name="agreement"
+                checked={formData.agreement}
+                onChange={(e) =>
+                    setFormData(prevState => ({
+                      ...prevState,
+                      agreement: e.target.checked
+                    }))
+                }
+                required
+            />
+            <span>
+            I agree to{' '}
+              <a href={cond} target="_blank" rel="noopener noreferrer">
+              the rules and conditions of Therapedia
+            </a>
+          </span>
+          </div>
+          <button type="submit" className="DOCbutton">Sign Up</button>
+        </form>
+        <p>
+          Already have an account? <Link to="/sign_in">Sign In</Link>
+        </p>
+      </div>
   );
 };
 
-export default SignUp;
+export default Sign_up_doc;

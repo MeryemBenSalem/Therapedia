@@ -1,4 +1,6 @@
 package com.ppp.Therapedia.controller;
+import com.fasterxml.jackson.databind.annotation.JsonAppend;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 
 import com.ppp.Therapedia.model.Doctor;
@@ -17,6 +19,10 @@ import java.util.NoSuchElementException;
 @RequestMapping("/doctor")
 public class DoctorController extends ProfileController {
 
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Autowired
     private DoctorService doctorService;
 
@@ -30,20 +36,10 @@ public class DoctorController extends ProfileController {
     }
 
     @PostMapping("/signup")
-
-     public ResponseEntity<?> signup(@RequestBody Doctor doctor) {
-        try {
-            // Save the new profile
-            doctorService.saveDoctor(doctor);
-
-            // Create a session attribute
-            session.setAttribute("doctor", doctor);
-            System.out.println(session);
-            // Return success response
-            return new ResponseEntity<>("Successfully signed up.", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to sign up. Please try again.", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public String signup(@RequestBody Doctor doctor) {
+        doctor.setPassword(passwordEncoder.encode(doctor.getPassword()));
+        doctorService.saveDoctor(doctor);
+        return "User registered successfully!";
     }
 
 

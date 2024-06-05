@@ -1,0 +1,183 @@
+.container {
+  background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);
+  padding: 50px 50px 300px;
+  display: grid;
+  grid-template-rows: auto 1fr; /* One row for logo, rest for content */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-items: center; /* Center logo horizontally */
+}
+
+.signUpContainer {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fcf1f6;
+  grid-row: 2;  /* Place within the second row of the grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Spacing between form elements */
+  text-align: center ;
+}
+
+
+.logo-container {
+  position: absolute;
+  top: 20px;
+  flex-direction: column;
+}
+
+.logo {
+  height: 300px;
+  width: auto;
+  
+}
+
+h1 {
+  color: #68283D;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #44312B;
+  text-align: center;
+  margin-top: 0;
+}
+
+h1, h2 {
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea,
+button.DOCbutton {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  margin :10px;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+textarea {
+  background-color: #fff;
+}
+
+input[type="number"]{
+  max-width: 250px;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+button.DOCbutton {
+  background: linear-gradient(to right, #68283D, #44312B);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+
+button.DOCbutton[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button.DOCbutton:hover {
+  background: linear-gradient(to right, #552333, #33201e);
+}
+
+
+textarea {
+  resize: vertical;
+}
+
+label {
+  background-color: #D1B3BC;
+  border: #D1B3BC;
+  color: #000000;
+}
+
+.formGroup {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.formGroup select {
+  flex: 1; /* Allow the select element to grow */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px; /* Adjust padding for better clickability and aesthetics */
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+select:focus { /* Style on focus */
+  border: 1px solid #68283D; /* Add a focus border for better usability */
+}
+
+
+a {
+  color: #999;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+.close-button-container {
+  position: absolute;
+  right: 20px;
+  background-color: #D1B3BC;
+
+}
+
+.close-button {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: #AD8291;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  color: #68283D;
+  font-weight: bold;
+}
+
+.close-button:hover {
+  color: black;
+}
+

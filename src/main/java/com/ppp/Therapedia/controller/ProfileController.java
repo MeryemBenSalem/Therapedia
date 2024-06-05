@@ -45,6 +45,9 @@ public class ProfileController {
 
     @PostMapping("/login")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+        System.out.println(authenticationRequest.getEmail());
+        System.out.println(authenticationRequest.getPassword());
+
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(authenticationRequest.getEmail(), authenticationRequest.getPassword())
         );

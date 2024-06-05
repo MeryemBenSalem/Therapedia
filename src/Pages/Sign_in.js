@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
+import '../Styles/sign_in.css';
+import logo from '../assets/logo2.png';
+
 
 const Sign_in = () => {
     const [formData, setFormData] = useState({
@@ -43,7 +46,15 @@ const Sign_in = () => {
 
     return (
         <div className="container">
+
+           
+
             <div className="sign-in-container">
+
+                    <div className="logo-container">
+                            <img src={logo} alt="Therapedia Logo" className="logo" />
+                        </div>
+
                 <h1>Welcome Back!</h1>
                 <h2>Sign In to Your Account</h2>
                 <form onSubmit={handleSubmit}>
@@ -67,7 +78,7 @@ const Sign_in = () => {
                             required
                         />
                     </div>
-                    <button type="submit">Sign In</button>
+                    <button type="submit" className="signINbutton">Sign In</button>
                 </form>
                 <p>
                     Don't have an account? <Link to="/sign_up">Sign Up</Link>
