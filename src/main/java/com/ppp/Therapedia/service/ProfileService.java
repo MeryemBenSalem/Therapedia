@@ -1,15 +1,11 @@
 package com.ppp.Therapedia.service;
 
-import com.ppp.Therapedia.model.Doctor;
-import com.ppp.Therapedia.model.Profile;
 //import com.ppp.Therapedia.model.Patient;
 //import com.ppp.Therapedia.repository.PatientRepository;
-import com.ppp.Therapedia.repository.ProfileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ProfileService {

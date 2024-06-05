@@ -6,7 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b4bf4afe-9726-44b3-a0d1-5ca839cc3a44" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/DoctorController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/PatientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/ProfileController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Doctor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Patient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Profile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/DoctorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/PatientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/ProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/DoctorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/ProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/ProfileService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
