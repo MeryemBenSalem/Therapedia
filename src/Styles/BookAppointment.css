@@ -48,19 +48,20 @@
     border: 1px solid transparent;
     border-radius: 28px;
     outline: transparent;
-    background-color: #68283D;
+    background: linear-gradient(to right, #68283D, #44312B);
     font-size: 18px;
     font-family: 'Rubik', sans-serif;
     letter-spacing: .8px;
     cursor: pointer;
     transition: all .4s ease;
-    margin: auto;
-    margin-left: 25%;
+    display: block; /* Ensures it behaves as a block-level element */
+     margin: 0 auto; 
+    width: 50%;
 }
 .text-appointment-btn:hover {
-    color: #68283D;
-    background-color: transparent;
-    border: 1px solid #68283D;
+    color:black;
+    background: linear-gradient(to right,#B0C4D3, #7fb7e2);
+    border: 1px solid #7fb7e2;
 }
 .text-stats {
     margin-top: 25px;

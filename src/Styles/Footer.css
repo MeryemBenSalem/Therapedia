@@ -1,6 +1,5 @@
 .footer-section {
-    background-color: linear-gradient(to bottom, #B0C4D3 , #FCF1F5);
-    ;
+    background-color: #FCF1F5;
     padding: 20px 0; /* Reduced padding to decrease height */
 }
 

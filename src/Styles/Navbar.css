@@ -5,6 +5,7 @@
     align-items: center;
     height: 20px;
     background-color: #FCF1F5; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 .navbar-items {
@@ -56,6 +57,9 @@
     cursor: pointer;
     transition: all .4s ease;
     margin-right: 0px; /* Adjusted value to move the button to the right */
+    text-decoration: none; /* Remove underline */
+    display: flex;
+    align-items: center;
 }
 
 .navbar-btn:hover {
@@ -141,20 +145,19 @@
     }
 }
 
-.navbar-btn {
-    text-decoration: none; /* Remove underline */
-}
-
-.logo-container {
-    position: absolute;
-    top: center;
-    left: 20px;
-    z-index: 1; 
-}
-
-.logo {
-    width: 250px; 
-    height: auto; 
-    top: 10px; /* Adjusted value to move the items to the top */
-    margin-top: -5px;
-}
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 250px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left: -25px; /* Adjust spacing between logo and button */
+    }
+  
+  .navbar-btn svg {
+    margin-right: 5px; /* Adjust spacing between icon and text */
+  }
+  

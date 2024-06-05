@@ -1,14 +1,14 @@
-
 import React from 'react';
-import { createRoot } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 
 createRoot(document.getElementById('root')).render(<App />);
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import SignUp from './Pages/sign_up'; 
-import SignUpDoc from './Pages/sign_up_doc'; 
+
+import SignUpDoc from './Pages/Sign_up_doc'; 
+import SignUp from './Pages/Sign_up';
 import Home from './Pages/Home'; 
 import Legal from './Pages/Legal'; 
 import Sign_in from './Pages/Sign_in';
