@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "../Styles/Appointements.css";
 
 function Appointments() {
@@ -7,6 +7,18 @@ function Appointments() {
   const specialityboxRef = useRef(null);
   const educationboxRef = useRef(null);
   const bookRef = useRef(null);
+  
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleBookClick = () => {
+    setShowConfirm(true);
+  };
+
+  const handleConfirm = () => {
+    // Handle booking confirmation logic here
+    setShowConfirm(false);
+    // You can add more logic here, such as sending booking request to server, etc.
+  };
 
   return (
     <div className="card1" ref={card1Ref}>
@@ -25,9 +37,17 @@ function Appointments() {
           </li>
         </ul>
         <div className="button-box" ref={bookRef}>
-          <button className="book">Book </button>
+          <button className="book" onClick={handleBookClick}>
+            Book
+          </button>
         </div>
       </div>
+      {showConfirm && (
+        <div className="popup">
+          <p>Confirm booking?</p>
+          <button onClick={handleConfirm}>Yes</button>
+        </div>
+      )}
     </div>
   );
 }
