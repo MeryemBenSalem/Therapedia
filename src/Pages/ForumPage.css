@@ -1,14 +1,15 @@
 /* ForumPage.css */
 
 .forum-page {
-    background : linear-gradient(#d5b7f5,#fdf8e2,#ffddd3);
-    background-size: 300% 300%;
+    background: linear-gradient(#d5b7f5, #fdf8e2, #ffddd3);
+    background-size: cover; /* Set background size to cover */
     height: 100%;
     width: 100%;
     margin: 0;
 }
 
-.forum-page body, .forum-page html {
+.forum-page body,
+.forum-page html {
     height: 100%;
     margin: 0;
 }
@@ -41,15 +42,23 @@
     padding: 20px;
 }
 
+.notif-text {
+    background-color: #3e2723;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    margin: 0 0 20px;
+}
+
 .forum-page .add-question {
     background-color: #68283d;
     border-radius: 8px;
     border-style: none;
     box-sizing: border-box;
-    color: #FFFFFF;
+    color: #fff;
     cursor: pointer;
     display: inline-block;
-    font-family:  "Cursive", serif;
+    font-family: "Cursive", serif;
     font-size: 14px;
     font-weight: 500;
     height: 40px;
@@ -61,7 +70,7 @@
     position: relative;
     text-align: center;
     text-decoration: none;
-    transition: color 100ms;
+    transition: background-color 100ms;
     vertical-align: baseline;
     user-select: none;
     -webkit-user-select: none;
@@ -70,7 +79,7 @@
 
 .forum-page .add-question:hover,
 .forum-page .add-question:focus {
-    background-color: #F082AC;
+    background-color: #f082ac;
 }
 
 .forum-page h1 {
@@ -85,7 +94,6 @@
 
 .forum-page .modal-overlay {
     position: fixed;
-
     top: 0;
     left: 0;
     width: 100%;

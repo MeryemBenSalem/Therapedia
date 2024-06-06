@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Question from '../Components/Question';
 import QuestionForm from '../Components/QuestionForm';
+import Notification from '../Components/Notification'; // Import the Notification component
 import './ForumPage.css';
 import { jwtDecode } from 'jwt-decode';
+
 const ForumPage = () => {
     const [questions, setQuestions] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [userId, setUserId] = useState(null);
     const [email, setEmail] = useState(null);
+    const [notifications, setNotifications] = useState([]);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -19,6 +22,7 @@ const ForumPage = () => {
             }
         }
         fetchQuestions();
+        fetchNewestQuestions(); // Fetch newest questions when component mounts
     }, []);
 
     const fetchUserId = async (email) => {
@@ -48,6 +52,26 @@ const ForumPage = () => {
             console.error('Error fetching questions:', error);
         }
     };
+
+    const fetchNewestQuestions = async () => {
+        try {
+            const response = await fetch('http://localhost:8080/Question');
+            if (!response.ok) {
+                throw new Error('Failed to fetch newest questions');
+            }
+            const data = await response.json();
+            const sortedQuestions = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+            // Convert date to a simpler format
+            const simplifiedQuestions = sortedQuestions.map(question => ({
+                ...question,
+                date: new Date(question.date).toLocaleDateString()
+            }));
+            setNotifications(simplifiedQuestions);
+        } catch (error) {
+            console.error('Error fetching newest questions:', error);
+        }
+    };
+
 
     const addQuestion = async (questionData) => {
         if (!userId) return;
@@ -120,7 +144,10 @@ const ForumPage = () => {
                     </div>
                 </div>
                 <div className="notifications">
-                    <h2>Notifications</h2>
+                    <h2 className="notif-text">Latest Posts</h2>
+                    {notifications.map((notification, index) => (
+                        <Notification key={index} message={`${notification.content} - ${notification.date}`} />
+                    ))}
                 </div>
             </div>
         </div>
