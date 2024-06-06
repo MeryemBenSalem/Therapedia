@@ -1,0 +1,88 @@
+/* Container to center the sign-in container vertically and horizontally */
+.container {
+    background: linear-gradient(to bottom, #FCF1F5, #B0C4D3);
+    padding: 50px 50px 300px;
+    display: grid;
+    grid-template-rows: auto 1fr; /* One row for logo, rest for content */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center; /* Center logo horizontally */
+}
+
+.sign-in-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fcf1f6;
+    grid-row: 2;  /* Place within the second row of the grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between form elements */
+    text-align: center;
+}
+
+.sign-in-container h1 {
+    color: #68283D;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.sign-in-container h2 {
+    color: #44312B;
+    text-align: center;
+    margin-top: 0;
+}
+
+.sign-in-container .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+    color: #737373;
+}
+
+.sign-in-container input[type="email"],
+.sign-in-container input[type="password"] {
+    width: 80%; 
+    border: 1px solid #FCF1F5;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffffffa9;
+    text-align: center; /* Center the text inside the inputs */
+}
+
+button.signINbutton {
+    width: 100%;
+    max-width: 315px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    background: linear-gradient(to right, #68283D, #44312B);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+
+
+
+
+
+
+
+.sign-in-container button:hover {
+    background-color: #44312B;
+}
+
+.sign-in-container a {
+    color: #BC1823;
+    text-decoration: none;
+}
+
+.sign-in-container a:hover {
+    color: red;
+}

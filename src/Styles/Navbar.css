@@ -1,0 +1,163 @@
+.navbar-section {
+    display: flex;
+    padding: 40px 40px;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(252, 241, 245, 1), rgba(252, 241, 245, 0.26));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+
+.navbar-items {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    top: 20px; /* Adjusted value to move the items to the top */
+    left: 30%; /* Adjusted value to move items to the left */
+}
+
+.navbar-items > li {
+    list-style-type: none;
+    text-align: right;
+}
+
+.navbar-links {
+    text-decoration: none;
+    color: #68283D ;
+    font-size: 18px;
+    font-weight: bold; /* Bold */
+    letter-spacing: .8px;
+    margin-top: 5px;
+}
+
+.navbar-links:hover {
+    color: red; /* Dark red */
+}
+
+.navbar-btn-container {
+    margin-left: auto; /* Pushes the button to the right */
+    background: transparent;
+    margin-right: 0px; /* Adjusted value to move the button to the right */
+}
+
+.navbar-btn {
+    padding: 14px 20px;
+    color: #F5F5F5; /* Light gray */
+    border: 1px solid transparent;
+    border-radius: 28px;
+    outline: transparent;
+    background-color: #68283D; /* Dark red */
+    font-size: 18px;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .8px;
+    cursor: pointer;
+    transition: all .4s ease;
+    text-decoration: none;
+    align-items: center;
+}
+
+.navbar-btn:hover {
+    color: #68283D; /* Dark red */
+    background-color: #D1B3BC; /* Light brown */
+    border: 1px solid #68283D; /* Dark red */
+}
+
+/* Hamburger Icon */
+.mobile-nav {
+    display: none;
+}
+
+.hamb-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.hamb-icon:hover {
+    color: #68283D; /* Dark red */
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: #F5F5F5; /* Light gray */
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    transition: left .5s ease-in-out;
+}
+
+.mobile-navbar-close {
+    position: absolute;
+    top: 28px;
+    right: 28px;
+}
+
+.mobile-navbar-close .hamb-icon:hover {
+    color: rgb(255, 22, 22);
+}
+
+.open-nav {
+    left: 0;
+}
+
+.mobile-navbar-links {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    gap: 10px;
+}
+
+.mobile-navbar-links li a {
+    text-decoration: none;
+    color: #000000; /* Black */
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    letter-spacing: .2px;
+    transition: color .3s ease-in-out;
+    margin-top: 0%;
+}
+
+.mobile-navbar-links li a:hover {
+    color: darkred; /* Dark red */
+}
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .navbar-btn, .navbar-items {
+        display: none;
+    }
+    .mobile-nav {
+        display: block;
+    }
+}
+
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    margin-top: 10px;
+    max-width: 250px;
+    height: auto;
+
+}

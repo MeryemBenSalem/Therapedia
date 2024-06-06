@@ -1,2 +1,9 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+# https://www.robotstxt.org/robotstxt.html
+>>>>>>> AdminDashboardFront
+=======
+>>>>>>> Cherifa
 User-agent: *
 Disallow:

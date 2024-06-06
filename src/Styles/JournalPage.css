@@ -4,7 +4,9 @@
   align-items: center;
   padding: 40px;
   gap: 20px;
+  background: linear-gradient( #B0C4D3, #ffffff); /* Apply background to body */
 }
+
 
 .greeting {
   font-size: 36px;

@@ -1,0 +1,107 @@
+.footer-section {
+    background:linear-gradient(to top, rgba(252, 241, 245, 0.93), rgba(252, 241, 245, 0.28));;
+}
+
+.footer-container {
+    padding: 50px 180px 40px 40px; /* Reduced padding to decrease height */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: white;
+    border-bottom: 2px solid #293241;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Title */
+.ft-title {
+    color: #1A8EFD;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-description {
+    width: 420px;
+    margin: 16px 0 20px; /* Adjusted margin to reduce height */
+    color: #293241;
+    font-family: 'arial', sans-serif;
+    font-size: 20px;
+    letter-spacing: .8px;
+    line-height: 1.7rem;
+}
+
+/* Lists */
+.ft-list-title {
+    margin: 16px 0; /* Adjusted margin to reduce height */
+    font-family: ' arial', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: .8px;
+    text-align: center;
+    color: #68283D;
+}
+
+.ft-list-items {
+    list-style-type: none;
+    text-align: center;
+}
+
+.ft-list-items li a {
+    text-decoration: none;
+    color: #343639;
+    padding: 0 0 2px 0;
+    border-bottom: 2px dotted transparent;
+    transition: border .2s ease;
+}
+
+.ft-list-items li {
+    margin: 16px 0; /* Adjusted margin to reduce height */
+    font-family: 'arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+.ft-list-items li a:hover {
+    border-bottom: 2px dotted #a5a7ac;
+}
+
+/* CopyRight */
+.ft-copyright {
+    padding: 10px 20px; /* Reduced padding to decrease height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #343639;
+    font-family: 'arial', sans-serif;
+    font-size: 16px; /* Adjusted font size */
+    font-weight: bold;
+    letter-spacing: .8px;
+}
+
+/* Responsive */
+@media screen and (max-width: 700px) {
+    .footer-container {
+        padding: 12px; /* Reduced padding for small screens */
+        flex-wrap: wrap; /* Allow wrapping on small screens */
+    }
+    .ft-description {
+        width: 100%;
+        margin: 12px 0; /* Adjusted margin to reduce height */
+    }
+    .ft-input {
+        width: 100%;
+        margin: 12px 0; /* Adjusted margin to reduce height */
+    }
+    .ft-btn {
+        width: 100%;
+        margin: 0 0 12px; /* Adjusted margin to reduce height */
+    }
+    .ft-copyright {
+        padding: 12px; /* Reduced padding for small screens */
+        display: block;
+        text-align: center;
+    }
+}

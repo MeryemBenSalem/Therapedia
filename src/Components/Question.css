@@ -1,0 +1,205 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: #f6cff3;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    font-family: 'Roboto', Arial, Helvetica, Sans-serif, Verdana;
+    background: #dee1e3;
+}
+
+/* Comment List */
+.questions-list {
+    margin-top: 20px;
+    margin-left: 20px;
+    clear: both;
+    border: 2px solid #68283d;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.questions-list li {
+    margin-bottom: 15px;
+    display: flex;
+    position: relative;
+}
+
+.question-item {
+    display: flex;
+    width: 100%;
+}
+
+/* Avatar */
+.question-avatar {
+    width: 65px;
+    height: 65px;
+    position: relative;
+    z-index: 99;
+    float: left;
+    border: 3px solid #FFF;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+.question-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Question Box */
+.question-content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.question-box {
+    flex: 1;
+    margin-left: 20px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    word-break: break-all;
+    background: #FFF;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.question-box .question-head {
+    background: #FCFCFC;
+    padding: 10px 12px;
+    border-bottom: 1px solid #E5E5E5;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+}
+
+.question-box .question-head .question-name {
+    color: #68283d;
+    font-size: 16px;
+    font-family: "Cursive", serif;
+    font-weight: 700;
+    float: left;
+    margin-right: 10px;
+}
+
+.question-box .question-head .question-date {
+    color: #595959;
+    font-size: 12px;
+    float: right;
+}
+
+.question-box .question-content {
+    padding: 12px;
+    color: #595959;
+}
+.question-content {
+    font-size: 20px; /* Set the font size to 18 pixels */
+    font-weight: bold; /* Make the font bold */
+    font-family: "Cursive", Sans-serif, serif; /* Replace 'YourCustomFont' with the name of your custom font */
+}
+.comment-box1 {
+    display: flex;
+    margin-top: 10px;
+}
+
+.comment-box1 input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.comment-box1 input:focus {
+    outline: none;
+    border-color: #f6cff3;
+    box-shadow: 0 0 5px rgb(104, 40, 61);
+}
+
+.comment-box1 Button {
+    padding: 10px 20px;
+    border: 1px solid #f6cff3;
+    background-color: #f6cff3;
+    color: #68283d;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+.vote-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.vote-container Button {
+    margin: 5px 0;
+    padding: 10px 10px; /* Adjust padding to make buttons smaller */
+    font-size: 15px; /* Adjust font size to make buttons smaller */ /* Set minimum height to make buttons smaller */
+    color: #eebecd;
+    background: #68283d;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.vote-container Button:hover {
+    color: #ec608d;
+}
+
+.question-score {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.question-box {
+    flex: 1;
+    margin-left: 20px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    word-break: break-all;
+    background: #FFF;
+    border-radius: 4px;
+    overflow: hidden;
+}
+/* Comment Container */
+.comment-container {
+    margin-top: 20px;
+    margin-left: 50px;
+    width: auto;
+    clear: both;
+    border: 2px solid #68283d;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media only screen and (max-width: 766px) {
+    .questions-container {
+        width: 480px;
+    }
+
+    .questions-list .question-box {
+        width: 390px;
+    }
+}
