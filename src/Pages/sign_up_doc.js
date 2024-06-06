@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.png';
-import cond from '../assets/terms&conditions.pdf';
+import logo from '../Assets/logo.png';
+import cond from '../Assets/terms&conditions.pdf';
 import { Link } from 'react-router-dom';
 
 const Sign_up_doc = () => {

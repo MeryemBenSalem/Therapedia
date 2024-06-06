@@ -13,7 +13,7 @@ class Sidebar extends React.Component {
             <div className="border-end sidenav" id="sidebar-wrapper" style={{ position: "fixed", top: 0, left: 0, width: "14rem", zIndex: 1000, height: "100vh", background: "#f8f9fa", borderRight: "1px solid #dee2e6" }}>
                 <div className="sidebar-heading border-bottom" style={{ background: "#fff" }}>
                     <Link to="/">
-                        <img alt="Alt content" src={require('./../assets/images/logo.jpg')} style={{ width: "180px", borderRadius: "10px 10px 0 0" }} />
+                        <img alt="Alt content" src={require('./../Assets/images/logo.jpg')} style={{ width: "180px", borderRadius: "10px 10px 0 0" }} />
                     </Link>
                 </div>
                 <ul className="list-unstyled ps-0">

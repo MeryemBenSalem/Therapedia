@@ -1,5 +1,5 @@
 import React from "react";
-import "../../assets/css/profile.css"
+import "../../Assets/css/profile.css"
 import userProfileLayout from "../../hoc/userProfileLayout";
 
 class ProfilePage extends React.Component {

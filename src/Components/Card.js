@@ -37,7 +37,7 @@ export default function Card({ doctor }) {
         >
             <div className="column1">
                 <img
-                    src={require("../assets/47516338_b7e0_2.png")}
+                    src={require("../Assets/47516338_b7e0_2.png")}
                     alt={`Doctor ${doctor.firstName} ${doctor.lastName}`}
                     className="doctor-img"
                 />

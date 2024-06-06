@@ -1,10 +1,10 @@
 import React from "react";
 import DoctorCard from "./DoctorCard";
-import profile1 from "../assets/Aziza.jpg";
-import profile2 from "../assets/Baryoucha.jpg";
-import profile3 from "../assets/Arij.jpg";
-import profile4 from "../assets/Skan.jpg";
-import profile5 from "../assets/loulou.jpg";
+import profile1 from "../Assets/Aziza.jpg";
+import profile2 from "../Assets/Baryoucha.jpg";
+import profile3 from "../Assets/Arij.jpg";
+import profile4 from "../Assets/Skan.jpg";
+import profile5 from "../Assets/loulou.jpg";
 
 import "../Styles/Doctors.css";
 

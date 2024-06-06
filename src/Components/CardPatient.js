@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "../Styles/CardPatient.css";
-import img6141 from "../assets/IMG_6141.JPG";
+import img6141 from "../Assets/IMG_6141.JPG";
 
 export default function Card({ patient }) {
     const cardRef = useRef(null);

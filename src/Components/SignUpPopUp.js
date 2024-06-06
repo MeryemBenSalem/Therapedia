@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/signUpPopUp.css';
 import PropTypes from 'prop-types';
-import FrameImage from '../assets/Frame 1.png'; 
-import FrameImage1 from '../assets/logo2.png'; 
-import doctor from '../assets/Group 3.png';
-import patient from '../assets/patient.png';
+import FrameImage from '../Assets/Frame 1.png'; 
+import FrameImage1 from '../Assets/logo2.png'; 
+import doctor from '../Assets/Group 3.png';
+import patient from '../Assets/patient.png';
 
 function SpecialistButton({ isClicked, handleClick }) {
     return (

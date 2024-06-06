@@ -12,7 +12,7 @@ import MKButton from './MKButton';
 import MKTypography from './MKTypography';
 
 // Images
-import profilePicture from '../assets/47516338_b7e0_2.png';
+import profilePicture from '../Assets/47516338_b7e0_2.png';
 
 function Profile() {
   const { id } = useParams();

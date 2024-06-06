@@ -9,7 +9,7 @@ import MKBox from '../Components/MKBox';
 // Images
 import Profile from '../Components/Profile';
 import Footer from '../Components/Footer';
-import bgImage from "../assets/city-profile.jpg";
+import bgImage from "../Assets/city-profile.jpg";
 
 function Doctor_Description() {
   const theme = useTheme();

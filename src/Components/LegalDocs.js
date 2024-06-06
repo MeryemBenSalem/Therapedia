@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/LegalDocs.css";
-import logo2 from '../assets/logo2.png'; 
+import logo2 from '../Assets/logo2.png'; 
 
 
 function LegalDocs() {

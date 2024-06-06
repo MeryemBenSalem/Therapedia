@@ -6,7 +6,7 @@ import {jwtDecode} from "jwt-decode";
 import Legal from './Pages/Legal';
 import {useEffect, useState} from "react";
 import 'font-awesome/css/font-awesome.min.css';
-import './assets/css/app.css';
+import './Assets/css/app.css';
 import DashboardPage from './Pages/DashboardPage';
 
 import LoginPage from './Pages/auth/LoginPage';
@@ -22,7 +22,7 @@ import "./App.css";
 import NotFound from "./Pages/NotFound";
 import Doctors from "./Pages/Doctors";
 import Doctor_Description from "./Pages/Doctor_Description";
-import theme from "./assets/theme";
+import theme from "./Assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Consultation from "./Pages/Consultation";

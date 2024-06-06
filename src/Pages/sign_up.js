@@ -1,7 +1,7 @@
 //sign_up.js
 import React, { useState } from 'react';
-import logo from '../assets/logo.png';
-import cond from '../assets/terms&conditions.pdf';
+import logo from '../Assets/logo.png';
+import cond from '../Assets/terms&conditions.pdf';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import styles from '../Styles/Sign_up.module.css';

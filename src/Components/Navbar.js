@@ -4,7 +4,7 @@ import { faUserCircle, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SignUpPopUp from "./SignUpPopUp"; // Import the SignupPop component
 import "../Styles/Navbar.css";
-import logo from '../assets/logo.png';
+import logo from '../Assets/logo.png';
 
 function Navbar({ isLoggedIn }) {
     const [showModal, setShowModal] = useState(false);
