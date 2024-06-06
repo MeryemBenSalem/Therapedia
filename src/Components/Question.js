@@ -3,6 +3,7 @@ import Comment from './Comment';
 import './Question.css';
 import AddBoxRoundedIcon from '@mui/icons-material/AddBoxRounded';
 import { Button } from '@mui/material';
+import poff from '../Assets/download2.jfif';
 
 const Question = ({ question, onVote, userId }) => {
     const [comments, setComments] = useState([]);
@@ -114,7 +115,7 @@ const Question = ({ question, onVote, userId }) => {
                             <Button variant="contained" onClick={handleDownvote} disabled={voted === -1}>-</Button>
                         </div>
                         <div className="question-avatar">
-                            <img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""/>
+                            <img src={poff} alt=""/>
                         </div>
                         <div className="question-box">
                             <div className="question-head">

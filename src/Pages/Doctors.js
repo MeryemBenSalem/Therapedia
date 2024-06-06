@@ -3,10 +3,35 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Card from "../Components/Card";
 import Footer from "../Components/Footer";
+import {jwtDecode} from "jwt-decode";
 
 function Doctors() {
     const [doctors, setDoctors] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    useEffect(() => {
+        // Retrieve token from localStorage
+        const token = localStorage.getItem("token");
+        if (token) {
+            const decodedToken = decodeToken(token);
+            if (decodedToken) {
+                console.log(decodedToken)
+                setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+            }
+        }
+    }, []);
+
+    const decodeToken = (token) => {
+        try {
+            // Decode the JWT token to get the payload
+            // Return the decoded payload
+            return jwtDecode(token);
+        } catch (error) {
+            // Handle decoding errors, if any
+            console.error("Error decoding token:", error);
+            return null;
+        }
+    };
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
@@ -27,7 +52,7 @@ function Doctors() {
 
     return (
         <div className="home-section">
-            <Navbar />
+            <Navbar isLoggedIn={isLoggedIn} />
             <div className="doctors-list">
                 {doctors.map((doctor) => (
                     <Card

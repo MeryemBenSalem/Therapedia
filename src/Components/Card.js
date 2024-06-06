@@ -35,6 +35,9 @@ export default function Card({ doctor }) {
             onMouseEnter={handleMouseMove}
             onMouseLeave={resetTransformations}
         >
+
+
+
             <div className="column2">
                 <h1 className="title">{`Dr. ${doctor.firstName} ${doctor.lastName}`}</h1>
                 <ul className="speciality-box">

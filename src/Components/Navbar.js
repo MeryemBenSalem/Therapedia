@@ -4,7 +4,7 @@ import { faUserCircle, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import SignUpPopUp from "./SignUpPopUp"; // Import the SignupPop component
 import "../Styles/Navbar.css";
-import logo from '../Assets/logo.png';
+import logo from '../Assets/logo2.png';
 
 function Navbar({ isLoggedIn }) {
     const [showModal, setShowModal] = useState(false);
@@ -46,8 +46,13 @@ function Navbar({ isLoggedIn }) {
                 <div className="itt">
                     <ul className="navbar-items">
                         <li>
-                            <a href="#doctors" className="navbar-links">
+                            <a href="/Doctors" className="navbar-links">
                                 Our Doctors
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/appointment" className="navbar-links">
+                                Calender
                             </a>
                         </li>
                         <li>
@@ -68,7 +73,7 @@ function Navbar({ isLoggedIn }) {
                     </ul>
                 </div>
             </div>
-            <SignUpPopUp trigger={showModal} setTrigger={setShowModal} />
+            <SignUpPopUp trigger={showModal} setTrigger={setShowModal}/>
         </div>
     );
 }

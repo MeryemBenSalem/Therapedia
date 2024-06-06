@@ -1,9 +1,10 @@
 import "../Styles/consultation.css";
 import AvailableHours from "../Components/hours";
 import Patients from "../Components/Patients";
-import { useMemo, useState, useEffect } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import axios from 'axios';
-
+import Navbar from "../Components/Navbar";
+import Footer from '../Components/Footer';
 import {
     add,
     addDays,
@@ -31,10 +32,36 @@ import {
 } from "date-fns";
 
 import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import {jwtDecode} from "jwt-decode";
+
 
 export default function Home() {
     const [calendarTouched, setCalendarTouched] = useState(false);
     const [activeTab, setActiveTab] = useState("calendrier");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Retrieve token from localStorage
+        const token = localStorage.getItem("token");
+        if (token) {
+            const decodedToken = decodeToken(token);
+            if (decodedToken) {
+                console.log(decodedToken)
+                setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+            }
+        }
+    }, []);
+
+    const decodeToken = (token) => {
+        try {
+            // Decode the JWT token to get the payload
+            // Return the decoded payload
+            return jwtDecode(token);
+        } catch (error) {
+            // Handle decoding errors, if any
+            console.error("Error decoding token:", error);
+            return null;
+        }};
 
     let today = startOfToday();
     let [currentMonth, setCurrentMonth] = useState(format(today, "MMM-yyyy"));
@@ -135,11 +162,11 @@ export default function Home() {
         setAvailableTimesInThisMonthForEachDay(thisMonthTimesEachDay);
     }, [days]);
 
-    return (
-        <div className="calendar-container">
+    return (<div>    <Navbar isLoggedIn={isLoggedIn}/>
+            <div className="calendar-container">
             <div className="header">
-                <span className="title">Sélectionnez votre disponibilité</span><br /><br />
-                <span className="subtitle">les rendez vous sont entre 08h30 jusqu'à 23h30</span>
+                <span className="title">Select Your Availibilty</span><br /><br />
+                <span className="subtitle">Appointments are between 08h30 to 23h30</span>
             </div>
 
             <div className="tabs">
@@ -147,7 +174,7 @@ export default function Home() {
                     className={`tab-button ${activeTab === "calendrier" ? "active-tab" : "inactive-tab"}`}
                     onClick={() => setActiveTab("calendrier")}
                 >
-                    Calendrier
+                    Calender
                 </button>
                 <button
                     className={`tab-button ${activeTab === "patients" ? "active-tab" : "inactive-tab"}`}
@@ -256,6 +283,9 @@ export default function Home() {
                 <Patients />
             )}
         </div>
+            <Footer/>
+        </div>
+
     );
 }
 

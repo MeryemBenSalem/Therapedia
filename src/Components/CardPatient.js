@@ -8,9 +8,7 @@ export default function Card({ patient }) {
     return (
         <div className="container">
             <div className="cardPatient" ref={cardRef}>
-                <div className="column1">
 
-                </div>
                 <div className="column2">
                     <h1 className="title">
                         {patient.name}
@@ -22,22 +20,7 @@ export default function Card({ patient }) {
                             {patient.dateofConsultation}
                         </li>
                     </ul>
-                    <ul className="education-box">
-                        <li>
-                            <strong>Education:</strong>
-                            <br />
-                            {patient.education.map((edu, index) => (
-                                <span key={index}>{edu}<br /></span>
-                            ))}
-                        </li>
-                    </ul>
-                    <ul className="residency-box">
-                        <li>
-                            <strong>Residency:</strong>
-                            <br />
-                            {patient.residency}
-                        </li>
-                    </ul>
+
                 </div>
             </div>
         </div>

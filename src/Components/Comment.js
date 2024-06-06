@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Comment.css';
 import { Button } from "@mui/material";
+import prof from "../Assets/download2.jfif"
 import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 import ArrowUpwardRoundedIcon from "@mui/icons-material/ArrowUpwardRounded";
 
@@ -110,8 +111,7 @@ const Comment = ({ comment, onVote}) => {
                     <Button variant={"contained"} onClick={handleDownvote} disabled={voted === -1}>-</Button>
                 </div>
                 <div className="comment-content-wrapper">
-                    <div className="comment-avatar"><img
-                        src="http://i9.photobucket.com/albums/a88/creaticode/avatar_1_zps8e1c80cd.jpg" alt=""/></div>
+                    <div className="comment-avatar"><img src={prof} alt=""/></div>
                     <div className="comment-box">
                         <div className="comment-head">
                             <h6 className="comment-name by-author">{user ? user.firstName : 'Anonymous'}</h6>

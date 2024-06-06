@@ -1,17 +1,14 @@
 .footer-section {
-    background-color: #FCF1F5;
-    padding: 20px 0; /* Reduced padding to decrease height */
+    background:linear-gradient(to top, rgba(252, 241, 245, 0.93), rgba(252, 241, 245, 0.28));;
 }
 
 .footer-container {
-    padding: 20px; /* Reduced padding to decrease height */
+    padding: 50px 180px 40px 40px; /* Reduced padding to decrease height */
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
     color: white;
     border-bottom: 2px solid #293241;
-    border-radius: 2px;
     flex-wrap: nowrap; /* Prevent wrapping */
 }
 
@@ -29,7 +26,7 @@
     width: 420px;
     margin: 16px 0 20px; /* Adjusted margin to reduce height */
     color: #293241;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'arial', sans-serif;
     font-size: 20px;
     letter-spacing: .8px;
     line-height: 1.7rem;
@@ -38,17 +35,17 @@
 /* Lists */
 .ft-list-title {
     margin: 16px 0; /* Adjusted margin to reduce height */
-    font-family: 'Rubik', sans-serif;
+    font-family: ' arial', sans-serif;
     font-size: 24px;
     font-weight: bold;
     letter-spacing: .8px;
-    text-align: center; 
+    text-align: center;
     color: #68283D;
 }
 
 .ft-list-items {
     list-style-type: none;
-    text-align: center; 
+    text-align: center;
 }
 
 .ft-list-items li a {
@@ -61,7 +58,7 @@
 
 .ft-list-items li {
     margin: 16px 0; /* Adjusted margin to reduce height */
-    font-family: 'Rubik', sans-serif;
+    font-family: 'arial', sans-serif;
     font-size: 16px;
     font-weight: bold;
     letter-spacing: .8px;
@@ -78,7 +75,7 @@
     justify-content: space-between;
     align-items: center;
     color: #343639;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'arial', sans-serif;
     font-size: 16px; /* Adjusted font size */
     font-weight: bold;
     letter-spacing: .8px;

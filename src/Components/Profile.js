@@ -11,8 +11,6 @@ import MKAvatar from './MKAvatar';
 import MKButton from './MKButton';
 import MKTypography from './MKTypography';
 
-// Images
-import profilePicture from '../Assets/47516338_b7e0_2.png';
 
 function Profile() {
   const { id } = useParams();
@@ -68,7 +66,7 @@ function Profile() {
           <Grid container item xs={12} justifyContent="center" mx="auto">
             <MKBox mt={{ xs: -16, md: -20 }} textAlign="center">
               <MKAvatar
-                  src={profilePicture}
+
                   alt={`Dr. ${doctor.firstName} ${doctor.lastName}`}
                   size="xxl"
                   shadow="xl"

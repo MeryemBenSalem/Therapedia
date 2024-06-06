@@ -4,6 +4,8 @@ import QuestionForm from '../Components/QuestionForm';
 import Notification from '../Components/Notification'; // Import the Notification component
 import './ForumPage.css';
 import { jwtDecode } from 'jwt-decode';
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const ForumPage = () => {
     const [questions, setQuestions] = useState([]);
@@ -72,6 +74,30 @@ const ForumPage = () => {
         }
     };
 
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Retrieve token from localStorage
+        const token = localStorage.getItem("token");
+        if (token) {
+            const decodedToken = decodeToken(token);
+            if (decodedToken) {
+                console.log(decodedToken)
+                setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+            }
+        }
+    }, []);
+
+    const decodeToken = (token) => {
+        try {
+            // Decode the JWT token to get the payload
+            // Return the decoded payload
+            return jwtDecode(token);
+        } catch (error) {
+            // Handle decoding errors, if any
+            console.error("Error decoding token:", error);
+            return null;
+        }};
 
     const addQuestion = async (questionData) => {
         if (!userId) return;
@@ -121,8 +147,9 @@ const ForumPage = () => {
         setIsModalOpen(false);
     };
 
-    return (
+    return (<div> <Navbar isLoggedIn={isLoggedIn}/>
         <div className="container forum-page">
+
             <div className="header">
                 <h1>Welcome to our Forum page</h1>
                 <button className="add-question" onClick={openModal}>Share your thoughts!</button>
@@ -150,6 +177,8 @@ const ForumPage = () => {
                     ))}
                 </div>
             </div>
+        </div>
+            <Footer/>
         </div>
     );
 };

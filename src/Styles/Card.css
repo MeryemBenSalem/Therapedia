@@ -2,7 +2,7 @@
   transform-style: preserve-3d;
   position:relative;
   padding: 25px;
-  width: 70%;
+  width: 60%;
   height: 30%;
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -10,6 +10,7 @@
   justify-content: space-around;
   margin : 50px auto; 
   transform: translate(-50%, -50%);
+  align-items: center;
   background: linear-gradient(
     25deg,
     #AD8291 0%,
@@ -58,12 +59,12 @@
 .button-box button {
   width: 100%;
   color: #fff; /* Retain text color */
-  background-color: rgb(223, 60, 248); /* Retain button background color */
+  background-color: rgb(147, 100, 122); /* Retain button background color */
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
 .button-box button:hover {
-  background-color: rgb(191, 54, 222); /* Retain button hover color */
+  background-color: rgb(121, 80, 100); /* Retain button hover color */
 }
