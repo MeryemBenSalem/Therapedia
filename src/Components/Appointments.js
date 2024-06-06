@@ -16,7 +16,7 @@ function Appointments({ appointment }) {
 
   const handleConfirm = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/consultation/reserve/${appointment.consultationId}/patient/1`, {
+      const response = await fetch(`http://localhost:8080/consultation/reserve/${appointment.consultationId}/patient/2`, {
         method: 'PUT',
       });
       const result = await response.text();

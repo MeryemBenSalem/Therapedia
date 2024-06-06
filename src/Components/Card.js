@@ -35,13 +35,6 @@ export default function Card({ doctor }) {
             onMouseEnter={handleMouseMove}
             onMouseLeave={resetTransformations}
         >
-            <div className="column1">
-                <img
-                    src={require("../Assets/47516338_b7e0_2.png")}
-                    alt={`Doctor ${doctor.firstName} ${doctor.lastName}`}
-                    className="doctor-img"
-                />
-            </div>
             <div className="column2">
                 <h1 className="title">{`Dr. ${doctor.firstName} ${doctor.lastName}`}</h1>
                 <ul className="speciality-box">

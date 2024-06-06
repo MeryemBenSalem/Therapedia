@@ -9,10 +9,7 @@ export default function Card({ patient }) {
         <div className="container">
             <div className="cardPatient" ref={cardRef}>
                 <div className="column1">
-                    <img
-                        src={img6141} 
-                        alt={patient.name}
-                    />
+
                 </div>
                 <div className="column2">
                     <h1 className="title">

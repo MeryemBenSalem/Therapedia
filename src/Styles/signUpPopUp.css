@@ -1,134 +1,181 @@
-.popup{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+.signup-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.component1 h1 {  
-  color: #68283D;
-  margin-top: 0px;
+.signup-popup-inner {
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    align-items: flex-start;
+    width:67%;
+    background-color: #FCF1F5;
+    border-radius: 71px;
 }
 
-.poppcontainer {
-  display: flex;
+.signup-popup-container {
+    display: flex;
 }
 
-.column {
-  flex: 1;
-}
-.component1 img{
-  width: 50%;
+.signup-popup-column {
+    flex: 1;
 }
 
-.component img {
-  max-width: 100%; /* Ensure images don't exceed their container width */
-  height: auto; /* Maintain aspect ratio */
-}
-.component1{
-  position: relative;
-  left:40px;
-  top: 20px;
-  font-family: poppins, sans-serif;
+.signup-popup-component img {
+    width:500px;
 }
 
-.centered-text {
-  text-align: center;
-  font-size: 15px;
+.signup-popup-component1 {
+    position: relative;
+    left: 40px;
+    top: 20px;
+    font-family:'Rubik', sans-serif;
 }
 
-.specialist {
-  color: #C66B8A;
+.signup-popup-centered-text {
+    text-align: center;
+    font-size: 15px;
 }
 
-.support-seeker {
-  color: #C66B8A;
+.signup-popup-specialist {
+    color: #C66B8A;
 }
-._background2 {
-      font-family: poppins, sans-serif;
-      margin-top: 40px;
-      width: 200px;
-      height: 200px;
-      border-radius: 45px;
-      background-color: #72364d;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border: none;
-      cursor: pointer;
-      overflow: visible;
-      }
-      
-      
-  ._background2 div {
-      text-align: center;
-  }
-      
-  ._background2 h2 {
-      color: white;
-      margin-top : 130px;
-      font-size: 30px;
-      
-  }
-  ._background2 img {
-      width: 90px;
-      height: auto;
-      position: absolute;
-      top: 40%;
-      margin-left: -8%;
-  }
-  ._background2-clicked {
-      background-color: #4d3672; /* Change this to your desired color */
-  }
-  .styled{
-    width:200px;
-    background: linear-gradient(to right, #68283D, #44312B);
-    margin: 20px auto; 
-    padding: 10px 20px; /* Adds padding to the button */
+
+.signup-popup-support-seeker {
+    color: #C66B8A;
+}
+
+.signup-background2 {
+    font-family: 'Rubik', sans-serif;
+    margin-top: 40px;
+    left: 40%;
+    top: 20%;
+    width: 200px;
+    height: 200px;
+    border-radius: 45px;
+    background-color: #72364d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.signup-background2 div {
+    text-align: center;
+}
+
+.signup-background2 h2 {
+    color: white;
+    margin-top: 130px;
+    font-size: 30px;
+}
+
+.signup-background2 img {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    margin-left: -12%;
+}
+
+.signup-background2-clicked {
+    background-color: #4d3672;
+}
+
+.signup-styled {
+    margin: 20px 35%;
+    padding: 10px 20px;
     border-color: #72364d;
-    border-radius: 20px; /* Adds border radius */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Adds box shadow */
-    color: #ffffff; /* Sets text color */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-    display: block;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #C66B8A;
+    cursor: pointer;
 }
 
-.styled:hover {
-    opacity: 0.8; /* Reduces opacity on hover */
-}
-.popup-inner{
-  position: absolute;
-  top: 10%;
-  width: 70%;
-  height: 80%;
-  align-items: flex-start;
-  max-width: 640 px;
-  background-color: white;
-  border-radius: 71px;
+.signup-styled:hover {
+    opacity: 0.8;
 }
 
-.popup-inner .close-btn {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  width: 32px;
-  height: 32px;
-  background-color: white;
-  color: black;
-  border: none;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 18px;
+.signup-popup-confirm-btn {
+    margin: 20px auto; /* Center horizontally with auto margins */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    color: black;
+    background-color: #D1B3BC;
+    transition: transform 0.2s ease-in-out;
+    display: block; /* Ensures button is treated as a block element */
+    width: fit-content; /* Adjusts width based on content */
 }
 
-.popup-inner .close-btn:hover {
-  background-color: darkgray; /* Optional: Change color on hover */
+
+
+.signup-popup-confirm-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+    color: white;
+    background-color: #68283D;
+}
+
+.signup-popup-inner .signup-popup-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+.signup-user-btn {
+    font-family: 'Rubik', sans-serif;
+    margin: 40px 20px 0px 40px;
+    left: 40%;
+    top: 20%;
+    width: 200px;
+    height: 200px;
+    border-radius: 45px;
+    background-color: #72364d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.signup-user-btn div {
+    text-align: center;
+}
+
+.signup-user-btn h2 {
+    color: white;
+    margin-top: 130px;
+    font-size: 30px;
+}
+
+.signup-user-btn img {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 45%;
+    margin-left: -6%;
+}
+
+.signup-user-btn-clicked {
+    background-color: #4d3672;
+}
+.signup-popup h1 {
+    font-size: 24px; /* Adjust font size as needed */
+    color: #72364d; /* Text color */
+    margin-bottom: 10px; /* Bottom margin */
+    font-family: 'Poppins', sans-serif; /* Specify font family */
+    text-align: center; /* Center align the text */
+    margin-top: -50px;
 }

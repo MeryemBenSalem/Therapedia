@@ -58,12 +58,12 @@
 .button-box button {
   width: 100%;
   color: #fff; /* Retain text color */
-  background-color: rgba(248, 177, 60, 1); /* Retain button background color */
+  background-color: rgb(223, 60, 248); /* Retain button background color */
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
 .button-box button:hover {
-  background-color: rgb(222, 157, 54); /* Retain button hover color */
+  background-color: rgb(191, 54, 222); /* Retain button hover color */
 }

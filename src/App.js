@@ -5,7 +5,9 @@ import Sign_in from './Pages/Sign_in';
 import {jwtDecode} from "jwt-decode";
 import Legal from './Pages/Legal';
 import {useEffect, useState} from "react";
-
+import React from "react";
+import "./App.css";
+import JournalPage from "./Pages/JournalPage";
 import DashboardPage from './Pages/DashboardPage';
 import LoginPage from './Pages/auth/LoginPage';
 import ResetPassword from './Pages/auth/ResetPassword';
@@ -23,6 +25,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Consultation from "./Pages/Consultation";
 import ForumPage from "./Pages/ForumPage";
+import appointment from "./Pages/Consultation"
 function App() {
   const [username, setUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -55,12 +58,12 @@ function App() {
 
   return (
       <div className="App">
+
           <CssBaseline />
           <Router>
             <Routes>
               <Route path="/forum" element={<ForumPage/>}/>
               <Route path="/sign_up" element={<SignUp />} />
-
               <Route path="/sign_up_doc" element={<Sign_Up_Doc />} />
               <Route path="/" element={<Home />} />
               <Route path="/Legal" element={<Legal />} />
@@ -76,11 +79,14 @@ function App() {
               <Route exact path='/admin/content' element={<ContentManagement />} />
               <Route path="/Doctors" element={<Doctors />} />
               <Route path="/Doctors/:id" element={<Doctor_Description />} />
-              <Route path="/Consultation" element={<Consultation/>} />
+              <Route path="/appointment" element={<Consultation/>} />
               <Route path="/Patient" element={<Consultation />} />
               <Route path="*" element={<NotFound />} />
+              <Route path="/journal" element={<JournalPage />} />
+
             </Routes>
           </Router>
+
       </div>
   );
 }

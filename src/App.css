@@ -11,6 +11,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 /* Custom Scroll Bar */
 ::-webkit-scrollbar {
     width: 8px;
@@ -19,6 +20,6 @@ html {
     background-color: #FFFFFF;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #1A8EFD;
+    background-color: #AD8291;
     border-radius: 4rem;
 }

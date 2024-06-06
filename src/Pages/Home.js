@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import BookAppointment from "../Components/BookAppointment";
@@ -8,6 +9,7 @@ import Reviews from "../Components/Reviews";
 import Doctors from "../Components/Doctors";
 import Footer from "../Components/Footer";
 import { jwtDecode } from "jwt-decode";
+import JournalPage from "./JournalPage";
 
 function Home() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -37,17 +39,19 @@ function Home() {
     };
 
     return (
-        <div className="home-section" style={{ backgroundColor: "#B0C4D3" }}>
-            <Navbar isLoggedIn={isLoggedIn} /> {/* Pass isLoggedIn as a prop */}
-            <BookAppointment />
-            <Services />
-            <About />
-            <WhyChooseUs />
-            <Reviews />
-            <Doctors />
-            <Footer />
+        <div className="home-section" style={{backgroundColor: "#B0C4D3"}}>
+            <Navbar isLoggedIn={isLoggedIn}/> {/* Pass isLoggedIn as a prop */}
+            <BookAppointment/>
+            <Services/>
+            <About/>
+            <WhyChooseUs/>
+            <Reviews/>
+            <Doctors/>
+            <Footer/>
         </div>
     );
 }
-
 export default Home;
+
+
+

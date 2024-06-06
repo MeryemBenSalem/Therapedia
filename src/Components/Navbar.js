@@ -61,7 +61,7 @@ function Navbar({ isLoggedIn }) {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/journaling" className="navbar-links">
+                            <Link to="/Journal" className="navbar-links">
                                 Journaling
                             </Link>
                         </li>

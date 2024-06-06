@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../Styles/signUpPopUp.css';
 import PropTypes from 'prop-types';
-import FrameImage from '../Assets/Frame 1.png'; 
-import FrameImage1 from '../Assets/logo2.png'; 
+import FrameImage from '../Assets/Frame 1.png';
+import FrameImage1 from '../Assets/logo2.png';
 import doctor from '../Assets/Group 3.png';
 import patient from '../Assets/patient.png';
 
 function SpecialistButton({ isClicked, handleClick }) {
     return (
         <button
-            className={`_background2 ${isClicked ? '_background2-clicked' : ''}`}
+            className={`signup-user-btn ${isClicked ? 'signup-user-btn-clicked' : ''}`}
             onClick={handleClick}
         >
             <div>
@@ -24,7 +24,7 @@ function SpecialistButton({ isClicked, handleClick }) {
 function UserButton({ isClicked, handleClick }) {
     return (
         <button
-            className={`_background2 ${isClicked ? '_background2-clicked' : ''}`}
+            className={`signup-user-btn ${isClicked ? 'signup-user-btn-clicked' : ''}`}
             onClick={handleClick}
         >
             <div>
@@ -58,43 +58,42 @@ function SignUpPopUp(props) {
     };
 
     return (props.trigger) ? (
-        <div className='popup'>
-            <div className='popup-inner'>
-                <div className="poppcontainer">
-                    <div className="column">
-                        <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
-                        <div className="component1">
+        <div className='signup-popup'>
+            <div className='signup-popup-inner'>
+                <div className="signup-popup-container">
+                    <div className="signup-popup-column">
+                        <button className='signup-popup-close-btn' onClick={() => props.setTrigger(false)}>X</button>
+                        <div className="signup-popup-component">
                             <img src={FrameImage1} alt="Frame" />
                             <br/>
                             <h1>Sign Up</h1>
-                            <p className="centered-text">
-                            To access all Therapedia features, sign up now! <br/>
-                            
-                                You can join us as 
-                                <span className="specialist"> Specialist </span>
-                                or as 
-                                <span className="support-seeker"> Someone seeking support</span>
+                            <p className="signup-popup-centered-text">
+                                To access all Therapedia features, sign up now! <br/>
+                                You can join us as
+                                <span className="signup-popup-specialist"> Specialist </span>
+                                or as
+                                <span className="signup-popup-support-seeker"> Someone seeking support</span>
                             </p>
-                            <div className="poppcontainer">
-                                <div className="column">
-                                    <SpecialistButton 
-                                        isClicked={clickedButton === 'specialist'} 
-                                        handleClick={handleSpecialistClick} 
+                            <div className="signup-popup-container">
+                                <div className="signup-popup-column">
+                                    <SpecialistButton
+                                        isClicked={clickedButton === 'specialist'}
+                                        handleClick={handleSpecialistClick}
                                     />
                                 </div>
-                                <div className="column">
-                                    <UserButton 
-                                        isClicked={clickedButton === 'user'} 
-                                        handleClick={handleUserClick} 
+                                <div className="signup-popup-column">
+                                    <UserButton
+                                        isClicked={clickedButton === 'user'}
+                                        handleClick={handleUserClick}
                                     />
-                                </div>                                
+                                </div>
                             </div>
-                            <button className="styled" onClick={handleConfirmClick}>Confirm</button>
-                            <p className="centered-text">Already have an account? <a href="/Sign_in">Sign In</a></p>
+                            <button className="signup-popup-confirm-btn" onClick={handleConfirmClick}>Confirm</button>
+                            <p className="signup-popup-centered-text">Already have an account? <a href="/Sign_in">Sign In</a></p>
                         </div>
                     </div>
-                    <div className="column">
-                        <div className="component">
+                    <div className="signup-popup-column">
+                        <div className="signup-popup-component">
                             <img src={FrameImage} alt="Frame" />
                         </div>
                     </div>
@@ -102,7 +101,7 @@ function SignUpPopUp(props) {
                 {props.children}
             </div>
         </div>
-    ) : null; 
+    ) : null;
 }
 
 SignUpPopUp.propTypes = {
