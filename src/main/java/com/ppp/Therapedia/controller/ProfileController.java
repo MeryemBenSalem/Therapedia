@@ -1,12 +1,9 @@
 package com.ppp.Therapedia.controller;
 
-import com.ppp.Therapedia.model.JwtRequest;
-import com.ppp.Therapedia.model.JwtResponse;
-import com.ppp.Therapedia.model.Patient;
+import com.ppp.Therapedia.model.*;
 import com.ppp.Therapedia.service.MyUserDetailsService;
 import com.ppp.Therapedia.service.PatientService;
 import com.ppp.Therapedia.service.ProfileService;
-import com.ppp.Therapedia.model.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +37,28 @@ public class ProfileController {
 //    public ResponseEntity<?> loginProfile(@RequestBody Login login) {
 //        LoginResponse
 //    }
+@GetMapping("/email/{email}")
+public ResponseEntity<Profile> getUserByEmail(@PathVariable String email) {
+    Profile user = profileService.findByEmail(email);
+    if (user == null) {
+        return ResponseEntity.notFound().build();
+    }
+    return ResponseEntity.ok(user);
+}
+
+    @GetMapping("/{id}")
+public ResponseEntity<?> getProfileById(@PathVariable Long id) {
+    try {
+        Profile profile = profileService.getProfileById(id)
+                .orElseThrow(() -> new NoSuchElementException("Profile not found"));
+        return ResponseEntity.ok(profile);
+    } catch (NoSuchElementException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Profile not found");
+    } catch (Exception e) {
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error");
+    }
+}
+
 
 
 

@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { createRoot } from 'react-dom/client'; // Import createRoot from react-dom/client
 import App from './App'; // Import the main App component
-import './index.css'; // Global styles
+
 import reportWebVitals from './reportWebVitals'; // Import reportWebVitals
 
 // Assuming you have a DOM element with id 'root'

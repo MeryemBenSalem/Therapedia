@@ -48,15 +48,6 @@ public class DoctorController extends ProfileController {
         return doctorService.getAllDoctors();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Doctor> get(@PathVariable Integer id){
-        try{
-            Doctor doctor=doctorService.get(id);
-            return new ResponseEntity<Doctor>(doctor, HttpStatus.OK);
-        }catch (NoSuchElementException e) {
-            return new ResponseEntity<Doctor>(HttpStatus.NOT_FOUND);
-        }
-    }
 
     @PutMapping("/{id}")
     public ResponseEntity<Doctor> update(@RequestBody Doctor doctor,

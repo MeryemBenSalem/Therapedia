@@ -18,7 +18,7 @@ table, td, tr, th {
   border: 0;
   border-spacing: 0;
 }
-  
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -133,17 +133,17 @@ ul ul a {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 /* typography */
@@ -460,7 +460,7 @@ button{
 .modal.left.fade.in .modal-dialog{
   left: 0;
 }
-      
+
 /*Right*/
 .modal.right.fade .modal-dialog {
   right: 0px;
@@ -559,7 +559,7 @@ table tbody tr:focus-within, table tbody tr:hover {
   border-radius: 12px;
 }
 
-.table-action-dropdown .dropdown-toggle:hover, 
+.table-action-dropdown .dropdown-toggle:hover,
 .table-action-dropdown .dropdown-toggle:focus {
   background: var(--theme-color);
   color: #fff;
@@ -574,7 +574,7 @@ table tbody tr:focus-within, table tbody tr:hover {
   color: var(--theme-color);
 }
 
-.table-action-dropdown .dropdown-item:hover, 
+.table-action-dropdown .dropdown-item:hover,
 .table-action-dropdown .dropdown-item:focus {
   background: transparent;
   font-family: var(--default-font-semibold);

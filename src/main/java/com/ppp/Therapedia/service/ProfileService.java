@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -21,8 +22,6 @@ public class ProfileService {
 //    private PatientRepository patientRepository;
     private ProfileRepository<Profile> profileRepository;
 
-    @Autowired
-    private HttpSession httpSession;
 
 //    @Autowired
 //    private BCryptPasswordEncoder passwordEncoder;
@@ -33,28 +32,12 @@ public class ProfileService {
 //        Profile savedProfile = profileRepository.save(profile);
 //        return savedProfile;
 //    }
-
-    public boolean login(String email, String password){
-        Profile profile = profileRepository.findByEmail(email);
-        if (profile != null &&  profile.getPassword().equals(password) ) {
-            httpSession.setAttribute("Profile", profile);
-            return true;
-        }
-        return false;
+    public Optional<Profile> getProfileById(Long id) {
+        return profileRepository.findById(id);
     }
-
-    public boolean isUserLoggedIn() {
-        return httpSession.getAttribute("Profile") != null;
+    public Profile getProfileByEmail(String email){
+        return profileRepository.findByEmail(email);
     }
-
-    public void logout() {
-        httpSession.invalidate();
-    }
-
-//    public Profile login(String email, String password) {
-//        Profile user = profileRepository.findByEmailAndPassword(email, password);
-//        return user;
-//    }
 
     public Profile saveProfile(Profile profile){
         return profileRepository.save(profile);
@@ -76,4 +59,7 @@ public class ProfileService {
     }
 
 
+    public Profile findByEmail(String email) {
+        return profileRepository.findByEmail(email);
+    }
 }

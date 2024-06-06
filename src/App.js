@@ -5,10 +5,8 @@ import Sign_in from './Pages/Sign_in';
 import {jwtDecode} from "jwt-decode";
 import Legal from './Pages/Legal';
 import {useEffect, useState} from "react";
-import 'font-awesome/css/font-awesome.min.css';
-import './Assets/css/app.css';
-import DashboardPage from './Pages/DashboardPage';
 
+import DashboardPage from './Pages/DashboardPage';
 import LoginPage from './Pages/auth/LoginPage';
 import ResetPassword from './Pages/auth/ResetPassword';
 import ProfilePage from './Pages/profile/ProfilePage';
@@ -18,15 +16,13 @@ import UserManagement from './Pages/UserManagement';
 import TherapistManagement from './Pages/TherapistManagement';
 import ContentManagement from './Pages/ContentManagement';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import "./App.css";
 import NotFound from "./Pages/NotFound";
 import Doctors from "./Pages/Doctors";
 import Doctor_Description from "./Pages/Doctor_Description";
-import theme from "./Assets/theme";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Consultation from "./Pages/Consultation";
-
+import ForumPage from "./Pages/ForumPage";
 function App() {
   const [username, setUsername] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,7 +37,7 @@ function App() {
         // Set the username in state
         setUsername(decodedToken.sub);
         setRole(decodedToken.role);
-        setIsLoggedIn(true); // Set isLoggedIn to true if token exists
+        setIsLoggedIn(true);
       }
     }
   }, []);
@@ -58,38 +54,36 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <ThemeProvider theme={theme}>
-      <CssBaseline />
-    <Router>
-      <Routes>
-        <Route path="/sign_up" element={<SignUp />} />
-        <Route path="/sign_up_doc" element={<Sign_Up_Doc />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/Legal" element={<Legal />} />
-        <Route path="/Sign_in" element={<Sign_in />} />
-          <Route exact path='/dashboard' element={<DashboardPage />} />
-          <Route exact path='/login' element={<LoginPage />} />
-          <Route exact path='/reset-password' element={<ResetPassword />} />
-          <Route exact path='/profile' element={<ProfilePage />} />
-          <Route exact path='/change-password' element={<ChangePasswordPage />} />
-          <Route exact path='/preferences' element={<UserPreferencesPage />} />
-          <Route exact path='/admin/users' element={<UserManagement />} />
-          <Route exact path='/admin/therapists' element={<TherapistManagement />} />
-          <Route exact path='/admin/content' element={<ContentManagement />} />
-            <Route path="/Doctors" element={<Doctors />} />
-            <Route path="/Doctors/:id" element={<Doctor_Description />} />
-            <Route path="/Consultation" element={<Consultation/>} />
-            <Route path="/Patient" element={<Consultation />} />
-            <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
-    </ThemeProvider>
+      <div className="App">
+          <CssBaseline />
+          <Router>
+            <Routes>
+              <Route path="/forum" element={<ForumPage/>}/>
+              <Route path="/sign_up" element={<SignUp />} />
+
+              <Route path="/sign_up_doc" element={<Sign_Up_Doc />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/Legal" element={<Legal />} />
+              <Route path="/Sign_in" element={<Sign_in />} />
+              <Route exact path='/dashboard' element={<DashboardPage />} />
+              <Route exact path='/login' element={<LoginPage />} />
+              <Route exact path='/reset-password' element={<ResetPassword />} />
+              <Route exact path='/profile' element={<ProfilePage />} />
+              <Route exact path='/change-password' element={<ChangePasswordPage />} />
+              <Route exact path='/preferences' element={<UserPreferencesPage />} />
+              <Route exact path='/admin/users' element={<UserManagement />} />
+              <Route exact path='/admin/therapists' element={<TherapistManagement />} />
+              <Route exact path='/admin/content' element={<ContentManagement />} />
+              <Route path="/Doctors" element={<Doctors />} />
+              <Route path="/Doctors/:id" element={<Doctor_Description />} />
+              <Route path="/Consultation" element={<Consultation/>} />
+              <Route path="/Patient" element={<Consultation />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
       </div>
   );
 }
 
 
 export default App;
-
-
