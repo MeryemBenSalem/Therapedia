@@ -67,7 +67,7 @@ export default function Home() {
 
     const handleSaveAvailability = () => {
         const consultationData = {
-            doctorId: 3,
+            doctorId: 6,
             dateTime: selectedDay.toISOString(),
             patientId: null
         };

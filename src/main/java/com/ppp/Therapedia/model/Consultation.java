@@ -11,26 +11,11 @@ public class Consultation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "doctor_id")
+    private Integer doctorId;
 
-    private Integer doctor_Id;
-
-    public Integer getDoctor_Id() {
-        return doctor_Id;
-    }
-
-    public void setDoctor_Id(Integer doctor_Id) {
-        this.doctor_Id = doctor_Id;
-    }
-
-    public Integer getPatient_Id() {
-        return patient_Id;
-    }
-
-    public void setPatient_Id(Integer patient_Id) {
-        this.patient_Id = patient_Id;
-    }
-
-    private Integer patient_Id;
+    @Column(name = "patient_id")
+    private Integer patientId;
 
     private LocalDateTime dateTime;
     private boolean available = true;
@@ -44,6 +29,21 @@ public class Consultation {
         this.id = id;
     }
 
+    public Integer getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public Integer getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
 
     public LocalDateTime getDateTime() {
         return dateTime;

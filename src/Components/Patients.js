@@ -7,7 +7,7 @@ const Patients = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:8080/consultation/doctor/3/NotAvailable')
+        axios.get('http://localhost:8080/consultation/doctor/6/NotAvailable')
             .then(response => {
                 const patientsData = response.data.map(consultation => ({
                     name: consultation.patient.patientName,

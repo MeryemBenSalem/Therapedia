@@ -20,8 +20,6 @@ public class Patient extends Profile implements Serializable {
     private String medicalHistory;
     private String reasonForTherapy;
 
-    @OneToMany(mappedBy = "patient", fetch = FetchType.EAGER, cascade = jakarta.persistence.CascadeType.ALL)
-    private Set<Consultation> consultations;
 
     public String getEmergencyContact() {
         return emergencyContact;
@@ -63,11 +61,4 @@ public class Patient extends Profile implements Serializable {
         this.reasonForTherapy = reasonForTherapy;
     }
 
-    public Set<Consultation> getConsultations() {
-        return consultations;
-    }
-
-    public void setConsultations(Set<Consultation> consultations) {
-        this.consultations = consultations;
-    }
 }

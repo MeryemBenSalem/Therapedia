@@ -1,7 +1,11 @@
 package com.ppp.Therapedia.controller;
 
 import com.ppp.Therapedia.model.Consultation;
+import com.ppp.Therapedia.model.Doctor;
+import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.service.ConsultationService;
+import com.ppp.Therapedia.service.DoctorService;
+import com.ppp.Therapedia.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,9 +27,13 @@ public class ConsultationController {
     @Autowired
     private ConsultationService consultationService;
 
+    @Autowired
+    private DoctorService doctorService;
+
+    @Autowired
+    private PatientService patientService;
 
     private static final Logger logger = LoggerFactory.getLogger(ConsultationController.class);
-
 
     @PostMapping("/doctor/{doctorId}")
     public ResponseEntity<String> addConsultation(@PathVariable Integer doctorId, @RequestBody Consultation consultation) {
@@ -48,10 +56,15 @@ public class ConsultationController {
         List<Map<String, Object>> response = consultations.stream().map(consultation -> {
             Map<String, Object> data = new HashMap<>();
             data.put("consultationId", consultation.getId());
-            data.put("consultationTime", consultation.getDateTime()); // Assurez-vous que votre entité Consultation a un champ dateTime
+            data.put("consultationTime", consultation.getDateTime());
             Map<String, Object> doctorData = new HashMap<>();
-            doctorData.put("doctorId", consultation.getDoctor_Id());
-            doctorData.put("doctorName", consultation.getDoctor_Id().getFirstName() + " " + consultation.getDoctor().getLastName());
+            try {
+                Doctor doctor = doctorService.get(doctorId);
+                doctorData.put("doctorId", doctor.getId());
+                doctorData.put("doctorName", doctor.getFirstName() + " " + doctor.getLastName());
+            } catch (NoSuchElementException e) {
+                logger.error("Doctor not found with ID: " + doctorId);
+            }
             data.put("doctor", doctorData);
             return data;
         }).collect(Collectors.toList());
@@ -68,10 +81,15 @@ public class ConsultationController {
             List<Map<String, Object>> response = consultations.stream().map(consultation -> {
                 Map<String, Object> data = new HashMap<>();
                 data.put("consultationId", consultation.getId());
-                data.put("consultationTime", consultation.getDateTime()); // Assurez-vous que votre entité Consultation a un champ dateTime
+                data.put("consultationTime", consultation.getDateTime());
                 Map<String, Object> doctorData = new HashMap<>();
-                doctorData.put("doctorId", consultation.getDoctor().getId());
-                doctorData.put("doctorName", consultation.getDoctor().getFirstName() + " " + consultation.getDoctor().getLastName());
+                try {
+                    Doctor doctor = doctorService.get(doctorId);
+                    doctorData.put("doctorId", doctor.getId());
+                    doctorData.put("doctorName", doctor.getFirstName() + " " + doctor.getLastName());
+                } catch (NoSuchElementException e) {
+                    logger.error("Doctor not found with ID: " + doctorId);
+                }
                 data.put("doctor", doctorData);
                 return data;
             }).collect(Collectors.toList());
@@ -80,6 +98,7 @@ public class ConsultationController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
     @GetMapping("/doctor/{doctorId}/NotAvailable")
     public ResponseEntity<List<Map<String, Object>>> getNotAvailableConsultationsByDoctorId(@PathVariable Integer doctorId) {
         try {
@@ -90,10 +109,15 @@ public class ConsultationController {
             List<Map<String, Object>> response = consultations.stream().map(consultation -> {
                 Map<String, Object> data = new HashMap<>();
                 data.put("consultationId", consultation.getId());
-                data.put("consultationTime", consultation.getDateTime()); // Assurez-vous que votre entité Consultation a un champ dateTime
+                data.put("consultationTime", consultation.getDateTime());
                 Map<String, Object> patientData = new HashMap<>();
-                patientData.put("patientId", consultation.getPatient().getId());
-                patientData.put("patientName", consultation.getPatient().getFirstName() + " " + consultation.getPatient().getLastName());
+                try {
+                    Patient patient = patientService.get(consultation.getPatientId());
+                    patientData.put("patientId", patient.getId());
+                    patientData.put("patientName", patient.getFirstName() + " " + patient.getLastName());
+                } catch (NoSuchElementException e) {
+                    logger.error("Patient not found with ID: " + consultation.getPatientId());
+                }
                 data.put("patient", patientData);
                 return data;
             }).collect(Collectors.toList());
@@ -103,17 +127,21 @@ public class ConsultationController {
         }
     }
 
-
     @GetMapping("/patient/{patientId}/reserved")
     public ResponseEntity<List<Map<String, Object>>> getReservedConsultationsByPatientId(@PathVariable Integer patientId) {
         List<Consultation> consultations = consultationService.findReservedConsultationsByPatientId(patientId);
         List<Map<String, Object>> response = consultations.stream().map(consultation -> {
             Map<String, Object> data = new HashMap<>();
             data.put("consultationId", consultation.getId());
-            data.put("consultationTime", consultation.getDateTime()); // Assurez-vous que votre entité Consultation a un champ dateTime
+            data.put("consultationTime", consultation.getDateTime());
             Map<String, Object> doctorData = new HashMap<>();
-            doctorData.put("doctorId", consultation.getDoctor().getId());
-            doctorData.put("doctorName", consultation.getDoctor().getFirstName() + " " + consultation.getDoctor().getLastName());
+            try {
+                Doctor doctor = doctorService.get(consultation.getDoctorId());
+                doctorData.put("doctorId", doctor.getId());
+                doctorData.put("doctorName", doctor.getFirstName() + " " + doctor.getLastName());
+            } catch (NoSuchElementException e) {
+                logger.error("Doctor not found with ID: " + consultation.getDoctorId());
+            }
             data.put("doctor", doctorData);
             return data;
         }).collect(Collectors.toList());
@@ -149,6 +177,7 @@ public class ConsultationController {
             return new ResponseEntity<>("Failed to reserve consultation: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+
     @PutMapping("/cancelReservation/{consultationId}")
     public ResponseEntity<String> cancelReservation(@PathVariable Integer consultationId) {
         try {
@@ -159,6 +188,7 @@ public class ConsultationController {
         }
     }
 }
+
 
 class ConsultationRequest {
     private Integer doctorId;

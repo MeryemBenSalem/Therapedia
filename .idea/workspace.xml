@@ -5,154 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b4bf4afe-9726-44b3-a0d1-5ca839cc3a44" name="Changes" comment="prop">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/nouveau ppp final.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Therapedia.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/android-chrome-192x192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/android-chrome-512x512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/apple-touch-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-16x16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon-32x32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/47516338_b7e0_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/Frame 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/Group 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/Group 5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/IMG_6141.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/city-profile.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/doctor-book-appointment.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/doctor-group.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/doctor-picture.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/logo .png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/patient.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/profile-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/profile-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/profile-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/profile-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/borders.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/boxShadows.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/breakpoints.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/colors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/globals.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/base/typography.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/appBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/avatar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/button/contained.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/button/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/button/outlined.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/button/root.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/button/text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/buttonBase.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/card/cardContent.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/card/cardMedia.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/card/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/container.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/divider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/flatpickr.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/icon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/iconButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/linearProgress.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/link.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/list/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/list/listItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/list/listItemText.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/popover.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/components/svgIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/boxShadow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/gradientChartLine.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/hexToRgb.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/linearGradient.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/pxToRem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/functions/rgba.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assets/theme/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Appointments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Card.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/CardPatient.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Info.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKAvatar/MKAvatarRoot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKAvatar/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKBox/MKBoxRoot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKBox/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKButton/MKButtonRoot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKButton/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKTypography/MKTypographyRoot.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/MKTypography/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Patients.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Profile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SignupForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/SubscribeNewsletter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/hours.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/layout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/timesBar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Consultation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Doctor_Description.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Pages/Doctors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/Appointements.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/AppointmentForm.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/Card.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/CardPatient.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/Hero.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/Info.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/consultation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/hours.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Styles/signUpPopUp.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/ConsultationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Consultation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/ConsultationRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/ConsultationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/CorsConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ConsultationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ConsultationRequest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/DoctorController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/PatientController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ProfileController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Consultation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Doctor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Patient.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Profile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Role.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/ConsultationRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/DoctorRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/PatientRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/ProfileRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/ConsultationService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/DoctorService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/PatientService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/ProfileService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ppp.Therapedia.TherapediaApplicationTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/com.ppp.Therapedia.TherapediaApplicationTests.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Therapedia.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/SignUpPopUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/SignUpPopUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Patients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Patients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/Consultation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/Consultation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Styles/SignUpPopUp.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Styles/SignUpPopUp.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/Group 3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/Group 3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/patient.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/patient.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/TherapediaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/TherapediaApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/ConsultationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/controller/ConsultationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Consultation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Consultation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/ConsultationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/ConsultationRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/DoctorRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/repository/DoctorRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/ConsultationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ppp/Therapedia/service/ConsultationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/TherapediaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/TherapediaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/TherapediaApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ConsultationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ConsultationRequest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/DoctorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/PatientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/controller/ProfileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Consultation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Doctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Patient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Profile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/model/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/ConsultationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/DoctorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/PatientRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/repository/ProfileRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/ConsultationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/DoctorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/PatientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ppp/Therapedia/service/ProfileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.ppp.Therapedia.TherapediaApplicationTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.ppp.Therapedia.TherapediaApplicationTests.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ppp/Therapedia/TherapediaApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +104,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.TherapediaApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging feature/login-backend&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/login-backend&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/merye/Desktop/PPP/src/pages/auth&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -256,7 +153,7 @@
     <attachedChunks>
       <set>
         <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
       </set>
     </attachedChunks>
   </component>
@@ -272,6 +169,7 @@
       <workItem from="1717188144898" duration="1060000" />
       <workItem from="1717354248458" duration="30014000" />
       <workItem from="1717499075944" duration="28245000" />
+      <workItem from="1717630518945" duration="6279000" />
     </task>
     <servers />
   </component>

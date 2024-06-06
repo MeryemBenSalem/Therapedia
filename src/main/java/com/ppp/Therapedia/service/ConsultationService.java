@@ -2,7 +2,6 @@ package com.ppp.Therapedia.service;
 
 import com.ppp.Therapedia.model.Consultation;
 import com.ppp.Therapedia.model.Doctor;
-import com.ppp.Therapedia.model.Patient;
 import com.ppp.Therapedia.repository.ConsultationRepository;
 import com.ppp.Therapedia.repository.DoctorRepository;
 import org.slf4j.Logger;
@@ -12,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 @Service
@@ -26,7 +26,7 @@ public class ConsultationService {
 
     public void saveConsultation(Integer doctorId, Consultation consultation) throws Exception {
         Doctor doctor = doctorRepository.findById(doctorId).orElseThrow(() -> new Exception("Doctor not found"));
-        consultation.setDoctor_Id(doctorId);
+        consultation.setDoctorId(doctorId);
         consultationRepository.save(consultation);
     }
 
@@ -35,13 +35,13 @@ public class ConsultationService {
     }
 
     public Consultation get(Integer id) {
-        return consultationRepository.findById(id).orElseThrow();
+        return consultationRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Consultation not found"));
     }
 
     public void updateConsultation(Integer id, Integer doctorId, LocalDateTime dateTime) {
-        Consultation consultation = consultationRepository.findById(id).orElseThrow();
-        Doctor doctor = doctorRepository.findById(doctorId).orElseThrow();
-        consultation.setDoctor_Id(doctorId);
+        Consultation consultation = consultationRepository.findById(id).orElseThrow(() -> new NoSuchElementException("Consultation not found"));
+        Doctor doctor = doctorRepository.findById(doctorId).orElseThrow(() -> new NoSuchElementException("Doctor not found"));
+        consultation.setDoctorId(doctorId);
         consultation.setDateTime(dateTime);
         consultationRepository.save(consultation);
     }
@@ -55,6 +55,7 @@ public class ConsultationService {
     public List<Consultation> findAvailableConsultationsByDoctorId(Integer doctorId) {
         return consultationRepository.findByDoctorIdAndAvailableTrue(doctorId);
     }
+
     public List<Consultation> findNotAvailableConsultationsByDoctorId(Integer doctorId) {
         return consultationRepository.findByDoctorIdAndAvailableFalse(doctorId);
     }
@@ -65,10 +66,7 @@ public class ConsultationService {
             throw new Exception("Consultation is already reserved");
         }
         consultation.setAvailable(false);
-        // Assurez-vous que le patient est défini correctement
-        Patient patient = new Patient();
-        patient.setId(patientId);
-        consultation.setPatient_Id(patientId);
+        consultation.setPatientId(patientId);
         consultationRepository.save(consultation);
         logger.info("ConsultationId: {} reserved for patientId: {}", consultationId, patientId);
     }
@@ -80,10 +78,10 @@ public class ConsultationService {
         return consultations;
     }
 
-
     public void delete(Integer id) {
         consultationRepository.deleteById(id);
     }
+
     public void cancelReservation(Integer consultationId) throws Exception {
         logger.info("Canceling reservation for consultationId: {}", consultationId);
         Consultation consultation = consultationRepository.findById(consultationId).orElseThrow(() -> new Exception("Consultation not found"));
@@ -92,7 +90,7 @@ public class ConsultationService {
             throw new Exception("Consultation is already available");
         }
         consultation.setAvailable(true);
-        consultation.setPatient_Id(null);
+        consultation.setPatientId(null);
         consultationRepository.save(consultation);
         logger.info("Reservation for consultationId: {} has been canceled", consultationId);
     }

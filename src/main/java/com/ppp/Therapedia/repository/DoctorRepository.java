@@ -2,6 +2,7 @@ package com.ppp.Therapedia.repository;
 
 import com.ppp.Therapedia.model.Doctor;
 import com.ppp.Therapedia.model.Patient;
+import io.lettuce.core.dynamic.annotation.Param;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 

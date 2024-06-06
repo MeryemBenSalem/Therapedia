@@ -18,7 +18,7 @@ public class Comment {
     private String postedBy;
 
     @ManyToOne
-    @JoinColumn (name = "article_id", nullable = false)
+    @JoinColumn(name = "article_id", referencedColumnName = "article_id", nullable = false)
     private Article article;
 
     public Comment(){
