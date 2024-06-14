@@ -1,72 +1,69 @@
+# Therapedia: A Mental Health Web App
 
+Therapedia is a mental health web application designed to facilitate virtual appointments between therapists and patients. The application provides an admin dashboard for managing users and appointments, along with a journaling feature for patients.
 
-# Getting Started with Create React App
+## Table of Contents
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+- User Management: View, add , edit, and delete therapist and patient profiles.
+- Appointment Management: Schedule, view, and manage appointments.
+- Dashboard Analytics: Display key metrics and generate reports.
+- Blogs : Patients and Doctors can read mental health related Blogs.
+- Journal Feature: Patients can log in, create sessions, and manage their journal entries.
+- Forum Discussion : Users can ask questions, share ideas, and provide feedback.
+- Responsive and modern UI.
 
-## Available Scripts
+## Technologies Used
+- **Frontend**: React.js
+- **Backend**: Spring Boot
+- **Database**: PostgreSQL
 
-In the project directory, you can run:
+## Getting Started
 
-### `npm start`
+### Prerequisites
+- [Node.js](https://nodejs.org/) 
+- [npm](https://www.npmjs.com/) 
+- [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html) 
+- [PostgreSQL](https://www.postgresql.org/) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installation
+1. **Clone the repository**
+    ```sh
+    git clone https://github.com/MeryemBenSalem/Therapedia.git
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install frontend dependencies**
+    ```sh
+    npm install --force
+    ```
 
-### `npm test`
+3. **Set up the backend**
+    - Navigate to the backend directory and configure the `application.properties` file with your PostgreSQL database credentials.
+    ```properties
+    spring.datasource.url=jdbc:postgresql://localhost:5432/your_database
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+    spring.jpa.hibernate.ddl-auto=update
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Running the Application
 
-### `npm run build`
+1. **Start the backend**
+    ```sh
+    ./mvnw spring-boot:run
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. **Start the frontend**
+    ```sh
+    npm start
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+3. **Access the application**
+    - Frontend: `http://localhost:3000`
+    - Backend: `http://localhost:8080`
